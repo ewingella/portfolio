@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Alexandre - Portfolio</title>
+    <meta name="description" content="Portfolio de Maria Alexandre - Développeur Frontend spécialisé en CSS Grid, JavaScript et interfaces interactives">
+    <link rel="stylesheet" href="assets/css/portfolio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="#home">Maria Alexandre</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Accueil</a></li>
+                <li><a href="#about" class="nav-link">À propos</a></li>
+                <li><a href="#projects" class="nav-link">Projets</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Salut, je suis <span class="text-gradient">Maria</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Développeur Frontend passionné par les interfaces interactives et l'apprentissage du CSS Grid moderne
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+                        <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-avatar">
+                        <div class="avatar-placeholder">MA</div>
+                    </div>
+                    <div class="hero-decoration">
+                        <div class="floating-card">
+                            <div class="card-header">CSS Grid</div>
+                            <div class="card-content">
+                                <div class="grid-demo">
+                                    <div class="grid-item"></div>
+                                    <div class="grid-item"></div>
+                                    <div class="grid-item"></div>
+                                    <div class="grid-item"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">À propos de moi</h2>
+                <p class="section-subtitle">Passionné par le développement web moderne et l'enseignement</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Je suis un développeur frontend spécialisé dans la création d'interfaces modernes et interactives. 
+                        Ma passion pour CSS Grid m'a amené à créer des outils éducatifs pour aider d'autres développeurs 
+                        à maîtriser cette technologie puissante.
+                    </p>
+                    <p>
+                        J'aime combiner design élégant et fonctionnalités avancées pour créer des expériences utilisateur 
+                        exceptionnelles. Chaque projet est une opportunité d'apprendre et d'innover.
+                    </p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">🎨</div>
+                        <h3>Frontend</h3>
+                        <p>HTML5, CSS3, JavaScript, CSS Grid, Flexbox</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">⚡</div>
+                        <h3>Interactivité</h3>
+                        <p>Drag & Drop, Animations, UX/UI Design</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">📚</div>
+                        <h3>Pédagogie</h3>
+                        <p>Création d'outils éducatifs interactifs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Mes Projets</h2>
+                <p class="section-subtitle">Une sélection de mes réalisations récentes</p>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card featured">
+                    <div class="project-image">
+                        <div class="project-preview">
+                            <div class="preview-header">CSS Grid Guide</div>
+                            <div class="preview-grid">
+                                <div class="preview-item header">Header</div>
+                                <div class="preview-item nav">Nav</div>
+                                <div class="preview-item main">Main</div>
+                                <div class="preview-item aside">Aside</div>
+                                <div class="preview-item footer">Footer</div>
+                            </div>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="projets/css-grid-guide/" class="btn btn-primary">Voir le projet</a>
+                                <a href="#" class="btn btn-secondary">Code source</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">CSS Grid Guide Interactif</h3>
+                            <span class="project-status">En vedette</span>
+                        </div>
+                        <p class="project-description">
+                            Un guide complet et interactif pour apprendre CSS Grid avec des démos en temps réel, 
+                            du drag & drop et la génération de code automatique.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">CSS Grid</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Drag & Drop</span>
+                            <span class="tech-tag">Syntax Highlighting</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <div class="placeholder-icon">🚀</div>
+                            <p>Projet à venir</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Calculatrice Moderne</h3>
+                        <p class="project-description">
+                            Interface moderne avec animations fluides et fonctionnalités avancées.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">CSS3</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <div class="placeholder-icon">📝</div>
+                            <p>Projet à venir</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Todo App Interactive</h3>
+                        <p class="project-description">
+                            Application de gestion de tâches avec interface intuitive et persistance des données.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">LocalStorage</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Restons en contact</h2>
+                <p class="section-subtitle">N'hésitez pas à me contacter pour discuter de vos projets</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>maria.alexandre@example.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div>
+                            <h3>LinkedIn</h3>
+                            <p>Maria Alexandre</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🐙</div>
+                        <div>
+                            <h3>GitHub</h3>
+                            <p>github.com/ewingella</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form class="form">
+                        <div class="form-group">
+                            <label for="name">Nom</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Maria Alexandre. Tous droits réservés.</p>
+                <div class="footer-links">
+                    <a href="https://github.com/ewingella" class="footer-link">GitHub</a>
+                    <a href="#" class="footer-link">LinkedIn</a>
+                    <a href="#" class="footer-link">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/portfolio.js"></script>
+</body>
+</html>
