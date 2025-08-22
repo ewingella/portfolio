@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation Full-Stack Engineer - Maria Alexandre</title>
+    <meta name="description" content="Découvrez mon parcours de formation Full-Stack Engineer chez Codecademy avec tous les projets réalisés et compétences acquises">
+    <link rel="stylesheet" href="assets/css/portfolio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .formation-hero {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .formation-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .formation-hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .codecademy-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(255,255,255,0.15);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.3);
+            margin-bottom: 2rem;
+        }
+        
+        .progress-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.15);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+        
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            max-width: 45%;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1;
+        }
+        
+        .timeline-marker.completed {
+            background: var(--success, #10b981);
+        }
+        
+        .timeline-marker.current {
+            background: var(--accent);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .module-title {
+            color: var(--primary);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .module-status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .status-completed {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+        
+        .status-current {
+            background: #dbeafe;
+            color: var(--primary);
+        }
+        
+        .status-upcoming {
+            background: var(--gray-100);
+            color: var(--gray-600);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        
+        .project-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        
+        .project-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .tech-tag {
+            background: var(--gray-100);
+            color: var(--text-secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            margin-top: auto;
+        }
+        
+        .project-link:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .back-to-portfolio {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: var(--primary);
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .back-to-portfolio:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .formation-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                flex-direction: row !important;
+                padding-left: 50px;
+            }
+            
+            .timeline-marker {
+                left: 20px;
+            }
+            
+            .timeline-content {
+                max-width: 100%;
+            }
+            
+            .back-to-portfolio {
+                position: static;
+                margin: 1rem;
+                width: fit-content;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-to-portfolio">← Retour au Portfolio</a>
+    
+    <!-- Formation Hero -->
+    <section class="formation-hero">
+        <div class="container">
+            <div class="codecademy-badge">
+                <span style="font-size: 1.5rem;">🎓</span>
+                <span>Codecademy Pro</span>
+            </div>
+            
+            <h1>Formation Full-Stack Engineer</h1>
+            <p>Parcours complet de développement web moderne avec JavaScript, React, Node.js et bien plus encore</p>
+            
+            <div class="progress-stats">
+                <div class="stat-card">
+                    <span class="stat-number">75%</span>
+                    <span class="stat-label">Progression globale</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">12</span>
+                    <span class="stat-label">Projets réalisés</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">150+</span>
+                    <span class="stat-label">Heures de formation</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">Technologies maîtrisées</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section style="padding: 4rem 0; background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Parcours de Formation</h2>
+                <p class="section-subtitle">Progression étape par étape dans le développement Full-Stack</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="module-title">Web Development Foundations</div>
+                        <div class="module-status status-completed">✅ Terminé</div>
+                        <p>HTML sémantique, CSS moderne, design responsive et principes de l'accessibilité web</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">Responsive Design</span>
+                            <span class="tech-tag">Accessibility</span>
+                        </div>
+                    </div>
+                    <div class="timeline-marker completed"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="module-title">Building Interactive Websites</div>
+                        <div class="module-status status-completed">✅ Terminé</div>
+                        <p>JavaScript moderne, interactivité DOM, création de sites web responsives et accessibles</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">JavaScript ES6+</span>
+                            <span class="tech-tag">DOM Manipulation</span>
+                            <span class="tech-tag">Responsive Design</span>
+                            <span class="tech-tag">Web Accessibility</span>
+                        </div>
+                    </div>
+                    <div class="timeline-marker completed"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="module-title">Frontend Development</div>
+                        <div class="module-status status-current">🔄 En cours</div>
+                        <p>JavaScript avancé, Testing, Requêtes HTTP asynchrones, React, Redux, Git & GitHub</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">JavaScript Testing</span>
+                            <span class="tech-tag">Async JavaScript</span>
+                            <span class="tech-tag">HTTP Requests</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Redux</span>
+                            <span class="tech-tag">Git & GitHub</span>
+                        </div>
+                    </div>
+                    <div class="timeline-marker current"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="module-title">Backend Development</div>
+                        <div class="module-status status-upcoming">⏳ À venir</div>
+                        <p>Express.js, Authentification & Autorisation, Bases de données relationnelles, PostgreSQL, APIs REST et documentation Swagger</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Express.js</span>
+                            <span class="tech-tag">User Authentication</span>
+                            <span class="tech-tag">Authorization</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">REST API</span>
+                            <span class="tech-tag">Swagger/OpenAPI</span>
+                        </div>
+                    </div>
+                    <div class="timeline-marker"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="module-title">Full-Stack Development</div>
+                        <div class="module-status status-upcoming">⏳ À venir</div>
+                        <p>Connexion Frontend-Backend, déploiement d'applications web, sécurité et fondamentaux DevOps</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Frontend-Backend</span>
+                            <span class="tech-tag">Deployment</span>
+                            <span class="tech-tag">Security Fundamentals</span>
+                            <span class="tech-tag">Data Security</span>
+                            <span class="tech-tag">DevOps Fundamentals</span>
+                        </div>
+                    </div>
+                    <div class="timeline-marker"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="module-title">Portfolio & Career Prep</div>
+                        <div class="module-status status-upcoming">⏳ À venir</div>
+                        <p>Finalisation du portfolio, préparation aux entretiens techniques et intégration professionnelle</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Portfolio Development</span>
+                            <span class="tech-tag">Technical Interviews</span>
+                            <span class="tech-tag">Code Review</span>
+                            <span class="tech-tag">Career Skills</span>
+                        </div>
+                    </div>
+                    <div class="timeline-marker"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section style="padding: 4rem 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Projets Réalisés</h2>
+                <p class="section-subtitle">Applications et projets développés pendant la formation</p>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Frontend Projects -->
+                <div class="project-card">
+                    <h3>🎨 Portfolio Interactif</h3>
+                    <p>Site portfolio responsive avec animations CSS, grille moderne et design adaptatif. Projet personnel utilisant les compétences acquises.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">CSS Grid</span>
+                    </div>
+                    <a href="index.html" class="project-link">Voir le projet →</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3>📊 CSS Grid Guide</h3>
+                    <p>Guide interactif pour apprendre CSS Grid avec drag & drop, génération de code en temps réel et démos pratiques.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">CSS Grid</span>
+                        <span class="tech-tag">JavaScript ES6+</span>
+                        <span class="tech-tag">Drag & Drop API</span>
+                    </div>
+                    <a href="projets/css-grid-guide/projet.html" class="project-link">Voir le projet →</a>
+                </div>
+                
+                <!-- Placeholder projects -->
+                <div class="project-card">
+                    <h3>⚛️ Application React</h3>
+                    <p>Application web interactive construite avec React, gestion d'état avec hooks et composants réutilisables.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Hooks</span>
+                        <span class="tech-tag">Components</span>
+                    </div>
+                    <a href="#" class="project-link">À venir →</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3>🛒 E-commerce Frontend</h3>
+                    <p>Interface utilisateur complète pour site e-commerce avec panier, filtres et design responsive.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Redux</span>
+                        <span class="tech-tag">CSS Modules</span>
+                    </div>
+                    <a href="#" class="project-link">À venir →</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3>🌐 API REST Complète</h3>
+                    <p>API RESTful avec Express.js, authentification utilisateur, autorisation, PostgreSQL et documentation Swagger/OpenAPI.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Express.js</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Authentication</span>
+                        <span class="tech-tag">Swagger</span>
+                    </div>
+                    <a href="#" class="project-link">En développement →</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3>� Application Full-Stack</h3>
+                    <p>Application complète connectant React frontend et Express.js backend, avec déploiement sécurisé et bonnes pratiques DevOps.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React + Express</span>
+                        <span class="tech-tag">Deployment</span>
+                        <span class="tech-tag">Security</span>
+                        <span class="tech-tag">DevOps</span>
+                    </div>
+                    <a href="#" class="project-link">Projet final →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="padding: 4rem 0; background: var(--gray-900); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700;">Suivez ma progression</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Découvrez mes projets au fur et à mesure de mon apprentissage
+            </p>
+            <a href="index.html#projets" style="display: inline-flex; align-items: center; gap: 0.75rem; background: var(--primary); color: white; text-decoration: none; padding: 1.25rem 2.5rem; border-radius: 8px; font-weight: 600; font-size: 1.125rem; transition: all 0.2s ease;">
+                🚀 Voir tous mes projets
+            </a>
+        </div>
+    </section>
+
+    <script src="assets/js/portfolio.js"></script>
+</body>
+</html>
