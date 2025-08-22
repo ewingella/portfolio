@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formations - Maria Alexandre</title>
+    <meta name="description" content="Découvrez toutes les formations que je suis pour devenir développeur Full-Stack">
+    <link rel="stylesheet" href="../assets/css/portfolio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .formations-hero {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .formations-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .formations-hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .formations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .formation-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .formation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        
+        .formation-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .formation-logo {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 700;
+        }
+        
+        .formation-info h3 {
+            margin: 0 0 0.5rem 0;
+            color: var(--primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .formation-provider {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .formation-progress {
+            margin: 1rem 0;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--gray-200);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: width 0.3s ease;
+        }
+        
+        .progress-text {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+        
+        .formation-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: var(--gray-50);
+            border-radius: 8px;
+        }
+        
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+        
+        .formation-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: auto;
+        }
+        
+        .btn-formation {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+        
+        .btn-secondary {
+            background: var(--gray-100);
+            color: var(--text-primary);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--gray-200);
+        }
+        
+        .back-to-portfolio {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: var(--primary);
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .back-to-portfolio:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .formations-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .formations-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .back-to-portfolio {
+                position: static;
+                margin: 1rem;
+                width: fit-content;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="back-to-portfolio">← Retour au Portfolio</a>
+    
+    <!-- Formations Hero -->
+    <section class="formations-hero">
+        <div class="container">
+            <h1>Mes Formations</h1>
+            <p>Parcours d'apprentissage continu pour devenir développeur Full-Stack professionnel</p>
+        </div>
+    </section>
+
+    <!-- Formations Grid -->
+    <section style="padding: 4rem 0; background: var(--bg-secondary);">
+        <div class="container">
+            <div class="formations-grid">
+                <!-- Codecademy Full-Stack Engineer -->
+                <div class="formation-card">
+                    <div class="formation-header">
+                        <div class="formation-logo">CA</div>
+                        <div class="formation-info">
+                            <h3>Full-Stack Engineer</h3>
+                            <div class="formation-provider">Codecademy Pro</div>
+                        </div>
+                    </div>
+                    
+                    <div class="formation-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%;"></div>
+                        </div>
+                        <div class="progress-text">75% complété • En cours</div>
+                    </div>
+                    
+                    <div class="formation-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">6</span>
+                            <div class="stat-label">Modules</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">12</span>
+                            <div class="stat-label">Projets</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">150+</span>
+                            <div class="stat-label">Heures</div>
+                        </div>
+                    </div>
+                    
+                    <p style="color: var(--text-secondary); line-height: 1.6; margin: 1rem 0;">
+                        Formation complète couvrant HTML/CSS, JavaScript, React, Node.js, bases de données et déploiement.
+                    </p>
+                    
+                    <div class="formation-actions">
+                        <a href="codecademy-fullstack.html" class="btn-formation btn-primary">Voir détails</a>
+                        <a href="../index.html#projets" class="btn-formation btn-secondary">Projets</a>
+                    </div>
+                </div>
+                
+                <!-- Placeholder pour futures formations -->
+                <div class="formation-card" style="opacity: 0.6;">
+                    <div class="formation-header">
+                        <div class="formation-logo" style="background: var(--gray-400);">FC</div>
+                        <div class="formation-info">
+                            <h3>Responsive Web Design</h3>
+                            <div class="formation-provider">FreeCodeCamp</div>
+                        </div>
+                    </div>
+                    
+                    <div class="formation-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%;"></div>
+                        </div>
+                        <div class="progress-text">À venir</div>
+                    </div>
+                    
+                    <div class="formation-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <div class="stat-label">Modules</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15</span>
+                            <div class="stat-label">Projets</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">300</span>
+                            <div class="stat-label">Heures</div>
+                        </div>
+                    </div>
+                    
+                    <p style="color: var(--text-secondary); line-height: 1.6; margin: 1rem 0;">
+                        Certification en design web responsive, HTML, CSS, et projets pratiques.
+                    </p>
+                    
+                    <div class="formation-actions">
+                        <a href="#" class="btn-formation btn-secondary">Bientôt disponible</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="padding: 4rem 0; background: var(--gray-900); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700;">Formation continue</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
+                L'apprentissage est un voyage continu. Suivez ma progression et découvrez mes projets.
+            </p>
+            <a href="../index.html" style="display: inline-flex; align-items: center; gap: 0.75rem; background: var(--primary); color: white; text-decoration: none; padding: 1.25rem 2.5rem; border-radius: 8px; font-weight: 600; font-size: 1.125rem; transition: all 0.2s ease;">
+                🚀 Voir mon portfolio
+            </a>
+        </div>
+    </section>
+
+    <script src="../assets/js/portfolio.js"></script>
+</body>
+</html>
