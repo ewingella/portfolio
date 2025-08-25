@@ -1,0 +1,283 @@
+/* Formation Projects Styles */
+
+.formation-projects {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.formation-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--gray-200);
+}
+
+.formation-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.formation-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.formation-stats .stat {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+}
+
+.formation-stats .stat strong {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* Module Sections */
+.module-section {
+    margin-bottom: 3rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.module-header {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.module-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.module-count {
+    background: rgba(255,255,255,0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.module-projects {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+/* Project Cards */
+.project-card {
+    background: var(--gray-50);
+    border-radius: 12px;
+    padding: 2rem;
+    border-left: 4px solid var(--gray-300);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.project-card.difficulty-beginner {
+    border-left-color: #10b981;
+}
+
+.project-card.difficulty-intermediate {
+    border-left-color: #f59e0b;
+}
+
+.project-card.difficulty-advanced {
+    border-left-color: #ef4444;
+}
+
+.project-header {
+    margin-bottom: 1rem;
+}
+
+.project-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 0.5rem 0;
+}
+
+.project-meta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.project-difficulty,
+.project-status {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+}
+
+.project-difficulty {
+    background: var(--gray-200);
+    color: var(--text-secondary);
+}
+
+.project-status {
+    background: var(--primary);
+    color: white;
+}
+
+.project-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+    background: white;
+    color: var(--primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid var(--primary);
+}
+
+.project-features,
+.project-objectives {
+    margin-bottom: 1.5rem;
+}
+
+.project-features strong,
+.project-objectives strong {
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.project-features ul,
+.project-objectives ul {
+    margin: 0;
+    padding-left: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.project-features li,
+.project-objectives li {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 0.25rem;
+}
+
+.project-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid var(--gray-200);
+}
+
+.btn-project {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Timeline alternative pour mobile */
+@media (max-width: 768px) {
+    .formation-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .module-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .module-projects {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    .project-actions {
+        flex-direction: column;
+    }
+}
+
+/* Animation d'apparition */
+.module-section {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Loading state */
+.formation-projects.loading {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formation-projects.loading::before {
+    content: "Chargement des projets...";
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+}

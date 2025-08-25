@@ -9,7 +9,7 @@
   "difficulty": "intermediate",
   "type": "personal-project",
   "description": "Guide interactif pour apprendre CSS Grid avec des démos en temps réel, du drag & drop et la génération de code automatique",
-  "demoUrl": "demos/template-areas.html",
+  "demoUrl": "projet.html",
   "githubUrl": "#",
   "features": [
     "Drag & Drop interactif",

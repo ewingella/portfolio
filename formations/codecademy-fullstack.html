@@ -6,6 +6,7 @@
     <title>Formation Full-Stack Engineer - Maria Alexandre</title>
     <meta name="description" content="Découvrez mon parcours de formation Full-Stack Engineer chez Codecademy avec tous les projets réalisés et compétences acquises">
     <link rel="stylesheet" href="../assets/css/portfolio.css">
+    <link rel="stylesheet" href="../assets/css/formation-projects.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -447,81 +448,13 @@
     <section style="padding: 4rem 0;">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Projets Réalisés</h2>
-                <p class="section-subtitle">Applications et projets développés pendant la formation</p>
+                <h2 class="section-title">Projets par Module</h2>
+                <p class="section-subtitle">Projets organisés par module de formation avec leurs objectifs d'apprentissage</p>
             </div>
             
-            <div class="projects-grid">
-                <!-- Frontend Projects -->
-                <div class="project-card">
-                    <h3>🎨 Portfolio Interactif</h3>
-                    <p>Site portfolio responsive avec animations CSS, grille moderne et design adaptatif. Projet personnel utilisant les compétences acquises.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">CSS Grid</span>
-                    </div>
-                    <a href="index.html" class="project-link">Voir le projet →</a>
-                </div>
-                
-                <div class="project-card">
-                    <h3>📊 CSS Grid Guide</h3>
-                    <p>Guide interactif pour apprendre CSS Grid avec drag & drop, génération de code en temps réel et démos pratiques.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">CSS Grid</span>
-                        <span class="tech-tag">JavaScript ES6+</span>
-                        <span class="tech-tag">Drag & Drop API</span>
-                    </div>
-                    <a href="../projets/css-grid-guide/projet.html" class="project-link">Voir le projet →</a>
-                </div>
-                
-                <!-- Placeholder projects -->
-                <div class="project-card">
-                    <h3>⚛️ Application React</h3>
-                    <p>Application web interactive construite avec React, gestion d'état avec hooks et composants réutilisables.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Hooks</span>
-                        <span class="tech-tag">Components</span>
-                    </div>
-                    <a href="#" class="project-link">À venir →</a>
-                </div>
-                
-                <div class="project-card">
-                    <h3>🛒 E-commerce Frontend</h3>
-                    <p>Interface utilisateur complète pour site e-commerce avec panier, filtres et design responsive.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Redux</span>
-                        <span class="tech-tag">CSS Modules</span>
-                    </div>
-                    <a href="#" class="project-link">À venir →</a>
-                </div>
-                
-                <div class="project-card">
-                    <h3>🌐 API REST Complète</h3>
-                    <p>API RESTful avec Express.js, authentification utilisateur, autorisation, PostgreSQL et documentation Swagger/OpenAPI.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Express.js</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                        <span class="tech-tag">Authentication</span>
-                        <span class="tech-tag">Swagger</span>
-                    </div>
-                    <a href="#" class="project-link">En développement →</a>
-                </div>
-                
-                <div class="project-card">
-                    <h3>� Application Full-Stack</h3>
-                    <p>Application complète connectant React frontend et Express.js backend, avec déploiement sécurisé et bonnes pratiques DevOps.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">React + Express</span>
-                        <span class="tech-tag">Deployment</span>
-                        <span class="tech-tag">Security</span>
-                        <span class="tech-tag">DevOps</span>
-                    </div>
-                    <a href="#" class="project-link">Projet final →</a>
-                </div>
+            <!-- Container pour les projets dynamiques -->
+            <div id="formation-projects-container" class="formation-projects loading">
+                <!-- Le contenu sera chargé dynamiquement par JavaScript -->
             </div>
         </div>
     </section>
@@ -533,12 +466,20 @@
             <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
                 Découvrez mes projets au fur et à mesure de mon apprentissage
             </p>
-            <a href="../index.html#projets" style="display: inline-flex; align-items: center; gap: 0.75rem; background: var(--primary); color: white; text-decoration: none; padding: 1.25rem 2.5rem; border-radius: 8px; font-weight: 600; font-size: 1.125rem; transition: all 0.2s ease;">
+            <a href="../projets/" style="display: inline-flex; align-items: center; gap: 0.75rem; background: var(--primary); color: white; text-decoration: none; padding: 1.25rem 2.5rem; border-radius: 8px; font-weight: 600; font-size: 1.125rem; transition: all 0.2s ease;">
                 🚀 Voir tous mes projets
             </a>
         </div>
     </section>
 
     <script src="../assets/js/portfolio.js"></script>
+    <script src="../assets/js/formation-projects.js"></script>
+    <script>
+        // Initialiser les projets de formation au chargement de la page
+        document.addEventListener('DOMContentLoaded', async () => {
+            const manager = new FormationProjectsManager();
+            await manager.init('codecademy-fullstack', 'formation-projects-container');
+        });
+    </script>
 </body>
 </html>
