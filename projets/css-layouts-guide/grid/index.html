@@ -1,13 +1,8 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="u  <ul>
-    <li><strong>🎯 Configuration de grille :</strong> Tous les concepts de base (fr, gap, minmax, fit-content, min/max-content) dans une interface interactive complète.</li>
-    <li><strong>G — template-areas :</strong> layout déclaratif par zones.</li>
-    <li><strong>H — auto-fit vs auto-fill :</strong> galerie responsive.</li>
-    <li><strong>I — auto-flow: column :</strong> auto-placement vertical, colonnes implicites.</li>
-    <li><strong>J — alignements :</strong> justify/align <em>items / self / content</em>.</li>
-  </ul>meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CSS Grid — Index</title>
   <link rel="stylesheet" href="guide.css" />
   <script src="js/guide-core.js" defer></script>
@@ -55,7 +50,11 @@
       font-weight: bold;
       box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
       transition: transform 0.2s;
-    " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+    " 
+    onmouseover="this.style.transform='translateY(-2px)'" 
+    onmouseout="this.style.transform='translateY(0)'"
+    onfocus="this.style.transform='translateY(-2px)'"
+    onblur="this.style.transform='translateY(0)'">
       🚀 Lancer la démo interactive
     </a>
   </p>
