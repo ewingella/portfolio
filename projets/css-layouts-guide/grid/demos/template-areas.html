@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSS Grid — template-areas</title>
+  <link rel="stylesheet" href="../guide.css" />
+  <script src="../js/guide-core.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="portfolio-nav">
+      <a href="../../../index.html" class="back-to-portfolio">← Retour au Portfolio</a>
+    </div>
+    <h1>CSS Grid — template-areas</h1>
+    <p>Projet de synthèse — CSS Grid : démos structurées + explications.</p>
+    
+    <div class="nav">
+      <a href="../index.html">Accueil</a>
+      <a href="grid-basics.html">🎯 Configuration de grille</a>
+      <a href="template-areas.html" style="background: #7c3aed; color: white; font-weight: bold;">G — template-areas</a>
+      <a href="auto-fit-fill.html">H — auto-fit vs auto-fill</a>
+      <a href="auto-flow-column.html">I — auto-flow: column</a>
+      <a href="alignment.html">J — alignements</a>
+    </div>
+    
+  </header>
+  <main class="page">
+    
+    <section class="section">
+      <h2>G — <code>grid-template-areas</code></h2>
+      <p class="explain">Disposition déclarative : donnez des noms aux zones pour exprimer visuellement le layout.</p>
+      
+      <p><span style="color: #b7e7c8;">●</span> <strong>header</strong> | <span style="color: #cacaFF;">●</span> <strong>nav</strong> | <span style="color: #f2e2a2;">●</span> <strong>main</strong> | <span style="color: #f3c0dc;">●</span> <strong>aside</strong> | <span style="color: #bfd8ff;">●</span> <strong>footer</strong></p>
+      
+      <div class="demo demo-areas">
+        <header>En‑tête</header>
+        <nav>Navigation</nav>
+        <main>Contenu principal</main>
+        <aside>Aside</aside>
+        <footer>Pied de page</footer>
+      </div>
+      <p class="note">En mobile, redéclarez <code>grid-template-areas</code> en une seule colonne pour empiler les zones.</p>
+    </section>
+    
+    <section class="section">
+      <h3>Version Mobile — Une colonne</h3>
+      <p class="explain">Même contenu, layout adapté : toutes les zones s'empilent verticalement.</p>
+      
+      <p><span style="color: #b7e7c8;">●</span> <strong>header</strong> → <span style="color: #cacaFF;">●</span> <strong>nav</strong> → <span style="color: #f2e2a2;">●</span> <strong>main</strong> → <span style="color: #f3c0dc;">●</span> <strong>aside</strong> → <span style="color: #bfd8ff;">●</span> <strong>footer</strong></p>
+      
+      <div class="demo demo-areas-mobile">
+        <header>En‑tête</header>
+        <nav>Navigation</nav>
+        <main>Contenu principal</main>
+        <aside>Aside</aside>
+        <footer>Pied de page</footer>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3>🎯 Atelier drag & drop — Construisez votre grille</h3>
+      <p class="explain">Glissez-déposez les éléments dans la grille. Les zones de même type doivent être adjacentes !</p>
+      
+      <div class="drag-drop-workshop">
+        <div class="palette">
+          <h4>Éléments disponibles</h4>
+          <div class="elements-source">
+            <div class="draggable-element" data-type="header" draggable="true">
+              <span class="element-icon">📋</span> Header
+            </div>
+            <div class="draggable-element" data-type="nav" draggable="true">
+              <span class="element-icon">🧭</span> Nav
+            </div>
+            <div class="draggable-element" data-type="main" draggable="true">
+              <span class="element-icon">📄</span> Main
+            </div>
+            <div class="draggable-element" data-type="aside" draggable="true">
+              <span class="element-icon">📌</span> Aside
+            </div>
+            <div class="draggable-element" data-type="footer" draggable="true">
+              <span class="element-icon">🔻</span> Footer
+            </div>
+          </div>
+          
+          <div class="controls-section">
+            <div class="control-group">
+              <label>Taille de grille :</label>
+              <select id="grid-size">
+                <option value="2x2">2×2</option>
+                <option value="3x3" selected>3×3</option>
+                <option value="4x3">4×3</option>
+                <option value="4x4">4×4</option>
+              </select>
+            </div>
+            
+            <button id="clear-grid" class="btn-secondary">🗑️ Vider la grille</button>
+            <button id="auto-example" class="btn-primary">✨ Exemple automatique</button>
+          </div>
+        </div>
+        
+        <div class="grid-workspace">
+          <h4>Grille de construction</h4>
+          <div id="construction-grid" class="construction-grid">
+            <!-- Les cellules seront générées dynamiquement -->
+          </div>
+          
+          <div class="grid-info">
+            <div class="code-output">
+              <div class="areas-preview">
+                <h5>CSS généré :</h5>
+                <pre id="areas-output"><code>/* Glissez des éléments pour voir le code */</code></pre>
+              </div>
+              
+              <div class="html-preview">
+                <h5>HTML correspondant :</h5>
+                <pre id="html-output"><code>/* Glissez des éléments pour voir le code */</code></pre>
+              </div>
+            </div>
+            
+            <div class="validation-status">
+              <div id="validation-message" class="message-info">
+                💡 Astuce : Les éléments de même type doivent être côte à côte
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <a class="back" href="../index.html">← Retour à l'index</a>
+  </main>
+  
+  <script src="../js/demo-utils.js"></script>
+  <script src="../js/template-areas-demo.js"></script>
+</body>
+</html>

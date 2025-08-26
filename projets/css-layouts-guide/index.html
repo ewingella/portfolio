@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Layouts Guide - Flexbox & Grid | Portfolio Maria</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">CSS Layouts Guide</h1>
+                <p class="hero-subtitle">Maîtrisez les layouts modernes avec Flexbox et CSS Grid</p>
+                <p class="hero-description">
+                    Deux guides interactifs complets pour apprendre les systèmes de mise en page les plus puissants de CSS. 
+                    Démos en temps réel, exercices pratiques et code prêt à utiliser.
+                </p>
+                <a href="../index.html" class="back-btn">← Retour aux projets</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="layout-preview">
+                <div class="flexbox-preview">
+                    <div class="flex-container">
+                        <div class="flex-item">1</div>
+                        <div class="flex-item">2</div>
+                        <div class="flex-item">3</div>
+                    </div>
+                </div>
+                <div class="grid-preview">
+                    <div class="grid-container">
+                        <div class="grid-item header">Header</div>
+                        <div class="grid-item nav">Nav</div>
+                        <div class="grid-item main">Main</div>
+                        <div class="grid-item aside">Aside</div>
+                        <div class="grid-item footer">Footer</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <section class="guides-section">
+                <h2 class="section-title">Choisissez votre guide</h2>
+                <p class="section-subtitle">Deux approches complémentaires pour maîtriser les layouts CSS modernes</p>
+                
+                <div class="guides-grid">
+                    <!-- Guide Flexbox -->
+                    <article class="guide-card flexbox-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-arrows-alt-h"></i>
+                            </div>
+                            <h3 class="card-title">CSS Flexbox</h3>
+                            <p class="card-subtitle">Layouts unidimensionnels</p>
+                        </div>
+                        
+                        <div class="card-preview">
+                            <div class="preview-demo flexbox-demo">
+                                <div class="demo-item">Item 1</div>
+                                <div class="demo-item">Item 2</div>
+                                <div class="demo-item">Item 3</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-content">
+                            <p class="card-description">
+                                Parfait pour aligner des éléments en ligne ou en colonne. 
+                                Idéal pour les composants, barres de navigation et centrage.
+                            </p>
+                            
+                            <div class="card-features">
+                                <h4>Ce que vous apprendrez :</h4>
+                                <ul>
+                                    <li><span class="feature-icon">🎯</span> flex-direction et axes</li>
+                                    <li><span class="feature-icon">📐</span> justify-content et align-items</li>
+                                    <li><span class="feature-icon">📱</span> flex-wrap et responsive</li>
+                                    <li><span class="feature-icon">🔧</span> flex-grow, shrink et basis</li>
+                                    <li><span class="feature-icon">🎮</span> Playground interactif</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="card-stats">
+                                <div class="stat">
+                                    <span class="stat-number">5</span>
+                                    <span class="stat-label">Sections</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">15+</span>
+                                    <span class="stat-label">Démos</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">4</span>
+                                    <span class="stat-label">Layouts</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer">
+                            <a href="flexbox/index.html" class="card-btn primary">
+                                <i class="fas fa-play"></i>
+                                Commencer Flexbox
+                            </a>
+                            <span class="difficulty">Intermédiaire</span>
+                        </div>
+                    </article>
+
+                    <!-- Guide CSS Grid -->
+                    <article class="guide-card grid-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-th"></i>
+                            </div>
+                            <h3 class="card-title">CSS Grid</h3>
+                            <p class="card-subtitle">Layouts bidimensionnels</p>
+                        </div>
+                        
+                        <div class="card-preview">
+                            <div class="preview-demo grid-demo">
+                                <div class="demo-item header">Header</div>
+                                <div class="demo-item nav">Nav</div>
+                                <div class="demo-item main">Main</div>
+                                <div class="demo-item aside">Aside</div>
+                                <div class="demo-item footer">Footer</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-content">
+                            <p class="card-description">
+                                Système puissant pour créer des layouts complexes en 2D. 
+                                Parfait pour les pages complètes et grilles responsives.
+                            </p>
+                            
+                            <div class="card-features">
+                                <h4>Ce que vous apprendrez :</h4>
+                                <ul>
+                                    <li><span class="feature-icon">🎯</span> Grid-template et zones</li>
+                                    <li><span class="feature-icon">📐</span> Lignes et colonnes</li>
+                                    <li><span class="feature-icon">📱</span> Auto-fit et minmax</li>
+                                    <li><span class="feature-icon">🔧</span> Gap et alignement</li>
+                                    <li><span class="feature-icon">🎮</span> Outil interactif</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="card-stats">
+                                <div class="stat">
+                                    <span class="stat-number">6</span>
+                                    <span class="stat-label">Sections</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">20+</span>
+                                    <span class="stat-label">Démos</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">8</span>
+                                    <span class="stat-label">Layouts</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer">
+                            <a href="grid/index.html" class="card-btn secondary">
+                                <i class="fas fa-play"></i>
+                                Commencer Grid
+                            </a>
+                            <span class="difficulty">Avancé</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="comparison-section">
+                <h2 class="section-title">Flexbox vs CSS Grid</h2>
+                <div class="comparison-table">
+                    <div class="comparison-header">
+                        <div class="comparison-item">
+                            <h3>Aspect</h3>
+                        </div>
+                        <div class="comparison-item flexbox-col">
+                            <i class="fas fa-arrows-alt-h"></i>
+                            <h3>Flexbox</h3>
+                        </div>
+                        <div class="comparison-item grid-col">
+                            <i class="fas fa-th"></i>
+                            <h3>CSS Grid</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="comparison-item">
+                            <strong>Dimension</strong>
+                        </div>
+                        <div class="comparison-item">
+                            Unidimensionnel (ligne OU colonne)
+                        </div>
+                        <div class="comparison-item">
+                            Bidimensionnel (lignes ET colonnes)
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="comparison-item">
+                            <strong>Cas d'usage</strong>
+                        </div>
+                        <div class="comparison-item">
+                            Composants, navigation, centrage
+                        </div>
+                        <div class="comparison-item">
+                            Layouts de page, grilles complexes
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="comparison-item">
+                            <strong>Direction</strong>
+                        </div>
+                        <div class="comparison-item">
+                            Row ou column (une à la fois)
+                        </div>
+                        <div class="comparison-item">
+                            Rows et columns simultanément
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="comparison-item">
+                            <strong>Alignement</strong>
+                        </div>
+                        <div class="comparison-item">
+                            justify-content, align-items
+                        </div>
+                        <div class="comparison-item">
+                            justify-items, align-items, place-items
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="comparison-item">
+                            <strong>Support navigateur</strong>
+                        </div>
+                        <div class="comparison-item">
+                            Excellent (IE10+)
+                        </div>
+                        <div class="comparison-item">
+                            Très bon (IE11+ avec préfixes)
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features-section">
+                <h2 class="section-title">Fonctionnalités des guides</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <h3>Démos interactives</h3>
+                        <p>Modifiez les propriétés en temps réel et voyez les résultats instantanément</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Code généré</h3>
+                        <p>CSS et HTML automatiquement générés, prêts à copier dans vos projets</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h3>Playground</h3>
+                        <p>Espaces d'expérimentation libres pour tester toutes les combinaisons</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Responsive</h3>
+                        <p>Interfaces optimisées pour tous les écrans, desktop et mobile</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Pédagogique</h3>
+                        <p>Explications claires avec exemples progressifs du débutant à l'expert</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Moderne</h3>
+                        <p>Techniques actuelles utilisées par les développeurs professionnels</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>CSS Layouts Guide</h3>
+                    <p>Guides interactifs pour maîtriser Flexbox et CSS Grid</p>
+                </div>
+                <div class="footer-links">
+                    <a href="flexbox/index.html">Guide Flexbox</a>
+                    <a href="grid/index.html">Guide CSS Grid</a>
+                    <a href="../index.html">Tous les projets</a>
+                    <a href="../../index.html">Portfolio</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Maria - Portfolio. Projet personnel d'apprentissage CSS.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "title": "CSS Flexbox Guide Interactif",
+  "description": "Guide complet et interactif pour maîtriser CSS Flexbox avec des démos en temps réel, des exercices pratiques et la génération de code automatique.",
+  "status": "in-progress",
+  "difficulty": "intermediate",
+  "formation": "personal",
+  "module": "CSS Advanced Layouts",
+  "technologies": ["CSS3", "Flexbox", "JavaScript ES6+", "Interactive Design", "Syntax Highlighting"],
+  "startDate": "2025-08-26",
+  "completionDate": null,
+  "githubUrl": "https://github.com/ewingella/portfolio/tree/main/projets/css-flexbox-guide",
+  "liveUrl": null,
+  "features": [
+    "Démos interactives en temps réel",
+    "Génération automatique de code CSS",
+    "Exercices pratiques avec validation",
+    "Playground pour expérimenter",
+    "Documentation complète des propriétés",
+    "Exemples de mise en page courantes"
+  ],
+  "learningObjectives": [
+    "Comprendre le modèle Flexbox",
+    "Maîtriser les propriétés du conteneur flex",
+    "Gérer l'alignement et la distribution",
+    "Créer des layouts responsives",
+    "Résoudre des problèmes courants"
+  ]
+}

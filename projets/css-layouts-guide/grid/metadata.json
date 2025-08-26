@@ -1,0 +1,29 @@
+{
+  "title": "CSS Grid Guide Interactif",
+  "formation": "codecademy-fullstack",
+  "formationName": "Codecademy Full-Stack Engineer",
+  "module": "Building Interactive Websites",
+  "moduleOrder": 2,
+  "technologies": ["CSS Grid", "JavaScript ES6+", "Drag & Drop API", "Syntax Highlighting"],
+  "status": "completed",
+  "difficulty": "intermediate",
+  "type": "personal-project",
+  "description": "Guide interactif pour apprendre CSS Grid avec des démos en temps réel, du drag & drop et la génération de code automatique",
+  "demoUrl": "projet.html",
+  "githubUrl": "#",
+  "features": [
+    "Drag & Drop interactif",
+    "Génération de code en temps réel",
+    "5 démos spécialisées",
+    "Syntax highlighting",
+    "Design responsive"
+  ],
+  "learningObjectives": [
+    "Maîtriser CSS Grid",
+    "Manipuler le DOM avec JavaScript",
+    "Créer des interfaces drag & drop",
+    "Générer du code dynamiquement"
+  ],
+  "dateCreated": "2025-08-21",
+  "dateUpdated": "2025-08-22"
+}
