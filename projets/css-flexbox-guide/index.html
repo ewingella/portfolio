@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flexbox Guide Interactif - Portfolio Maria</title>
+    <link rel="stylesheet" href="flexbox.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1>CSS Flexbox Guide</h1>
+                <p>Maîtrisez les layouts flexibles avec des démos interactives</p>
+                <a href="../index.html" class="back-btn">← Retour aux projets</a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-tabs">
+        <div class="container">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="basics">Les Bases</button>
+                <button class="tab-btn" data-tab="container">Conteneur Flex</button>
+                <button class="tab-btn" data-tab="items">Éléments Flex</button>
+                <button class="tab-btn" data-tab="layouts">Layouts Courants</button>
+                <button class="tab-btn" data-tab="playground">Playground</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="container">
+            <!-- Section Bases -->
+            <section id="basics" class="tab-content active">
+                <h2>Introduction à CSS Flexbox</h2>
+                <div class="theory-section">
+                    <p>CSS Flexbox (Flexible Box Layout) est un système de mise en page unidimensionnel qui permet de distribuer l'espace et d'aligner des éléments dans un conteneur.</p>
+                    
+                    <div class="concept-demo">
+                        <h3>Concept de base</h3>
+                        <div class="demo-container">
+                            <div class="flex-demo basic-flex">
+                                <div class="flex-item">1</div>
+                                <div class="flex-item">2</div>
+                                <div class="flex-item">3</div>
+                            </div>
+                        </div>
+                        <div class="code-display">
+                            <pre><code class="language-css">.container {
+  display: flex;
+}
+
+.item {
+  flex: 1;
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="terminology">
+                        <h3>Terminologie Flexbox</h3>
+                        <div class="terms-grid">
+                            <div class="term-card">
+                                <h4>Flex Container</h4>
+                                <p>L'élément parent avec <code>display: flex</code></p>
+                            </div>
+                            <div class="term-card">
+                                <h4>Flex Items</h4>
+                                <p>Les enfants directs du conteneur flex</p>
+                            </div>
+                            <div class="term-card">
+                                <h4>Main Axis</h4>
+                                <p>L'axe principal (horizontal par défaut)</p>
+                            </div>
+                            <div class="term-card">
+                                <h4>Cross Axis</h4>
+                                <p>L'axe perpendiculaire au main axis</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Conteneur -->
+            <section id="container" class="tab-content">
+                <h2>Propriétés du Conteneur Flex</h2>
+                
+                <div class="property-demo">
+                    <h3>flex-direction</h3>
+                    <div class="controls">
+                        <label>Direction:</label>
+                        <select id="direction-select">
+                            <option value="row">row (par défaut)</option>
+                            <option value="row-reverse">row-reverse</option>
+                            <option value="column">column</option>
+                            <option value="column-reverse">column-reverse</option>
+                        </select>
+                    </div>
+                    <div class="demo-container">
+                        <div class="flex-demo" id="direction-demo">
+                            <div class="flex-item">1</div>
+                            <div class="flex-item">2</div>
+                            <div class="flex-item">3</div>
+                            <div class="flex-item">4</div>
+                        </div>
+                    </div>
+                    <div class="code-display" id="direction-code">
+                        <pre><code class="language-css">.container {
+  display: flex;
+  flex-direction: row;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="property-demo">
+                    <h3>justify-content</h3>
+                    <div class="controls">
+                        <label>Justification:</label>
+                        <select id="justify-select">
+                            <option value="flex-start">flex-start (par défaut)</option>
+                            <option value="flex-end">flex-end</option>
+                            <option value="center">center</option>
+                            <option value="space-between">space-between</option>
+                            <option value="space-around">space-around</option>
+                            <option value="space-evenly">space-evenly</option>
+                        </select>
+                    </div>
+                    <div class="demo-container">
+                        <div class="flex-demo" id="justify-demo">
+                            <div class="flex-item">1</div>
+                            <div class="flex-item">2</div>
+                            <div class="flex-item">3</div>
+                        </div>
+                    </div>
+                    <div class="code-display" id="justify-code">
+                        <pre><code class="language-css">.container {
+  display: flex;
+  justify-content: flex-start;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="property-demo">
+                    <h3>align-items</h3>
+                    <div class="controls">
+                        <label>Alignement:</label>
+                        <select id="align-select">
+                            <option value="stretch">stretch (par défaut)</option>
+                            <option value="flex-start">flex-start</option>
+                            <option value="flex-end">flex-end</option>
+                            <option value="center">center</option>
+                            <option value="baseline">baseline</option>
+                        </select>
+                    </div>
+                    <div class="demo-container">
+                        <div class="flex-demo tall-demo" id="align-demo">
+                            <div class="flex-item">1</div>
+                            <div class="flex-item">2<br>Plus<br>Grand</div>
+                            <div class="flex-item">3</div>
+                        </div>
+                    </div>
+                    <div class="code-display" id="align-code">
+                        <pre><code class="language-css">.container {
+  display: flex;
+  align-items: stretch;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="property-demo">
+                    <h3>flex-wrap</h3>
+                    <div class="controls">
+                        <label>Retour à la ligne:</label>
+                        <select id="wrap-select">
+                            <option value="nowrap">nowrap (par défaut)</option>
+                            <option value="wrap">wrap</option>
+                            <option value="wrap-reverse">wrap-reverse</option>
+                        </select>
+                    </div>
+                    <div class="demo-container">
+                        <div class="flex-demo narrow-demo" id="wrap-demo">
+                            <div class="flex-item wide-item">Item 1</div>
+                            <div class="flex-item wide-item">Item 2</div>
+                            <div class="flex-item wide-item">Item 3</div>
+                            <div class="flex-item wide-item">Item 4</div>
+                            <div class="flex-item wide-item">Item 5</div>
+                        </div>
+                    </div>
+                    <div class="code-display" id="wrap-code">
+                        <pre><code class="language-css">.container {
+  display: flex;
+  flex-wrap: nowrap;
+}</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Éléments -->
+            <section id="items" class="tab-content">
+                <h2>Propriétés des Éléments Flex</h2>
+
+                <div class="property-demo">
+                    <h3>flex-grow</h3>
+                    <p>Détermine comment un élément grandit pour occuper l'espace disponible</p>
+                    <div class="controls">
+                        <label>Item 1:</label>
+                        <input type="range" id="grow1" min="0" max="5" value="0" step="1">
+                        <span id="grow1-value">0</span>
+                        
+                        <label>Item 2:</label>
+                        <input type="range" id="grow2" min="0" max="5" value="1" step="1">
+                        <span id="grow2-value">1</span>
+                        
+                        <label>Item 3:</label>
+                        <input type="range" id="grow3" min="0" max="5" value="0" step="1">
+                        <span id="grow3-value">0</span>
+                    </div>
+                    <div class="demo-container">
+                        <div class="flex-demo" id="grow-demo">
+                            <div class="flex-item" id="grow-item1">1</div>
+                            <div class="flex-item" id="grow-item2">2</div>
+                            <div class="flex-item" id="grow-item3">3</div>
+                        </div>
+                    </div>
+                    <div class="code-display" id="grow-code">
+                        <pre><code class="language-css">.item1 { flex-grow: 0; }
+.item2 { flex-grow: 1; }
+.item3 { flex-grow: 0; }</code></pre>
+                    </div>
+                </div>
+
+                <div class="property-demo">
+                    <h3>align-self</h3>
+                    <p>Permet à un élément d'override l'alignement du conteneur</p>
+                    <div class="controls">
+                        <label>Élément du milieu:</label>
+                        <select id="self-select">
+                            <option value="auto">auto (par défaut)</option>
+                            <option value="flex-start">flex-start</option>
+                            <option value="flex-end">flex-end</option>
+                            <option value="center">center</option>
+                            <option value="baseline">baseline</option>
+                            <option value="stretch">stretch</option>
+                        </select>
+                    </div>
+                    <div class="demo-container">
+                        <div class="flex-demo tall-demo" id="self-demo">
+                            <div class="flex-item">1</div>
+                            <div class="flex-item" id="self-item">2</div>
+                            <div class="flex-item">3</div>
+                        </div>
+                    </div>
+                    <div class="code-display" id="self-code">
+                        <pre><code class="language-css">.container {
+  align-items: flex-start;
+}
+.special-item {
+  align-self: auto;
+}</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Layouts -->
+            <section id="layouts" class="tab-content">
+                <h2>Layouts Courants avec Flexbox</h2>
+
+                <div class="layout-examples">
+                    <div class="layout-example">
+                        <h3>Centre parfait</h3>
+                        <div class="demo-container">
+                            <div class="flex-demo center-demo">
+                                <div class="flex-item">Centré</div>
+                            </div>
+                        </div>
+                        <div class="code-display">
+                            <pre><code class="language-css">.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="layout-example">
+                        <h3>Navigation horizontale</h3>
+                        <div class="demo-container">
+                            <nav class="nav-demo">
+                                <div class="nav-item">Accueil</div>
+                                <div class="nav-item">À propos</div>
+                                <div class="nav-item">Services</div>
+                                <div class="nav-item">Contact</div>
+                            </nav>
+                        </div>
+                        <div class="code-display">
+                            <pre><code class="language-css">.nav {
+  display: flex;
+  gap: 1rem;
+}
+.nav-item {
+  padding: 0.5rem 1rem;
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="layout-example">
+                        <h3>Cards responsives</h3>
+                        <div class="demo-container">
+                            <div class="cards-demo">
+                                <div class="card">Card 1</div>
+                                <div class="card">Card 2</div>
+                                <div class="card">Card 3</div>
+                            </div>
+                        </div>
+                        <div class="code-display">
+                            <pre><code class="language-css">.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.card {
+  flex: 1 1 300px;
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="layout-example">
+                        <h3>Sidebar + Contenu</h3>
+                        <div class="demo-container">
+                            <div class="sidebar-demo">
+                                <div class="sidebar">Sidebar</div>
+                                <div class="content">Contenu principal</div>
+                            </div>
+                        </div>
+                        <div class="code-display">
+                            <pre><code class="language-css">.container {
+  display: flex;
+}
+.sidebar {
+  flex: 0 0 200px;
+}
+.content {
+  flex: 1;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Playground -->
+            <section id="playground" class="tab-content">
+                <h2>Playground Flexbox</h2>
+                <p>Expérimentez librement avec toutes les propriétés Flexbox</p>
+                
+                <div class="playground">
+                    <div class="playground-controls">
+                        <div class="control-group">
+                            <h4>Conteneur</h4>
+                            <div class="control-row">
+                                <label>flex-direction:</label>
+                                <select id="pg-direction">
+                                    <option value="row">row</option>
+                                    <option value="row-reverse">row-reverse</option>
+                                    <option value="column">column</option>
+                                    <option value="column-reverse">column-reverse</option>
+                                </select>
+                            </div>
+                            <div class="control-row">
+                                <label>justify-content:</label>
+                                <select id="pg-justify">
+                                    <option value="flex-start">flex-start</option>
+                                    <option value="flex-end">flex-end</option>
+                                    <option value="center">center</option>
+                                    <option value="space-between">space-between</option>
+                                    <option value="space-around">space-around</option>
+                                    <option value="space-evenly">space-evenly</option>
+                                </select>
+                            </div>
+                            <div class="control-row">
+                                <label>align-items:</label>
+                                <select id="pg-align">
+                                    <option value="stretch">stretch</option>
+                                    <option value="flex-start">flex-start</option>
+                                    <option value="flex-end">flex-end</option>
+                                    <option value="center">center</option>
+                                    <option value="baseline">baseline</option>
+                                </select>
+                            </div>
+                            <div class="control-row">
+                                <label>flex-wrap:</label>
+                                <select id="pg-wrap">
+                                    <option value="nowrap">nowrap</option>
+                                    <option value="wrap">wrap</option>
+                                    <option value="wrap-reverse">wrap-reverse</option>
+                                </select>
+                            </div>
+                            <div class="control-row">
+                                <label>gap:</label>
+                                <input type="range" id="pg-gap" min="0" max="50" value="10" step="5">
+                                <span id="pg-gap-value">10px</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <h4>Éléments</h4>
+                            <div class="control-row">
+                                <label>Nombre d'items:</label>
+                                <input type="range" id="pg-items" min="1" max="8" value="3" step="1">
+                                <span id="pg-items-value">3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="playground-demo">
+                        <div class="demo-container">
+                            <div class="flex-demo tall-demo" id="playground-flex">
+                                <div class="flex-item">1</div>
+                                <div class="flex-item">2</div>
+                                <div class="flex-item">3</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="playground-code">
+                        <h4>Code CSS généré</h4>
+                        <div class="code-display">
+                            <pre><code class="language-css" id="playground-css">.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 10px;
+}</code></pre>
+                        </div>
+                        <button class="copy-btn" onclick="copyToClipboard()">📋 Copier le code</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Maria - Portfolio. Projet personnel d'apprentissage CSS Flexbox.</p>
+            <div class="footer-links">
+                <a href="../index.html">Tous les projets</a>
+                <a href="../../index.html">Portfolio</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="flexbox.js"></script>
+</body>
+</html>
