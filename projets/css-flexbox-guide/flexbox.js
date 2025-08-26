@@ -17,6 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Initialiser le système de boutons de code
+    initCodeButtons();
+
     // Initialiser les démos interactives
     initFlexDirectionDemo();
     initJustifyContentDemo();
@@ -26,6 +29,46 @@ document.addEventListener('DOMContentLoaded', function() {
     initAlignSelfDemo();
     initPlayground();
 });
+
+// Système de boutons pour afficher CSS/HTML
+function initCodeButtons() {
+    const codeButtons = document.querySelectorAll('.code-btn');
+    
+    codeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const codeType = this.getAttribute('data-code');
+            const codeSection = this.closest('.code-section');
+            
+            // Retirer active de tous les boutons dans cette section
+            codeSection.querySelectorAll('.code-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Retirer active de tous les displays dans cette section
+            codeSection.querySelectorAll('.code-display').forEach(display => {
+                display.classList.remove('active');
+            });
+            
+            // Activer le bouton cliqué
+            this.classList.add('active');
+            
+            // Activer le display correspondant
+            const targetDisplay = codeSection.querySelector(`.${codeType}-code`);
+            if (targetDisplay) {
+                targetDisplay.classList.add('active');
+            }
+
+            // Mettre à jour le texte du bouton de copie dans le playground
+            const playgroundSection = codeSection.closest('.playground-code');
+            if (playgroundSection) {
+                const copyBtn = playgroundSection.querySelector('.copy-btn');
+                if (copyBtn && !copyBtn.textContent.includes('✅')) {
+                    copyBtn.textContent = `📋 Copier le ${codeType.toUpperCase()}`;
+                }
+            }
+        });
+    });
+}
 
 // Demo flex-direction
 function initFlexDirectionDemo() {
@@ -79,6 +122,7 @@ function initAlignItemsDemo() {
         code.innerHTML = `<pre><code class="language-css">.container {
   display: flex;
   align-items: ${value};
+  min-height: 150px;
 }</code></pre>`;
         
         Prism.highlightElement(code.querySelector('code'));
@@ -90,18 +134,58 @@ function initFlexWrapDemo() {
     const select = document.getElementById('wrap-select');
     const demo = document.getElementById('wrap-demo');
     const code = document.getElementById('wrap-code');
+    const sizeRadios = document.querySelectorAll('input[name="container-size"]');
 
-    select.addEventListener('change', (e) => {
-        const value = e.target.value;
-        demo.style.flexWrap = value;
+    // Initialiser avec la taille par défaut
+    demo.classList.add('container-small');
+
+    function updateWrapDemo() {
+        const wrapValue = select.value;
+        const checkedSize = document.querySelector('input[name="container-size"]:checked');
+        const sizeValue = checkedSize ? checkedSize.value : 'small';
+        
+        // Mettre à jour le style flex-wrap
+        demo.style.flexWrap = wrapValue;
+        
+        // Mettre à jour la classe de taille
+        demo.classList.remove('container-small', 'container-medium', 'container-large');
+        demo.classList.add(`container-${sizeValue}`);
+        
+        // Déterminer la largeur pour le code et l'affichage
+        const widthMap = {
+            'small': '300px',
+            'medium': '500px',
+            'large': '700px'
+        };
+        
+        const width = widthMap[sizeValue];
+        
+        // Afficher la largeur sur le conteneur
+        demo.setAttribute('data-width', width);
         
         code.innerHTML = `<pre><code class="language-css">.container {
   display: flex;
-  flex-wrap: ${value};
+  flex-wrap: ${wrapValue};
+  max-width: ${width};
+  border: 2px dashed #4a90e2;
+}
+
+.item {
+  min-width: 120px;
+  padding: 1rem;
 }</code></pre>`;
         
         Prism.highlightElement(code.querySelector('code'));
+    }
+
+    select.addEventListener('change', updateWrapDemo);
+    
+    sizeRadios.forEach(radio => {
+        radio.addEventListener('change', updateWrapDemo);
     });
+    
+    // Initialiser
+    updateWrapDemo();
 }
 
 // Demo flex-grow
@@ -130,7 +214,11 @@ function initFlexGrowDemo() {
         item2.style.flexGrow = g2;
         item3.style.flexGrow = g3;
         
-        code.innerHTML = `<pre><code class="language-css">.item1 { flex-grow: ${g1}; }
+        code.innerHTML = `<pre><code class="language-css">.container {
+  display: flex;
+}
+
+.item1 { flex-grow: ${g1}; }
 .item2 { flex-grow: ${g2}; }
 .item3 { flex-grow: ${g3}; }</code></pre>`;
         
@@ -160,8 +248,11 @@ function initAlignSelfDemo() {
         item.style.alignSelf = value;
         
         code.innerHTML = `<pre><code class="language-css">.container {
+  display: flex;
   align-items: flex-start;
+  min-height: 150px;
 }
+
 .special-item {
   align-self: ${value};
 }</code></pre>`;
@@ -182,6 +273,7 @@ function initPlayground() {
     const pgItemsValue = document.getElementById('pg-items-value');
     const playgroundFlex = document.getElementById('playground-flex');
     const playgroundCSS = document.getElementById('playground-css');
+    const pgSizeRadios = document.querySelectorAll('input[name="pg-container-size"]');
 
     function updatePlayground() {
         const direction = pgDirection.value;
@@ -190,6 +282,10 @@ function initPlayground() {
         const wrap = pgWrap.value;
         const gap = pgGap.value;
         const itemCount = parseInt(pgItems.value);
+        
+        // Gérer la taille du conteneur
+        const checkedSize = document.querySelector('input[name="pg-container-size"]:checked');
+        const sizeValue = checkedSize ? checkedSize.value : 'medium';
         
         // Mettre à jour les valeurs affichées
         pgGapValue.textContent = gap + 'px';
@@ -201,6 +297,20 @@ function initPlayground() {
         playgroundFlex.style.alignItems = align;
         playgroundFlex.style.flexWrap = wrap;
         playgroundFlex.style.gap = gap + 'px';
+        
+        // Appliquer la taille du conteneur
+        playgroundFlex.classList.remove('container-small', 'container-medium', 'container-large');
+        playgroundFlex.classList.add(`container-${sizeValue}`);
+        
+        // Déterminer la largeur pour le code et l'affichage
+        const widthMap = {
+            'small': '300px',
+            'medium': '500px',
+            'large': '700px'
+        };
+        
+        const width = widthMap[sizeValue];
+        playgroundFlex.setAttribute('data-width', width);
         
         // Gérer le nombre d'items
         const currentItems = playgroundFlex.children.length;
@@ -228,10 +338,23 @@ function initPlayground() {
   align-items: ${align};
   flex-wrap: ${wrap};
   gap: ${gap}px;
+  max-width: ${width};
+  border: 2px dashed #4a90e2;
 }`;
+        
+        // Mettre à jour le code HTML
+        const playgroundHTML = document.getElementById('playground-html');
+        let htmlItems = '';
+        for (let i = 1; i <= itemCount; i++) {
+            htmlItems += `  <div class="item">${i}</div>\n`;
+        }
+        
+        playgroundHTML.textContent = `<div class="container">
+${htmlItems}</div>`;
         
         // Re-highlight syntax
         Prism.highlightElement(playgroundCSS);
+        Prism.highlightElement(playgroundHTML);
     }
 
     // Event listeners
@@ -242,17 +365,32 @@ function initPlayground() {
     pgGap.addEventListener('input', updatePlayground);
     pgItems.addEventListener('input', updatePlayground);
     
+    // Event listeners pour les boutons radio de taille
+    pgSizeRadios.forEach(radio => {
+        radio.addEventListener('change', updatePlayground);
+    });
+    
     // Initialiser
     updatePlayground();
 }
 
 // Fonction pour copier le code dans le presse-papiers
 function copyToClipboard() {
-    const code = document.getElementById('playground-css').textContent;
+    // Déterminer quel code est affiché dans le playground
+    const playgroundSection = document.querySelector('.playground-code .code-section');
+    const activeButton = playgroundSection.querySelector('.code-btn.active');
+    const codeType = activeButton.getAttribute('data-code');
+    
+    let code;
+    if (codeType === 'css') {
+        code = document.getElementById('playground-css').textContent;
+    } else {
+        code = document.getElementById('playground-html').textContent;
+    }
     
     if (navigator.clipboard) {
         navigator.clipboard.writeText(code).then(() => {
-            showCopyFeedback();
+            showCopyFeedback(codeType);
         });
     } else {
         // Fallback pour les anciens navigateurs
@@ -262,16 +400,16 @@ function copyToClipboard() {
         textArea.select();
         document.execCommand('copy');
         document.body.removeChild(textArea);
-        showCopyFeedback();
+        showCopyFeedback(codeType);
     }
 }
 
 // Feedback visuel pour la copie
-function showCopyFeedback() {
+function showCopyFeedback(codeType = 'CSS') {
     const btn = document.querySelector('.copy-btn');
     const originalText = btn.textContent;
     
-    btn.textContent = '✅ Copié !';
+    btn.textContent = `✅ ${codeType.toUpperCase()} copié !`;
     btn.style.background = 'var(--success)';
     
     setTimeout(() => {

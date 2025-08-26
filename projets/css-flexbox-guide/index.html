@@ -47,14 +47,31 @@
                                 <div class="flex-item">3</div>
                             </div>
                         </div>
-                        <div class="code-display">
-                            <pre><code class="language-css">.container {
+                        <div class="code-section">
+                            <div class="code-buttons">
+                                <button class="code-btn active" data-code="css">CSS</button>
+                                <button class="code-btn" data-code="html">HTML</button>
+                            </div>
+                            <div class="code-display css-code active">
+                                <pre><code class="language-css">.container {
   display: flex;
 }
 
 .item {
   flex: 1;
+  padding: 1rem;
+  background: #4a90e2;
+  color: white;
+  text-align: center;
 }</code></pre>
+                            </div>
+                            <div class="code-display html-code">
+                                <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="item"&gt;1&lt;/div&gt;
+  &lt;div class="item"&gt;2&lt;/div&gt;
+  &lt;div class="item"&gt;3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                            </div>
                         </div>
                     </div>
 
@@ -105,11 +122,25 @@
                             <div class="flex-item">4</div>
                         </div>
                     </div>
-                    <div class="code-display" id="direction-code">
-                        <pre><code class="language-css">.container {
+                    <div class="code-section">
+                        <div class="code-buttons">
+                            <button class="code-btn active" data-code="css">CSS</button>
+                            <button class="code-btn" data-code="html">HTML</button>
+                        </div>
+                        <div class="code-display css-code active" id="direction-code">
+                            <pre><code class="language-css">.container {
   display: flex;
   flex-direction: row;
 }</code></pre>
+                        </div>
+                        <div class="code-display html-code">
+                            <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="item"&gt;1&lt;/div&gt;
+  &lt;div class="item"&gt;2&lt;/div&gt;
+  &lt;div class="item"&gt;3&lt;/div&gt;
+  &lt;div class="item"&gt;4&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
                     </div>
                 </div>
 
@@ -133,11 +164,24 @@
                             <div class="flex-item">3</div>
                         </div>
                     </div>
-                    <div class="code-display" id="justify-code">
-                        <pre><code class="language-css">.container {
+                    <div class="code-section">
+                        <div class="code-buttons">
+                            <button class="code-btn active" data-code="css">CSS</button>
+                            <button class="code-btn" data-code="html">HTML</button>
+                        </div>
+                        <div class="code-display css-code active" id="justify-code">
+                            <pre><code class="language-css">.container {
   display: flex;
   justify-content: flex-start;
 }</code></pre>
+                        </div>
+                        <div class="code-display html-code">
+                            <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="item"&gt;1&lt;/div&gt;
+  &lt;div class="item"&gt;2&lt;/div&gt;
+  &lt;div class="item"&gt;3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
                     </div>
                 </div>
 
@@ -160,23 +204,53 @@
                             <div class="flex-item">3</div>
                         </div>
                     </div>
-                    <div class="code-display" id="align-code">
-                        <pre><code class="language-css">.container {
+                    <div class="code-section">
+                        <div class="code-buttons">
+                            <button class="code-btn active" data-code="css">CSS</button>
+                            <button class="code-btn" data-code="html">HTML</button>
+                        </div>
+                        <div class="code-display css-code active" id="align-code">
+                            <pre><code class="language-css">.container {
   display: flex;
   align-items: stretch;
+  min-height: 150px;
 }</code></pre>
+                        </div>
+                        <div class="code-display html-code">
+                            <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="item"&gt;1&lt;/div&gt;
+  &lt;div class="item"&gt;2&lt;br&gt;Plus&lt;br&gt;Grand&lt;/div&gt;
+  &lt;div class="item"&gt;3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
                     </div>
                 </div>
 
                 <div class="property-demo">
                     <h3>flex-wrap</h3>
                     <div class="controls">
-                        <label>Retour à la ligne:</label>
+                        <label for="wrap-select">Retour à la ligne:</label>
                         <select id="wrap-select">
                             <option value="nowrap">nowrap (par défaut)</option>
                             <option value="wrap">wrap</option>
                             <option value="wrap-reverse">wrap-reverse</option>
                         </select>
+                        
+                        <div class="size-controls">
+                            <span>Taille du conteneur:</span>
+                            <label class="radio-label">
+                                <input type="radio" name="container-size" value="small" checked>
+                                Petit (300px)
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="container-size" value="medium">
+                                Moyen (500px)
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="container-size" value="large">
+                                Grand (700px)
+                            </label>
+                        </div>
                     </div>
                     <div class="demo-container">
                         <div class="flex-demo narrow-demo" id="wrap-demo">
@@ -187,11 +261,33 @@
                             <div class="flex-item wide-item">Item 5</div>
                         </div>
                     </div>
-                    <div class="code-display" id="wrap-code">
-                        <pre><code class="language-css">.container {
+                    <div class="code-section">
+                        <div class="code-buttons">
+                            <button class="code-btn active" data-code="css">CSS</button>
+                            <button class="code-btn" data-code="html">HTML</button>
+                        </div>
+                        <div class="code-display css-code active" id="wrap-code">
+                            <pre><code class="language-css">.container {
   display: flex;
   flex-wrap: nowrap;
+  max-width: 300px;
+  border: 2px dashed #4a90e2;
+}
+
+.item {
+  min-width: 120px;
+  padding: 1rem;
 }</code></pre>
+                        </div>
+                        <div class="code-display html-code">
+                            <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="item"&gt;Item 1&lt;/div&gt;
+  &lt;div class="item"&gt;Item 2&lt;/div&gt;
+  &lt;div class="item"&gt;Item 3&lt;/div&gt;
+  &lt;div class="item"&gt;Item 4&lt;/div&gt;
+  &lt;div class="item"&gt;Item 5&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -223,10 +319,27 @@
                             <div class="flex-item" id="grow-item3">3</div>
                         </div>
                     </div>
-                    <div class="code-display" id="grow-code">
-                        <pre><code class="language-css">.item1 { flex-grow: 0; }
+                    <div class="code-section">
+                        <div class="code-buttons">
+                            <button class="code-btn active" data-code="css">CSS</button>
+                            <button class="code-btn" data-code="html">HTML</button>
+                        </div>
+                        <div class="code-display css-code active" id="grow-code">
+                            <pre><code class="language-css">.container {
+  display: flex;
+}
+
+.item1 { flex-grow: 0; }
 .item2 { flex-grow: 1; }
 .item3 { flex-grow: 0; }</code></pre>
+                        </div>
+                        <div class="code-display html-code">
+                            <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="item item1"&gt;1&lt;/div&gt;
+  &lt;div class="item item2"&gt;2&lt;/div&gt;
+  &lt;div class="item item3"&gt;3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
                     </div>
                 </div>
 
@@ -251,13 +364,29 @@
                             <div class="flex-item">3</div>
                         </div>
                     </div>
-                    <div class="code-display" id="self-code">
-                        <pre><code class="language-css">.container {
+                    <div class="code-section">
+                        <div class="code-buttons">
+                            <button class="code-btn active" data-code="css">CSS</button>
+                            <button class="code-btn" data-code="html">HTML</button>
+                        </div>
+                        <div class="code-display css-code active" id="self-code">
+                            <pre><code class="language-css">.container {
+  display: flex;
   align-items: flex-start;
+  min-height: 150px;
 }
+
 .special-item {
   align-self: auto;
 }</code></pre>
+                        </div>
+                        <div class="code-display html-code">
+                            <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="item"&gt;1&lt;/div&gt;
+  &lt;div class="item special-item"&gt;2&lt;/div&gt;
+  &lt;div class="item"&gt;3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -274,34 +403,71 @@
                                 <div class="flex-item">Centré</div>
                             </div>
                         </div>
-                        <div class="code-display">
-                            <pre><code class="language-css">.container {
+                        <div class="code-section">
+                            <div class="code-buttons">
+                                <button class="code-btn active" data-code="css">CSS</button>
+                                <button class="code-btn" data-code="html">HTML</button>
+                            </div>
+                            <div class="code-display css-code active">
+                                <pre><code class="language-css">.container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 200px;
 }</code></pre>
+                            </div>
+                            <div class="code-display html-code">
+                                <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="item"&gt;Centré&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                            </div>
                         </div>
                     </div>
 
                     <div class="layout-example">
                         <h3>Navigation horizontale</h3>
                         <div class="demo-container">
-                            <nav class="nav-demo">
+                            <nav class="nav-demo" aria-label="Navigation principale">
                                 <div class="nav-item">Accueil</div>
                                 <div class="nav-item">À propos</div>
                                 <div class="nav-item">Services</div>
                                 <div class="nav-item">Contact</div>
                             </nav>
                         </div>
-                        <div class="code-display">
-                            <pre><code class="language-css">.nav {
+                        <div class="code-section">
+                            <div class="code-buttons">
+                                <button class="code-btn active" data-code="css">CSS</button>
+                                <button class="code-btn" data-code="html">HTML</button>
+                            </div>
+                            <div class="code-display css-code active">
+                                <pre><code class="language-css">.nav {
   display: flex;
   gap: 1rem;
+  background: #4a90e2;
+  padding: 0.5rem;
+  border-radius: 8px;
 }
+
 .nav-item {
   padding: 0.5rem 1rem;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.2);
 }</code></pre>
+                            </div>
+                            <div class="code-display html-code">
+                                <pre><code class="language-html">&lt;nav class="nav"&gt;
+  &lt;div class="nav-item"&gt;Accueil&lt;/div&gt;
+  &lt;div class="nav-item"&gt;À propos&lt;/div&gt;
+  &lt;div class="nav-item"&gt;Services&lt;/div&gt;
+  &lt;div class="nav-item"&gt;Contact&lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+                            </div>
                         </div>
                     </div>
 
@@ -314,15 +480,38 @@
                                 <div class="card">Card 3</div>
                             </div>
                         </div>
-                        <div class="code-display">
-                            <pre><code class="language-css">.cards {
+                        <div class="code-section">
+                            <div class="code-buttons">
+                                <button class="code-btn active" data-code="css">CSS</button>
+                                <button class="code-btn" data-code="html">HTML</button>
+                            </div>
+                            <div class="code-display css-code active">
+                                <pre><code class="language-css">.cards {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
+
 .card {
   flex: 1 1 300px;
+  background: linear-gradient(135deg, #4a90e2, #667eea);
+  color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }</code></pre>
+                            </div>
+                            <div class="code-display html-code">
+                                <pre><code class="language-html">&lt;div class="cards"&gt;
+  &lt;div class="card"&gt;Card 1&lt;/div&gt;
+  &lt;div class="card"&gt;Card 2&lt;/div&gt;
+  &lt;div class="card"&gt;Card 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                            </div>
                         </div>
                     </div>
 
@@ -334,16 +523,43 @@
                                 <div class="content">Contenu principal</div>
                             </div>
                         </div>
-                        <div class="code-display">
-                            <pre><code class="language-css">.container {
+                        <div class="code-section">
+                            <div class="code-buttons">
+                                <button class="code-btn active" data-code="css">CSS</button>
+                                <button class="code-btn" data-code="html">HTML</button>
+                            </div>
+                            <div class="code-display css-code active">
+                                <pre><code class="language-css">.container {
   display: flex;
+  min-height: 120px;
 }
+
 .sidebar {
-  flex: 0 0 200px;
+  flex: 0 0 200px; /* Ne grandit pas, ne rétrécit pas, largeur fixe 200px */
+  background: #7f8c8d;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .content {
-  flex: 1;
+  flex: 1; /* Prend tout l'espace restant */
+  background: #4a90e2;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }</code></pre>
+                            </div>
+                            <div class="code-display html-code">
+                                <pre><code class="language-html">&lt;div class="container"&gt;
+  &lt;div class="sidebar"&gt;Sidebar&lt;/div&gt;
+  &lt;div class="content"&gt;Contenu principal&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -359,7 +575,7 @@
                         <div class="control-group">
                             <h4>Conteneur</h4>
                             <div class="control-row">
-                                <label>flex-direction:</label>
+                                <label for="pg-direction">flex-direction:</label>
                                 <select id="pg-direction">
                                     <option value="row">row</option>
                                     <option value="row-reverse">row-reverse</option>
@@ -368,7 +584,7 @@
                                 </select>
                             </div>
                             <div class="control-row">
-                                <label>justify-content:</label>
+                                <label for="pg-justify">justify-content:</label>
                                 <select id="pg-justify">
                                     <option value="flex-start">flex-start</option>
                                     <option value="flex-end">flex-end</option>
@@ -379,7 +595,7 @@
                                 </select>
                             </div>
                             <div class="control-row">
-                                <label>align-items:</label>
+                                <label for="pg-align">align-items:</label>
                                 <select id="pg-align">
                                     <option value="stretch">stretch</option>
                                     <option value="flex-start">flex-start</option>
@@ -389,7 +605,7 @@
                                 </select>
                             </div>
                             <div class="control-row">
-                                <label>flex-wrap:</label>
+                                <label for="pg-wrap">flex-wrap:</label>
                                 <select id="pg-wrap">
                                     <option value="nowrap">nowrap</option>
                                     <option value="wrap">wrap</option>
@@ -397,9 +613,26 @@
                                 </select>
                             </div>
                             <div class="control-row">
-                                <label>gap:</label>
+                                <label for="pg-gap">gap:</label>
                                 <input type="range" id="pg-gap" min="0" max="50" value="10" step="5">
                                 <span id="pg-gap-value">10px</span>
+                            </div>
+                            <div class="control-row">
+                                <span>Taille du conteneur:</span>
+                                <div class="size-controls">
+                                    <label class="radio-label">
+                                        <input type="radio" name="pg-container-size" value="small">
+                                        Petit (300px)
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="pg-container-size" value="medium" checked>
+                                        Moyen (500px)
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="pg-container-size" value="large">
+                                        Grand (700px)
+                                    </label>
+                                </div>
                             </div>
                         </div>
 
@@ -424,9 +657,14 @@
                     </div>
 
                     <div class="playground-code">
-                        <h4>Code CSS généré</h4>
-                        <div class="code-display">
-                            <pre><code class="language-css" id="playground-css">.container {
+                        <h4>Code généré</h4>
+                        <div class="code-section">
+                            <div class="code-buttons">
+                                <button class="code-btn active" data-code="css">CSS</button>
+                                <button class="code-btn" data-code="html">HTML</button>
+                            </div>
+                            <div class="code-display css-code active">
+                                <pre><code class="language-css" id="playground-css">.container {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -434,6 +672,14 @@
   flex-wrap: nowrap;
   gap: 10px;
 }</code></pre>
+                            </div>
+                            <div class="code-display html-code">
+                                <pre><code class="language-html" id="playground-html">&lt;div class="container"&gt;
+  &lt;div class="item"&gt;1&lt;/div&gt;
+  &lt;div class="item"&gt;2&lt;/div&gt;
+  &lt;div class="item"&gt;3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                            </div>
                         </div>
                         <button class="copy-btn" onclick="copyToClipboard()">📋 Copier le code</button>
                     </div>

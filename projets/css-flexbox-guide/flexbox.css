@@ -221,6 +221,86 @@ body {
     border-color: var(--primary);
 }
 
+.size-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.5rem;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.radio-label:hover {
+    background: rgba(74, 144, 226, 0.1);
+}
+
+.radio-label input[type="radio"] {
+    margin: 0;
+    cursor: pointer;
+}
+
+.radio-label input[type="radio"]:checked + span,
+.radio-label:has(input[type="radio"]:checked) {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Tailles de conteneur pour flex-wrap */
+.flex-demo.container-small {
+    max-width: 300px;
+}
+
+.flex-demo.container-medium {
+    max-width: 500px;
+}
+
+.flex-demo.container-large {
+    max-width: 700px;
+}
+
+/* Playground avec tailles */
+#playground-flex.container-small {
+    max-width: 300px;
+}
+
+#playground-flex.container-medium {
+    max-width: 500px;
+}
+
+#playground-flex.container-large {
+    max-width: 700px;
+}
+
+#playground-flex {
+    border: 2px dashed var(--primary);
+    position: relative;
+}
+
+#playground-flex::before {
+    content: attr(data-width);
+    position: absolute;
+    top: -25px;
+    right: 0;
+    background: var(--primary);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
 .control-row {
     display: flex;
     align-items: center;
@@ -264,7 +344,21 @@ body {
 }
 
 .flex-demo.narrow-demo {
-    max-width: 400px;
+    border: 2px dashed var(--primary);
+    position: relative;
+}
+
+.flex-demo.narrow-demo::before {
+    content: attr(data-width);
+    position: absolute;
+    top: -25px;
+    right: 0;
+    background: var(--primary);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
 }
 
 .flex-demo.center-demo {
@@ -392,11 +486,45 @@ body {
 }
 
 /* Code display */
-.code-display {
+.code-section {
     margin-top: 1rem;
+}
+
+.code-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.code-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--primary);
+    background: transparent;
+    color: var(--primary);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.code-btn.active {
+    background: var(--primary);
+    color: white;
+}
+
+.code-btn:hover:not(.active) {
+    background: rgba(74, 144, 226, 0.1);
+}
+
+.code-display {
     background: #1e1e1e;
     border-radius: 8px;
     overflow: hidden;
+    display: none;
+}
+
+.code-display.active {
+    display: block;
 }
 
 .code-display pre {
