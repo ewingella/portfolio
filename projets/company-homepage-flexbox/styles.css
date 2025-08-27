@@ -16,11 +16,14 @@ body {
 /* Header */
 header {
     /* Styles à ajouter */
+    height: 60px;
 }
 
 /* Hero Section */
 #hero {
     /* Styles à ajouter */
+    height: 400px;
+    background: url('images/hero-bg.jpg') no-repeat center center/cover;
 }
 
 /* Services Section */

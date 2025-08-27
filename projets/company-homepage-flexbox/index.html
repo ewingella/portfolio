@@ -1,27 +1,161 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company Homepage - Flexbox Project</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Header avec navigation -->
     <header>
+        <div class="logo">
+            <img src="images/bee.png" alt="Company Logo a bee">
+            <h1>Company Logo</h1>
+        </div>
+
         <nav>
             <!-- Navigation à créer -->
+            <p>home</p>
+            <p>about</p>
+            <p>products</p>
+            <p>contact</p>
         </nav>
+        <button>Order now</button>
     </header>
 
     <!-- Section hero avec call-to-action -->
     <section id="hero">
         <!-- Contenu hero à créer -->
+        <div>
+            <h1>Pure, Natural Honey
+                <span>From Our Hives to Your Home</span>
+            </h1>
+            <p>Discover the golden taste of artisanal honey, crafted with love by our dedicated beekeepers</p>
+            <div>
+                <button>Shop our honey</button>
+                <button>Learn Our Story</button>
+            </div>
+        </div>
+
+    </section>
+    <!-- section Story -->
+    <section>
+        <!-- brand story -->
+        <div>
+            <div class="story">
+                <h2>Our Sweet Story</h2>
+                <p>For over three generations, the Golden Hive Honey Co. has been dedicated to producing the finest
+                    natural honey. Our family-owned apiary started in 1952 with just a handful of hives nestled in the
+                    rolling hills of our countryside.</p>
+                <p>Today, we maintain over 200 hives across pristine wildflower meadows, ensuring our bees have access
+                    to the most diverse and beautiful blooms. We believe in sustainable beekeeping practices that
+                    protect our precious pollinators while delivering the purest honey to your table.</p>
+
+                <div id="experience">
+                    <div class="experience">
+                        <div class="number">
+                            70+
+                        </div>
+                        <div class="label">Years of Experience</div>
+                    </div>
+                    <div class="experience">
+                        <div class="number">
+                            200+
+                        </div>
+                        <div class="label">Hives Maintained</div>
+                    </div>
+                    <div class="experience">
+                        <div class="number">
+                            100%
+                        </div>
+                        <div class="label">Natural</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div>
+                <img src="images/honey-hives.png" alt="hives">
+            </div>
+        </div>
+
+
     </section>
 
     <!-- Section services/produits -->
     <section id="services">
         <!-- Services à créer -->
+        <div>
+            <div>
+                <h2>Our Honey Collection</h2>
+                <p>Each jar tells a story of the flowers our bees have visited. Discover the unique flavors and
+                    characteristics of our artisanal honey varieties.</p>
+            </div>
+        </div>
+        <div class="product-container">
+            <div class="card">
+                <div class="image-container">
+                    <span class="badge">Best Seller</span>
+                    <img src="images/flowers.png" alt="honey jar">
+                </div>
+                <div class="card-content">
+                    <h4>Wildflower Honey</h4>
+                    <p>A delicate blend of seasonal wildflowers with a complex, floral taste.</p>
+                    <div class="price">
+                        <span>$12.99</span>
+                        <button>Add to Cart</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-container">
+                    <span class="badge">New</span>
+                    <img src="images/flowers.png" alt="honey jar">
+                </div>
+                <div class="card-content">
+                    <h4>Lavender Honey</h4>
+                    <p>A soothing honey infused with the essence of lavender flowers.</p>
+                    <div class="price">
+                        <span>$14.99</span>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="image-container">
+                        <span class="badge">Limited</span>
+                        <img src="images/flowers.png" alt="honey jar">
+                    </div>
+                    <div class="card-content">
+                        <h4>Acacia Honey</h4>
+                        <p>A light, clear honey with a mild, sweet flavor and hints of vanilla.</p>
+                        <div class="price">
+                            <span>$16.99</span>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="image-container">
+                        <span class="badge">Organic</span>
+                        <img src="images/flowers.png" alt="honey jar">
+                    </div>
+                    <div class="card-content">
+                        <h4>Manuka Honey</h4>
+                        <p>A rich, robust honey known for its unique health benefits and earthy flavor.</p>
+                        <div class="price">
+                            <span>$24.99</span>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </section>
 
     <!-- Section équipe -->
@@ -34,4 +168,5 @@
         <!-- Footer à créer -->
     </footer>
 </body>
+
 </html>
