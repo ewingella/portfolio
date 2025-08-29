@@ -45,8 +45,10 @@ button {
     color: white;
     font-size: 1.1rem;
     border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
+    border-radius: 0.3125rem;
+    /* 5px */
+    padding: 0.625rem 0.9375rem;
+    /* 10px 15px */
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -68,14 +70,17 @@ h2 {
     font-size: 2rem;
     font-weight: 500;
     color: var(--dark-brown);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.5);
+    /* 2px 2px 4px */
 }
 
 p {
     font-size: 1.3rem;
     color: #fff;
-    margin: 10px 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0.625rem 0;
+    /* 10px 0 */
+    text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.5);
+    /* 2px 2px 4px */
 }
 
 /* Header */
@@ -85,8 +90,10 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 10px;
-    height: 80px;
+    padding: 0.3125rem 0.625rem;
+    /* 5px 10px */
+    height: 5rem;
+    /* 80px */
     background-color: var(--cream-white);
 }
 
@@ -98,8 +105,10 @@ header .logo {
 }
 
 header .logo div {
-    height: 40px;
-    width: 40px;
+    height: 2.5rem;
+    /* 40px */
+    width: 2.5rem;
+    /* 40px */
     background-color: var(--primary-orange);
     border-radius: 50%;
 }
@@ -111,7 +120,8 @@ header .logo img {
 
 header .logo span {
     font-family: 'Lemon', cursive;
-    margin-left: 10px;
+    margin-left: 0.625rem;
+    /* 10px */
     font-size: 1.5rem;
     color: var(--dark-brown);
 }
@@ -119,7 +129,8 @@ header .logo span {
 nav {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 1.25rem;
+    /* 20px */
     color: var(--dark-brown-light);
 }
 
@@ -136,7 +147,8 @@ header nav a:hover {
 /* Hero Section */
 #hero {
     /* Styles à ajouter */
-    height: 600px;
+    height: 37.5rem;
+    /* 600px */
     background: url('images/banner.png') no-repeat center center/cover;
     display: flex;
     align-items: center;
@@ -151,7 +163,8 @@ header nav a:hover {
     align-items: center;
     justify-content: center;
     width: fit-content;
-    gap: 50px;
+    gap: 3.125rem;
+    /* 50px */
 
 }
 
@@ -164,8 +177,10 @@ header nav a:hover {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 10px auto;
-    gap: 30px;
+    margin: 0.625rem auto;
+    /* 10px auto */
+    gap: 1.875rem;
+    /* 30px */
     width: fit-content;
 }
 
@@ -177,7 +192,8 @@ header nav a:hover {
     height: fit-content;
 
     width: 100%;
-    padding: 50px 200px;
+    padding: 3.125rem 12.5rem;
+    /* 50px 200px */
 
 }
 
@@ -186,7 +202,8 @@ header nav a:hover {
     flex-direction: row;
     height: 100%;
     width: 100%;
-    gap: 50px;
+    gap: 3.125rem;
+    /* 50px */
 }
 
 .story {
@@ -194,7 +211,8 @@ header nav a:hover {
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    gap: 20px;
+    gap: 1.25rem;
+    /* 20px */
     width: 50%;
 }
 
@@ -222,7 +240,8 @@ header nav a:hover {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: 3.125rem;
+    /* 50px */
     height: fit-content;
     width: 100%;
 }
@@ -233,9 +252,11 @@ header nav a:hover {
     align-items: center;
     justify-content: start;
     text-align: center;
-    gap: 5px;
+    gap: 0.3125rem;
+    /* 5px */
     width: 25%;
-    height: 100px;
+    height: 6.25rem;
+    /* 100px */
 
 }
 
@@ -253,18 +274,19 @@ header nav a:hover {
 #services {
     /* Styles à ajouter */
     display: flex;
-    padding: 50px 200px;
+    padding: 3.125rem 12.5rem;
+    /* 50px 200px */
     height: fit-content;
-    border: 1px solid red;
+    /* 1px */
 }
+
 #services-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     height: fit-content;
-    border: rebeccapurple solid 3px;
-    padding: 0 20px;
+   
 }
 
 .product-container {
@@ -272,9 +294,10 @@ header nav a:hover {
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
-    row-gap: 15px;
+    row-gap: 0.9375rem;
+    /* 15px */
     height: fit-content;
-  
+
 }
 
 #services-header {
@@ -282,15 +305,17 @@ header nav a:hover {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
+    /* 30px */
     height: fit-content;
-   
+
 }
-#services-header p{
+
+#services-header p {
     color: var(--neutral-gray);
     font-size: 1.1rem;
     text-shadow: none;
-    
+
 }
 
 
@@ -299,34 +324,47 @@ header nav a:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 350px;  /* Largeur fixe */
-    height: 450px; /* Hauteur fixe */
-  
+    margin: 0 auto;
+    width: 21.875rem;
+    /* 350px */
+    height: 28.125rem;
+    /* 450px */
+    border: var(--neutral-gray) solid 0.0625rem;
+    /* 1px */
+    border-radius: 1rem;/* 16px - bordure arrondie pour la carte */
+    overflow: hidden; /* Assure que l'image respecte les bordures arrondies */
 }
-.card-content{
+
+.card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+.card-content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 10px;
-    gap: 10px;
+    justify-content: space-around;
+    padding: 0.625rem;
+    /* 10px */
+    gap: 0.625rem;
+    /* 10px */
+    height: 100%;
 }
 
 /* Desktop: 4 cartes */
-.card { width: calc(50% - 15px); }
-
-/* Tablet: 2 cartes */
-@media (max-width: 768px) {
-    .card { width: calc(90% - 10px); }
+.card {
+    width: calc(50% - 0.9375rem);
 }
 
-/* Mobile: 1 carte */
-@media (max-width: 480px) {
-    .card { width: 100%; }
-}
+
+
+
+
 
 .image-container {
-    position: relative; /* Nécessaire pour positionner le badge par rapport à ce conteneur */
- 
+    position: relative;
+    /* Nécessaire pour positionner le badge par rapport à ce conteneur */
 }
 
 .image-container img {
@@ -340,20 +378,26 @@ header nav a:hover {
 
 .image-container .badge {
     position: absolute;
-    top: 10px;
-    right: 10px; /* Changé de left à right */
+    top: 0.625rem;
+    /* 10px */
+    right: 0.625rem;
+    /* 10px */
     background-color: var(--primary-orange);
     color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 0.3125rem 0.625rem;
+    /* 5px 10px */
+    border-radius: 0.3125rem;
+    /* 5px */
     font-size: 0.9rem;
 }
+
 .card-content h4 {
-   color: var(--neutral-gray);
-   font-size: 1.1rem;
-   text-shadow: none;
-   font-weight: bold;
+    color: var(--neutral-gray);
+    font-size: 1.1rem;
+    text-shadow: none;
+    font-weight: bold;
 }
+
 .card-content p {
     color: var(--neutral-gray);
     text-shadow: none;
@@ -361,10 +405,98 @@ header nav a:hover {
     text-align: start;
     margin-bottom: 10px;
 }
+.price{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
 
 
 
 /* Footer */
 footer {
     /* Styles à ajouter */
+}
+
+
+
+
+/* bouton coter */
+@media (max-width: 1000px) {
+    .card {
+        width: calc(50% - 0.625rem); 
+    }
+    #story{
+        padding: 10px 100px;
+    }
+    #services{
+        padding: 10px 100px;
+    }
+
+}
+/* Tablet: 1 carte bouton en dessous */
+@media (max-width: 768px) {
+    #story{
+        padding: 5px 20px;
+        margin: 0 auto;
+    }
+    #services{
+        padding: 5px 20px;
+    }
+ header button{
+        display: none;
+    }
+}
+
+
+/* Mobile: 1 carte */
+@media (max-width: 480px) {
+   
+   header .logo span{
+        font-size: 0.8rem;
+    }
+    .hero-buttons{
+        flex-direction: column;
+    }
+    .hero-content h1{
+        font-size: 1.5rem;
+
+    }
+    .hero-content p{
+        font-size: 1rem;
+    }
+    #story{
+        padding: 0 5px ;
+    }
+    #story-container{
+        flex-direction: column;
+    }
+    .story{
+        width: 100%;
+    }
+    #img-hives{
+        width: 100%;
+        height: auto;
+    }
+
+    #services{
+        padding: 0 5px ;
+    }
+
+
+    .card {
+        width: 100%;
+    }
+    .image-container{
+        height: 45%;
+    }
+    .price{
+        flex-direction: column;
+    }
+    .product-container{
+        padding: 0 5px ;
+    }
+
 }
