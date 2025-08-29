@@ -87,7 +87,6 @@ p {
 header {
     /* Styles à ajouter */
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding: 0.3125rem 0.625rem;
@@ -99,9 +98,7 @@ header {
 
 header .logo {
     display: flex;
-    flex-direction: row;
     align-items: center;
-
 }
 
 header .logo div {
@@ -128,7 +125,6 @@ header .logo span {
 
 nav {
     display: flex;
-    flex-direction: row;
     gap: 1.25rem;
     /* 20px */
     color: var(--dark-brown-light);
@@ -175,13 +171,10 @@ header nav a:hover {
 
 .hero-buttons {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 0.625rem auto;
-    /* 10px auto */
-    gap: 1.875rem;
-    /* 30px */
-    width: fit-content;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+   min-width: 150px;
 }
 
 
@@ -199,7 +192,6 @@ header nav a:hover {
 
 #story-container {
     display: flex;
-    flex-direction: row;
     height: 100%;
     width: 100%;
     gap: 3.125rem;
@@ -237,7 +229,6 @@ header nav a:hover {
 
 #experience {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 3.125rem;
@@ -293,6 +284,7 @@ header nav a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-content: flex-start;
     width: 100%;
     row-gap: 0.9375rem;
     /* 15px */
@@ -325,6 +317,8 @@ header nav a:hover {
     flex-direction: column;
     justify-content: space-between;
     margin: 0 auto;
+    flex: 0 0 calc(50% - 0.9375rem);
+    /* Plus précis que width */
     width: 21.875rem;
     /* 350px */
     height: 28.125rem;
@@ -400,7 +394,6 @@ header nav a:hover {
 
 .price {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     width: 100%;
@@ -438,7 +431,6 @@ header nav a:hover {
 
 #contacts {
     display: flex;
-    flex-direction: row;
     align-items: start;
     justify-content: space-between;
     width: 100%;
@@ -558,7 +550,6 @@ footer {
 
 .footer-infos {
     display: flex;
-    flex-direction: row;
     border-bottom: var(--primary-orange-light) 1px solid;
 }
 
@@ -587,14 +578,15 @@ footer {
     text-align: left;
 }
 
-    .footer-bottom p {
- 
-        font-size: 0.8rem;
-        text-align: center;
-    }
+.footer-bottom p {
+
+    font-size: 0.8rem;
+    text-align: center;
+}
+
 .brand-logo {
     display: flex;
-    flex-direction: row;
+
 }
 
 .brand-logo img {
@@ -636,6 +628,7 @@ footer {
     }
 
 
+
 }
 
 /* Tablet: 1 carte bouton en dessous */
@@ -663,6 +656,7 @@ footer {
     header button {
         display: none;
     }
+ 
 }
 
 
@@ -673,9 +667,9 @@ footer {
         font-size: 0.8rem;
     }
 
-    .hero-buttons {
+    /* .hero-buttons {
         flex-direction: column;
-    }
+    } */
 
     .hero-content h1 {
         font-size: 1.5rem;
@@ -729,7 +723,7 @@ footer {
 
 
     .card {
-        width: 100%;
+        flex: 0 0 100%;
     }
 
     .image-container {
@@ -757,6 +751,9 @@ footer {
     }
 
     .footer-infos>div {
+        width: 100%;
+    }
+    button{
         width: 100%;
     }
 
