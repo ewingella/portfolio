@@ -161,7 +161,7 @@
             </div>
         </div>
 
-    
+
 
 
     </section>
@@ -169,8 +169,8 @@
     <!-- Section contacts -->
     <section id="team">
         <!-- contacts -->
-        <div>
-            <div>
+        <div id="team-container">
+            <div id="team-intro">
                 <h2>Get in Touch</h2>
                 <p>
                     We'd love to hear from you. Send us a message and we'll respond as soon as possible.
@@ -178,7 +178,7 @@
             </div>
             <div id="contacts">
                 <div id="contacts-infos">
-                    <div class="contatct-title">
+                    <div class="contact-title">
                         <h4>Contact Informations</h4>
                     </div>
                     <div class="contact-item">
@@ -209,16 +209,18 @@
                     </div>
                     <div class="contact-form">
                         <form action="#" method="post">
-                            <div class="form-group">
+                            <div>
+                                <div id="first-name-group" class="form-group">
+                                    <label for="first-name">First Name</label>
+                                    <input type="text" id="first-name" name="first-name" placeholder="your first name"
+                                        required>
+                                </div>
 
-                                <label for="first-name">First Name</label>
-                                <input type="text" id="first-name" name="first-name" placeholder="your first name"
-                                    required>
-
-                                <label for="last-name">Last Name</label>
-                                <input type="text" id="last-name" name="last-name" placeholder="your last name"
-                                    required>
-
+                                <div id="last-name-group" class="form-group">
+                                    <label for="last-name">Last Name</label>
+                                    <input type="text" id="last-name" name="last-name" placeholder="your last name"
+                                        required>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
@@ -231,8 +233,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="4"
-                                    required>Tell us about your experience with our products.</textarea>
+                                <textarea id="message" name="message" rows="4" placeholder="Tell us about your experience with our products."
+                                    required></textarea>
                             </div>
                             <button type="submit">Send Message</button>
                         </form>
