@@ -1,3 +1,30 @@
+/* Import Google Fonts - Séparés pour garantir le chargement */
+@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap');
+
+/* Variables CSS - Palette de couleurs */
+:root {
+    /* Couleurs principales */
+    --primary-orange: #E17100;
+    --dark-brown: #7B3306;
+    --cream-white: #FFFBEB;
+    --bright-yellow: #FFD230;
+    --neutral-gray: #717182;
+
+    /* Couleurs dérivées pour usage spécifique */
+    --background-color: var(--cream-white);
+    --text-primary: var(--dark-brown);
+    --text-secondary: var(--neutral-gray);
+    --accent-color: var(--primary-orange);
+    --highlight-color: var(--bright-yellow);
+
+    /* Variations de transparence */
+    --primary-orange-light: #E1710020;
+    --dark-brown-light: #7B330620;
+    --bright-yellow-light: #FFD23020;
+}
+
 /* Reset CSS de base */
 * {
     margin: 0;
@@ -6,35 +33,333 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Nunito', sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: var(--text-primary);
+    background-color: var(--background-color);
 }
 
 /* Styles de base à développer */
+button {
+    background-color: var(--primary-orange);
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--bright-yellow);
+}
+
+h1 {
+    font-family: 'Lemonada', cursive;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-family: 'Lemonada', cursive;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--dark-brown);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+p {
+    font-size: 1.3rem;
+    color: #fff;
+    margin: 10px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 
 /* Header */
 header {
     /* Styles à ajouter */
-    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    height: 80px;
+    background-color: var(--cream-white);
+}
+
+header .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+header .logo div {
+    height: 40px;
+    width: 40px;
+    background-color: var(--primary-orange);
+    border-radius: 50%;
+}
+
+header .logo img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+header .logo span {
+    font-family: 'Lemon', cursive;
+    margin-left: 10px;
+    font-size: 1.5rem;
+    color: var(--dark-brown);
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    color: var(--dark-brown-light);
+}
+
+header nav a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--neutral-gray);
+}
+
+header nav a:hover {
+    color: var(--primary-orange);
 }
 
 /* Hero Section */
 #hero {
     /* Styles à ajouter */
-    height: 400px;
-    background: url('images/hero-bg.jpg') no-repeat center center/cover;
+    height: 600px;
+    background: url('images/banner.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
 }
 
-/* Services Section */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    gap: 50px;
+
+}
+
+#hero-subtitle {
+    display: block;
+    color: var(--bright-yellow);
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px auto;
+    gap: 30px;
+    width: fit-content;
+}
+
+
+
+/* Section story */
+#story {
+    /* Styles à ajouter */
+    height: fit-content;
+
+    width: 100%;
+    padding: 50px 200px;
+
+}
+
+#story-container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    gap: 50px;
+}
+
+.story {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 20px;
+    width: 50%;
+}
+
+.story p {
+    color: var(--neutral-gray);
+    text-shadow: none;
+    font-size: 1.1rem;
+}
+
+#img-hives {
+    height: 100%;
+    width: 50%;
+    margin: auto;
+
+}
+
+#hives {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#experience {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    height: fit-content;
+    width: 100%;
+}
+
+.experience {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    text-align: center;
+    gap: 5px;
+    width: 25%;
+    height: 100px;
+
+}
+
+.number {
+    color: var(--primary-orange);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.label {
+    color: var(--neutral-gray);
+}
+
+/* Section services/produits */
 #services {
     /* Styles à ajouter */
+    display: flex;
+    padding: 50px 200px;
+    height: fit-content;
+    border: 1px solid red;
+}
+#services-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    border: rebeccapurple solid 3px;
 }
 
-/* Team Section */
-#team {
-    /* Styles à ajouter */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    height: fit-content;
 }
+
+#services-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+    height: fit-content;
+}
+#services-header p{
+    color: var(--neutral-gray);
+    font-size: 1.1rem;
+    text-shadow: none;
+}
+
+
+/* les cartes produit */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 350px;  /* Largeur fixe */
+    height: 400px; /* Hauteur fixe */
+    border: 3px solid royalblue;
+
+}
+.card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 10px;
+}
+
+/* Desktop: 4 cartes */
+.card { width: calc(50% - 15px); }
+
+/* Tablet: 2 cartes */
+@media (max-width: 768px) {
+    .card { width: calc(90% - 10px); }
+}
+
+/* Mobile: 1 carte */
+@media (max-width: 480px) {
+    .card { width: 100%; }
+}
+
+.image-container {
+    position: relative; /* Nécessaire pour positionner le badge par rapport à ce conteneur */
+ 
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* L'image remplit le conteneur en gardant ses proportions */
+    object-position: center;
+    /* Centre l'image dans le conteneur */
+}
+
+.image-container .badge {
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Changé de left à right */
+    background-color: var(--primary-orange);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+.card-content h4 {
+   color: var(--neutral-gray);
+   font-size: 1.1rem;
+   text-shadow: none;
+   font-weight: bold;
+}
+.card-content p {
+    color: var(--neutral-gray);
+    text-shadow: none;
+    font-size: 0.8rem;
+    text-align: start;
+    margin-bottom: 10px;
+}
+
+
 
 /* Footer */
 footer {

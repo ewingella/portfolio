@@ -12,16 +12,18 @@
     <!-- Header avec navigation -->
     <header>
         <div class="logo">
-            <img src="images/bee.png" alt="Company Logo a bee">
-            <h1>Company Logo</h1>
+            <div>
+                <img src="images/bee.png" alt="Company Logo a bee">
+            </div>
+            <span>Golden Hive Honey Co.</span>
         </div>
 
         <nav>
             <!-- Navigation à créer -->
-            <p>home</p>
-            <p>about</p>
-            <p>products</p>
-            <p>contact</p>
+            <a href="#hero">home</a>
+            <a href="#about">about</a>
+            <a href="#products">products</a>
+            <a href="#contact">contact</a>
         </nav>
         <button>Order now</button>
     </header>
@@ -29,12 +31,12 @@
     <!-- Section hero avec call-to-action -->
     <section id="hero">
         <!-- Contenu hero à créer -->
-        <div>
+        <div class="hero-content">
             <h1>Pure, Natural Honey
-                <span>From Our Hives to Your Home</span>
+                <span id="hero-subtitle">From Our Hives to Your Home</span>
             </h1>
             <p>Discover the golden taste of artisanal honey, crafted with love by our dedicated beekeepers</p>
-            <div>
+            <div class="hero-buttons">
                 <button>Shop our honey</button>
                 <button>Learn Our Story</button>
             </div>
@@ -42,9 +44,9 @@
 
     </section>
     <!-- section Story -->
-    <section>
+    <section id="story">
         <!-- brand story -->
-        <div>
+        <div id="story-container">
             <div class="story">
                 <h2>Our Sweet Story</h2>
                 <p>For over three generations, the Golden Hive Honey Co. has been dedicated to producing the finest
@@ -77,8 +79,8 @@
                 </div>
             </div>
 
-            <div>
-                <img src="images/honey-hives.png" alt="hives">
+            <div id="img-hives">
+                <img id="hives" src="images/honey-hives.png" alt="hives">
             </div>
         </div>
 
@@ -88,42 +90,45 @@
     <!-- Section services/produits -->
     <section id="services">
         <!-- Services à créer -->
-        <div>
-            <div>
+        <div id="services-container">
+            <div id="services-header">
+
                 <h2>Our Honey Collection</h2>
                 <p>Each jar tells a story of the flowers our bees have visited. Discover the unique flavors and
                     characteristics of our artisanal honey varieties.</p>
-            </div>
-        </div>
-        <div class="product-container">
-            <div class="card">
-                <div class="image-container">
-                    <span class="badge">Best Seller</span>
-                    <img src="images/flowers.png" alt="honey jar">
-                </div>
-                <div class="card-content">
-                    <h4>Wildflower Honey</h4>
-                    <p>A delicate blend of seasonal wildflowers with a complex, floral taste.</p>
-                    <div class="price">
-                        <span>$18.99</span>
-                        <button>Add to Cart</button>
-                    </div>
 
-                </div>
             </div>
-            <div class="card">
-                <div class="image-container">
-                    <span class="badge">Popular</span>
-                    <img src="images/honey-raw.png" alt="honey jar">
-                </div>
-                <div class="card-content">
-                    <h4>Clover Honey</h4>
-                    <p>Light, sweet honey with a mild flavor perfect for everyday use.</p>
-                    <div class="price">
-                        <span>$16.99</span>
-                        <button>Add to Cart</button>
+            <div class="product-container">
+                <div class="card">
+                    <div class="image-container">
+                        <span class="badge">Best Seller</span>
+                        <img src="images/flowers.png" alt="honey jar">
+                    </div>
+                    <div class="card-content">
+                        <h4>Wildflower Honey</h4>
+                        <p>A delicate blend of seasonal wildflowers with a complex, floral taste.</p>
+                        <div class="price">
+                            <span>$18.99</span>
+                            <button>Add to Cart</button>
+                        </div>
                     </div>
                 </div>
+
+                <div class="card">
+                    <div class="image-container">
+                        <span class="badge">Popular</span>
+                        <img src="images/honey-raw.png" alt="honey jar">
+                    </div>
+                    <div class="card-content">
+                        <h4>Clover Honey</h4>
+                        <p>Light, sweet honey with a mild flavor perfect for everyday use.</p>
+                        <div class="price">
+                            <span>$16.99</span>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="card">
                     <div class="image-container">
                         <span class="badge">Premium</span>
@@ -138,6 +143,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="card">
                     <div class="image-container">
                         <span class="badge">Artisanal</span>
@@ -154,6 +160,8 @@
                 </div>
             </div>
         </div>
+
+    
 
 
     </section>
