@@ -353,6 +353,7 @@ header nav a:hover {
     /* 10px */
     height: 100%;
 }
+
 .image-container {
     position: relative;
     /* Nécessaire pour positionner le badge par rapport à ce conteneur */
@@ -404,20 +405,23 @@ header nav a:hover {
     justify-content: space-between;
     width: 100%;
 }
+
 /* ############ */
 /* contactes */
 /* ########### */
-#team{
-    padding: 20px 200px ;
+#team {
+    padding: 20px 200px;
 }
-#team-container{
+
+#team-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     height: fit-content;
 
-}  
+}
+
 #team-intro {
     text-align: center;
     margin-bottom: 1.875rem;
@@ -425,10 +429,11 @@ header nav a:hover {
     height: fit-content;
 
 }
+
 #team-intro p {
     color: var(--neutral-gray);
     font-size: 1.1rem;
-    text-shadow: none;      
+    text-shadow: none;
 }
 
 #contacts {
@@ -439,7 +444,8 @@ header nav a:hover {
     width: 100%;
     height: fit-content;
 }
-#contacts > div {
+
+#contacts>div {
     display: flex;
     flex-direction: column;
     width: 48%;
@@ -448,7 +454,8 @@ header nav a:hover {
     background-color: #fff;
     padding: 10px 20px;
 }
-.contact-title{
+
+.contact-title {
     color: var(--neutral-gray);
     font-size: 1rem;
 }
@@ -460,58 +467,68 @@ header nav a:hover {
     gap: 10px;
 
 }
-.contact-item{
+
+.contact-item {
     display: flex;
     flex-direction: column;
 }
 
-.contact-item h4{
+.contact-item h4 {
     color: var(--neutral-gray);
     font-size: 1rem;
     font-weight: bolder;
 }
-.contact-item p{
+
+.contact-item p {
     color: var(--neutral-gray);
     text-shadow: none;
     font-size: 0.9rem;
-  
+
     margin: 3px 0;
 }
 
 
-.contact-form form{
+.contact-form form {
     display: flex;
     flex-direction: column;
     gap: 10px;
     width: 100%;
 }
-form > div{
+
+form>div {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-form > div:first-child {
+
+form>div:first-child {
     /* Le tout premier div directement dans <form> */
-   flex-direction: row;
+    flex-direction: row;
 }
-.form-group{
+
+.form-group {
     color: var(--neutral-gray);
 
 }
-.form-group label{
+
+.form-group label {
     font-size: 1rem;
-    font-weight:bolder;
+    font-weight: bolder;
 }
-.form-group input, .form-group textarea{
+
+.form-group input,
+.form-group textarea {
     width: 100%;
     padding: 10px;
-    border: none; /* Supprime complètement le border */
+    border: none;
+    /* Supprime complètement le border */
     /* border: var(--neutral-gray) solid 0.0625rem; */
     border-radius: 5px;
     font-size: 1rem;
     font-family: 'Nunito', sans-serif;
     color: var(--text-primary);
-    background-color: rgba(113, 113, 130, 0.1); /* Gris clair transparent */
+    background-color: rgba(113, 113, 130, 0.1);
+    /* Gris clair transparent */
 }
 
 .form-group input::placeholder,
@@ -526,8 +543,66 @@ form > div:first-child {
 /* ########### */
 footer {
     /* Styles à ajouter */
+    padding: 20px 200px;
+    background-color: var(--dark-brown);
 }
 
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+}
+
+.footer-infos {
+    display: flex;
+    flex-direction: row;
+    border-bottom: var(--primary-orange-light) 1px solid;
+}
+
+.footer-infos>div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding: 10px;
+    width: 25%;
+
+}
+
+.footer-title {
+    color: var(--cream-white);
+    font-size: 1rem;
+    font-weight: bolder;
+
+
+}
+
+.footer-description {
+    color: var(--bright-yellow);
+    font-size: 0.9rem;
+    text-decoration: none;
+    text-align: left;
+}
+
+    .footer-bottom p {
+ 
+        font-size: 0.8rem;
+        text-align: center;
+    }
+.brand-logo {
+    display: flex;
+    flex-direction: row;
+}
+
+.brand-logo img {
+    max-width: 25%;
+    height: 100%;
+    background-color: var(--primary-orange);
+    border-radius: 50%;
+}
 
 
 /* #################### */
@@ -551,9 +626,15 @@ footer {
     #services {
         padding: 10px 100px;
     }
-    #team{
-        padding: 10px 100px ;
-    }  
+
+    #team {
+        padding: 10px 100px;
+    }
+
+    footer {
+        padding: 10px 100px;
+    }
+
 
 }
 
@@ -568,10 +649,16 @@ footer {
         padding: 5px 20px;
         margin: 0 auto;
     }
+
     #team {
         padding: 5px 20px;
         margin: 0 auto;
-    }   
+    }
+
+    footer {
+        padding: 5px 20px;
+        margin: 0 auto;
+    }
 
     header button {
         display: none;
@@ -602,20 +689,24 @@ footer {
     #story {
         padding: 0 5px;
     }
+
     #services {
         padding: 0 5px;
 
     }
+
     #team {
         padding: 0 5px;
-    }   
+    }
+
     #contacts {
         flex-direction: column;
         gap: 1rem;
         align-items: center;
         width: 100%;
     }
-    #contacts > div{
+
+    #contacts>div {
         width: 100%;
     }
 
@@ -651,6 +742,22 @@ footer {
 
     .product-container {
         padding: 0 5px;
+    }
+
+    footer {
+        padding: 0 5px;
+
+    }
+
+    .footer-infos {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+
+    .footer-infos>div {
+        width: 100%;
     }
 
 }
