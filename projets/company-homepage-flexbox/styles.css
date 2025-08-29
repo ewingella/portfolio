@@ -264,15 +264,17 @@ header nav a:hover {
     width: 100%;
     height: fit-content;
     border: rebeccapurple solid 3px;
+    padding: 0 20px;
 }
 
 .product-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-between;
     width: 100%;
+    row-gap: 15px;
     height: fit-content;
+  
 }
 
 #services-header {
@@ -282,11 +284,13 @@ header nav a:hover {
     text-align: center;
     margin-bottom: 30px;
     height: fit-content;
+   
 }
 #services-header p{
     color: var(--neutral-gray);
     font-size: 1.1rem;
     text-shadow: none;
+    
 }
 
 
@@ -296,9 +300,8 @@ header nav a:hover {
     flex-direction: column;
     justify-content: space-between;
     width: 350px;  /* Largeur fixe */
-    height: 400px; /* Hauteur fixe */
-    border: 3px solid royalblue;
-
+    height: 450px; /* Hauteur fixe */
+  
 }
 .card-content{
     display: flex;
