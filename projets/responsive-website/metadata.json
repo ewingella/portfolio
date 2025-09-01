@@ -1,0 +1,26 @@
+{
+  "title": "Making a Website Responsive",
+  "description": "Projet Codecademy pour apprendre les techniques de responsive design avec media queries, mobile-first design et layouts adaptatifs",
+  "technologies": ["HTML5", "CSS3", "Responsive Design", "Media Queries", "Mobile-First", "Flexbox"],
+  "formation": "Codecademy",
+  "module": "Web Development Foundations",
+  "status": "En cours",
+  "difficulty": "Intermédiaire",
+  "features": [
+    "Media queries pour différentes tailles d'écran",
+    "Design mobile-first",
+    "Navigation responsive avec menu hamburger",
+    "Images et contenus adaptatifs",
+    "Typographie responsive",
+    "Layout flexible avec Flexbox"
+  ],
+  "objectives": [
+    "Maîtriser les media queries CSS",
+    "Comprendre l'approche mobile-first",
+    "Créer des layouts adaptatifs",
+    "Optimiser les performances sur mobile",
+    "Implémenter une navigation responsive"
+  ],
+  "dateCreated": "2025-09-01",
+  "lastModified": "2025-09-01"
+}

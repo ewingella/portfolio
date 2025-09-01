@@ -1,0 +1,343 @@
+/* =================================
+   RESET & BASE STYLES
+   ================================= */
+
+/* Box-sizing global */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+/* Variables CSS pour la cohérence */
+:root {
+    --primary-color: #3b82f6;
+    --secondary-color: #1e40af;
+    --text-color: #1f2937;
+    --text-light: #6b7280;
+    --background: #ffffff;
+    --surface: #f9fafb;
+    --border-color: #e5e7eb;
+    
+    /* Typographie */
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    --font-size-base: 16px;
+    --line-height-base: 1.6;
+    
+    /* Espacement */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    
+    /* Conteneur */
+    --container-width: 1200px;
+    --container-padding: 1rem;
+    
+    /* Breakpoints pour media queries */
+    --bp-sm: 576px;
+    --bp-md: 768px;
+    --bp-lg: 992px;
+    --bp-xl: 1200px;
+}
+
+/* =================================
+   STYLES DE BASE
+   ================================= */
+
+html {
+    font-size: var(--font-size-base);
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--text-color);
+    background-color: var(--background);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Conteneur principal */
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* =================================
+   TYPOGRAPHIE RESPONSIVE
+   ================================= */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+}
+
+h1 { font-size: clamp(1.75rem, 4vw, 3rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+h4 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
+
+p {
+    margin-bottom: var(--spacing-md);
+    color: var(--text-light);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* =================================
+   LAYOUT RESPONSIVE
+   ================================= */
+
+/* Grid système de base */
+.grid {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.grid-4 { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+
+/* Flexbox utilitaires */
+.flex { display: flex; }
+.flex-column { flex-direction: column; }
+.flex-center { justify-content: center; align-items: center; }
+.flex-between { justify-content: space-between; align-items: center; }
+.flex-wrap { flex-wrap: wrap; }
+
+/* =================================
+   UTILITAIRES RESPONSIVE
+   ================================= */
+
+/* Espacement */
+.m-0 { margin: 0; }
+.mt-1 { margin-top: var(--spacing-sm); }
+.mt-2 { margin-top: var(--spacing-md); }
+.mt-3 { margin-top: var(--spacing-lg); }
+.mb-1 { margin-bottom: var(--spacing-sm); }
+.mb-2 { margin-bottom: var(--spacing-md); }
+.mb-3 { margin-bottom: var(--spacing-lg); }
+
+.p-1 { padding: var(--spacing-sm); }
+.p-2 { padding: var(--spacing-md); }
+.p-3 { padding: var(--spacing-lg); }
+
+/* Texte */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* Visibilité responsive */
+.hidden { display: none; }
+.visible { display: block; }
+
+/* =================================
+   MEDIA QUERIES
+   ================================= */
+
+/* Mobile First - Tablet */
+@media (min-width: 768px) {
+    .container {
+        --container-padding: 2rem;
+    }
+    
+    .tablet-show { display: block; }
+    .tablet-hide { display: none; }
+    
+    .tablet-text-center { text-align: center; }
+    .tablet-text-left { text-align: left; }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+    .container {
+        --container-padding: 2rem;
+    }
+    
+    .desktop-show { display: block; }
+    .desktop-hide { display: none; }
+    
+    .desktop-text-center { text-align: center; }
+    .desktop-text-left { text-align: left; }
+}
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+    .container {
+        --container-padding: 2rem;
+    }
+}
+
+/* =================================
+   COMPOSANTS DE BASE
+   ================================= */
+
+/* Boutons responsive */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 44px; /* Touch target minimum */
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-outline {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Cartes responsive */
+.card {
+    background: var(--background);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: var(--spacing-lg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Images responsives */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.img-responsive {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* =================================
+   STYLES DE STRUCTURE
+   ================================= */
+
+/* Section générique */
+.section {
+    padding: var(--spacing-2xl) 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.section-title {
+    color: var(--text-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.section-subtitle {
+    color: var(--text-light);
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* =================================
+   ANIMATIONS ET TRANSITIONS
+   ================================= */
+
+/* Animation d'apparition */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* =================================
+   ACCESSIBILITY
+   ================================= */
+
+/* Focus visible pour navigation au clavier */
+*:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Réduction des mouvements pour utilisateurs sensibles */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Mode sombre (préférence système) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #f9fafb;
+        --text-light: #d1d5db;
+        --background: #111827;
+        --surface: #1f2937;
+        --border-color: #374151;
+    }
+}
