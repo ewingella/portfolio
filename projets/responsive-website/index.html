@@ -1,18 +1,435 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Website - Codecademy Project</title>
-    <meta name="description" content="Projet Codecademy pour apprendre les techniques de responsive design">
-    
+    <title>Les Passionnés du Livre - Club de Lecture</title>
+    <meta name="description"
+        content="Club de lecture cosy pour partager notre passion des livres et découvrir de nouveaux auteurs ensemble">
+
+    <!-- Google Fonts - Club de lecture cosy -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+
     <!-- Votre contenu HTML ici -->
-    <h1>Making a Website Responsive</h1>
-    <p>Projet Codecademy en cours de développement...</p>
+    <header class="site-header">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo Pages turners">
+            </div>
+            <h4>
+                Pages Turners
+            </h4>
+        </div>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="#about">Home</a></li>
+                <li><a href="#current-book">Current Book</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#books">Books</a></li>
+                <li><a href="#members">Members</a></li>
+            </ul>
+        </nav>
+        <button class="dark-button">Join Us</button>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="main-container">
+                <div id="hero-description">
+                    <div id="hero-title">
+                        <h1>Welcome to Pages Turners</h1>
+                        <p> Join our passionate community of book lovers. Discover new stories, share insights, and make
+                            lasting
+                            friendships through the power of literature.</p>
+                    </div>
+                    <div id="hero-buttons">
+                        <button class="dark-button">Join Our Club</button>
+                        <button class="light-button">Learn More</button>
+                    </div>
+                    <div id="hero-activity">
+                        <div id="hero-activity-members"><span>50+ Active Members</span></div>
+                        <div id="hero-activity-weekly"><span>5+ Weekly Meetings</span></div>
+                        <div id="hero-activity-books"><span>100+ Books Read</span></div>
+                    </div>
+                </div>
+                <div id="hero-img">
+                    <img src="hero-image.jpg" alt="Reading together" />
+                </div>
+            </div>
+        </section>
+
+        <section class="book-month">
+            <div class="main-container">
+                <div class="main-title">
+                    <h2>Book of the Month</h2>
+                    <p>Discover our featured book for this month, handpicked by our members. Dive into captivating
+                        stories
+                        and
+                        join the discussion!</p>
+                </div>
+                <div class="book-highlight">
+                    <div class="book-highlight-container">
+                        <img src="book-cover.jpg" alt="Book Cover">
+
+                        <div class="book-info">
+                            <span>September 2025</span>
+
+                            <h3>The Seven Husbands of Evelyn Hugo</h3>
+                            <p>by Taylor Jenkins Reid</p>
+                            <div class="rating">
+                                ⭐⭐⭐⭐⭐
+                                <span>4.5/5 (Club Rating)</span>
+                            </div>
+                            <p class="book-description">
+                                A captivating novel about a reclusive Hollywood icon who finally decides to tell her
+                                story
+                                to an unknown journalist. This tale of love, ambition, and the price of fame will keep
+                                you
+                                turning pages late into the night.
+                            </p>
+                            <div id="book-month-schedule-container">
+                                <div id="book-month-schedule">
+                                    <p>Discussion Date</p>
+                                    <p>September 15, 2025</p>
+                                </div>
+                                <div id="book-month-schedule-time">
+                                    <p>Reading Time</p>
+                                    <p>8 hours</p>
+
+                                </div>
+                            </div>
+                            <div id="book-month-buttons">
+                                <button class="dark-button">Join Discussion</button>
+                                <button class="light-button">Get the Book</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="upcoming-event">
+            <div class="main-container">
+                <div class="main-title">
+                    <h2>Upcoming Events</h2>
+                    <p>Don't miss our exciting events! Mark your calendar and join us for engaging discussions and
+                        activities.</p>
+                </div>
+
+                <div class="event-list">
+                    <!-- event 1 -->
+                    <div class="event-item">
+                        <div class="event-item-title">
+                            <div class="event-item-title-type">
+                                <span>Book Discussion</span>
+                            </div>
+                            <h4>The Seven Husbands of Evelyn Hugo - Discussion</h4>
+                        </div>
+                        <div class="event-item-infos">
+                            <p>Join us for an in-depth discussion about this captivating Hollywood saga.</p>
+                            <div class="event-item-schedule">
+                                <div class="event-item-schedule-date">
+                                    <span>September 28, 2025</span>
+                                </div>
+                                <div class="event-item-schedule-time">
+                                    <span>7:00 PM - 9:00 PM</span>
+                                </div>
+                                <div class="event-item-schedule-location">
+                                    <span>Central Library - Room 204</span>
+                                </div>
+                                <div class="event-item-schedule-attending">
+                                    <span>23 attending</span>
+                                </div>
+                            </div>
+                            <div class="event-item-schedule-buttons">
+                                <button class="dark-button">RSVP Now</button>
+                                <button class="light-button">Add to Calendar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- event 2 -->
+                    <div class="event-item">
+                        <div class="event-item-title">
+                            <div class="event-item-title-type">
+                                <span>Selection Meeting</span>
+                            </div>
+                            <h4>October Book Selection Meeting</h4>
+                        </div>
+                        <div class="event-item-infos">
+                            <p>Help us choose our next monthly read from our curated shortlist.</p>
+                            <div class="event-item-schedule">
+                                <div class="event-item-schedule-date">
+                                    <span>October 5, 2025</span>
+                                </div>
+                                <div class="event-item-schedule-time">
+                                    <span>6:30 PM - 8:00 PM</span>
+                                </div>
+                                <div class="event-item-schedule-location">
+                                    <span>Café Luna - Private Room</span>
+                                </div>
+                                <div class="event-item-schedule-attending">
+                                    <span>18 attending</span>
+                                </div>
+                            </div>
+                            <div class="event-item-schedule-buttons">
+                                <button class="dark-button">RSVP Now</button>
+                                <button class="light-button">Add to Calendar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- event 3 -->
+                    <div class="event-item">
+                        <div class="event-item-title">
+                            <div class="event-item-title-type">
+                                <span>Special Event</span>
+                            </div>
+                            <h4>Author Meet & Greet</h4>
+                        </div>
+                        <div class="event-item-infos">
+                            <p>Special guest appearance by local author Emma Richardson.</p>
+                            <div class="event-item-schedule">
+                                <div class="event-item-schedule-date">
+                                    <span>October 15, 2025</span>
+                                </div>
+                                <div class="event-item-schedule-time">
+                                    <span>2:00 PM - 4:00 PM</span>
+                                </div>
+                                <div class="event-item-schedule-location">
+                                    <span>BookHaven Store</span>
+                                </div>
+                                <div class="event-item-schedule-attending">
+                                    <span>35 attending</span>
+                                </div>
+                            </div>
+                            <div class="event-item-schedule-buttons">
+                                <button class="dark-button">RSVP Now</button>
+                                <button class="light-button">Add to Calendar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section id="recommended-reads">
+            <div class="main-container">
+                <div class="main-title">
+                    <h2>Recommended Reads</h2>
+                    <p>
+                        Discover your next favorite book from our curated collection of member favorites
+                    </p>
+                </div>
+                <div class="book-list">
+                    <!-- book 1 -->
+                    <div class="book-item">
+                        <div class="book-item-cover">
+                            <spam>Previously Read</spam>
+                            <img src="images/book1.jpg" alt="Pride and Prejudice">
+                        </div>
+
+                        <div class="book-item-info">
+                            <div class="book-item-title">
+                                <h4>Pride and Prejudice</h4>
+                                <p>by Jane Austen</p>
+                            </div>
+                            <div class="book-item-meta">
+                                <span>Classic Romance</span>
+                                <span>4.7</span>
+                            </div>
+                            <div class="book-item-description">
+                                <p>A timeless tale of love, society, and personal growth in Regency England.</p>
+                            </div>
+                            <div class="book-item-time">
+                                <span>7 hours</span>
+                                <span>View Details</span>
+                            </div>
+                            <div class="book-item-buttons">
+                                <button class="light-button">Add to Reading list</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- book 2 -->
+                    <div class="book-item">
+                        <div class="book-item-cover">
+                            <spam>Shortlisted</spam>
+                            <img src="images/book2.jpg" alt="Where the Crawdads Sing">
+                        </div>
+
+                        <div class="book-item-info">
+                            <div class="book-item-title">
+                                <h4>Where the Crawdads Sing</h4>
+                                <p>by Delia Owens</p>
+                            </div>
+                            <div class="book-item-meta">
+                                <span>Contemporary Fiction</span>
+                                <span>4.8</span>
+                            </div>
+                            <div class="book-item-description">
+                                <p>A mystery and coming-of-age story set in the atmospheric marshlands of North
+                                    Carolina.</p>
+                            </div>
+                            <div class="book-item-time">
+                                <span>9 hours</span>
+                                <span>view details</span>
+                            </div>
+                            <div class="book-item-buttons">
+                                <button class="light-button">Add to Reading list</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- book 3 -->
+                    <div class="book-item">
+                        <div class="book-item-cover">
+                            <spam>Member Pick</spam>
+                            <img src="images/book3.jpg" alt="The Thursday Murder Club">
+                        </div>
+
+                        <div class="book-item-info">
+                            <div class="book-item-title">
+                                <h4>The Thursday Murder Club</h4>
+                                <p>by Richard Osman</p>
+                            </div>
+                            <div class="book-item-meta">
+                                <span>Mystery</span>
+                                <span>4.8</span>
+                            </div>
+                            <div class="book-item-description">
+                                <p>Four unlikely friends meet weekly to investigate cold cases and solve murders..</p>
+                            </div>
+                            <div class="book-item-time">
+                                <span>8 hours</span>
+                                <span>view details</span>
+                            </div>
+                            <div class="book-item-buttons">
+                                <button class="light-button">Add to Reading list</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- book 4 -->
+                    <div class="book-item">
+                        <div class="book-item-cover">
+                            <spam>Top Rated</spam>
+                            <img src="images/book4.jpg" alt="Educated">
+                        </div>
+
+                        <div class="book-item-info">
+                            <div class="book-item-title">
+                                <h4>Educated</h4>
+                                <p>by Tara Westover</p>
+                            </div>
+                            <div class="book-item-meta">
+                                <span>Memoir</span>
+                                <span>4.9</span>
+                            </div>
+                            <div class="book-item-description">
+                                <p>Born to survivalists in the mountains of Idaho, Tara Westover was 17 the first time
+                                    she set foot in a classroom.</p>
+                            </div>
+                            <div class="book-item-time">
+                             <span>10 hours</span>
+                                <span>view details</span>
+                            </div>
+                            <div class="book-item-buttons">
+                                <button class="light-button">Add to Reading list</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="recommended-reads-button">
+                    <button class="dark-button">Explore More Books</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer class="site-footer">
+        <div class="main-container">
+            <div class="footer-info">
+                <div class="footer-info-pagesturners">
+                    <div id="footer-logo">
+                        <img src="logo.png" alt="Logo Pages turners">
+                        <h3>PageTurners</h3>
+                    </div>
+                    <p>
+                        A vibrant community of book lovers passionate about literature, discussion, and discovery.
+                    </p>
+                    <div id="footer-picto-reseaux">
+                        <div class="icon">
+                            <img src="facebook-icon.png" alt="Facebook">
+                        </div>
+                        <div class="icon">
+                            <img src="twitter-icon.png" alt="Twitter">
+                        </div>
+                        <div class="icon">
+                            <img src="instagram-icon.png" alt="Instagram">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-info-quicklinks">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">home</a></li>
+                        <li><a href="#current-book">Current Book</a></li>
+                        <li><a href="#schedule">Schedule</a></li>
+                        <li><a href="#books">Books recommendations</a></li>
+                        <li><a href="#members">Members</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-info-ressource">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#reading-lists">Reading Lists</a></li>
+                        <li><a href="#discussion-guides">Discussion Guides</a></li>
+                        <li><a href="#book-reviews">Book Reviews</a></li>
+                        <li><a href="#author-interviews">Author Interviews</a></li>
+                        <li><a href="#local-libraries">Local Libraries</a></li>
+                    </ul>
+                </div>
+                <div class="footer-info-getintouch">
+                    <h4>Get in Touch</h4>
+                    <div id="getintouch-email">
+                        <img src="email-icon.png" alt="Email Icon">
+                        <span>hello@pageturners.club</span>
+                    </div>
+                    <div id="getintouch-phone">
+                        <img src="phone-icon.png" alt="Phone Icon">
+                        <span>(555) 123-4567</span>
+                    </div>
+                    <div id="getintouch-address">
+                        <img src="address-icon.png" alt="Address Icon">
+                        <span>Central Library
+                            123 Main Street
+                            Your City, ST 12345</span>
+                    </div>
+
+                </div>
+
+            </div>
+            <div id="footer-credits">
+                <p>© 2025 Pages Turners. All rights reserved.</p>
+                <p>Website by Your Maria</p>
+                <p>Contact: hello@pageturners.club</p>
+            </div>
+        </div>
+    </footer>
+
 </body>
+
 </html>

@@ -19,18 +19,22 @@
 
 /* Variables CSS pour la cohérence */
 :root {
-    --primary-color: #3b82f6;
-    --secondary-color: #1e40af;
-    --text-color: #1f2937;
-    --text-light: #6b7280;
-    --background: #ffffff;
-    --surface: #f9fafb;
-    --border-color: #e5e7eb;
+    /* Couleurs club de lecture cosy */
+    --primary-color: #8B4513;        /* Brun cuir de livre */
+    --secondary-color: #A0522D;      /* Sienna chaleureux */
+    --accent-color: #D2691E;         /* Orange automnal */
+    --text-color: #2F1B14;           /* Brun foncé lisible */
+    --text-light: #5D4037;           /* Brun moyen */
+    --background: #FFF8F0;           /* Beige papier ancien */
+    --surface: #F5F5DC;              /* Beige plus chaud */
+    --border-color: #D7CCC8;         /* Beige grisé */
     
-    /* Typographie */
-    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    /* Typographie club de lecture */
+    --font-headings: 'Libre Baskerville', Georgia, serif;     /* Pour titres */
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;  /* Pour texte */
     --font-size-base: 16px;
     --line-height-base: 1.6;
+    --line-height-headings: 1.3;
     
     /* Espacement */
     --spacing-xs: 0.25rem;
@@ -61,7 +65,7 @@ html {
 }
 
 body {
-    font-family: var(--font-family);
+    font-family: var(--font-body);
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
     color: var(--text-color);
@@ -83,9 +87,11 @@ body {
    ================================= */
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
-    line-height: 1.2;
+    font-family: var(--font-headings);
+    font-weight: 700;
+    line-height: var(--line-height-headings);
     margin-bottom: var(--spacing-md);
+    color: var(--text-color);
 }
 
 h1 { font-size: clamp(1.75rem, 4vw, 3rem); }
@@ -334,10 +340,39 @@ img {
 /* Mode sombre (préférence système) */
 @media (prefers-color-scheme: dark) {
     :root {
-        --text-color: #f9fafb;
-        --text-light: #d1d5db;
-        --background: #111827;
-        --surface: #1f2937;
-        --border-color: #374151;
+        --text-color: #F5E6D3;
+        --text-light: #D7CCC8;
+        --background: #1A1A1A;
+        --surface: #2D2D2D;
+        --border-color: #404040;
+        --primary-color: #D2691E;
+        --secondary-color: #CD853F;
     }
+}
+
+/* =================================
+   STYLES SPÉCIFIQUES CLUB DE LECTURE
+   ================================= */
+
+/* Emphase pour les titres de livres */
+em {
+    font-style: italic;
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+/* Style cosy pour les conteneurs */
+.container {
+    background: linear-gradient(135deg, var(--background) 0%, var(--surface) 100%);
+    border-radius: 1rem;
+    padding: var(--spacing-2xl);
+    margin-top: var(--spacing-xl);
+    box-shadow: 0 8px 32px rgba(139, 69, 19, 0.1);
+}
+
+/* Typographie améliorée pour la lecture */
+p {
+    text-align: justify;
+    hyphens: auto;
+    line-height: 1.7;
 }
