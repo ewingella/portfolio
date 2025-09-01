@@ -109,7 +109,7 @@ Exemples :
 4. Concepts techniques (Responsive, PWA, etc.)
 5. Caractéristiques spéciales (Interactive, Real-time, etc.)
 
-## 🎯 Thèmes visuels disponibles
+## 🎯 Thèmes visuels disponibles 
 
 ### Existants
 - `honey-theme` : Dégradé orange/doré avec abeille
