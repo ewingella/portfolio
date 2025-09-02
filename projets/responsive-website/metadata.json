@@ -1,26 +1,28 @@
 {
-  "title": "Making a Website Responsive",
-  "description": "Projet Codecademy pour apprendre les techniques de responsive design avec media queries, mobile-first design et layouts adaptatifs",
-  "technologies": ["HTML5", "CSS3", "Responsive Design", "Media Queries", "Mobile-First", "Flexbox"],
-  "formation": "Codecademy",
-  "module": "Web Development Foundations",
-  "status": "En cours",
-  "difficulty": "Intermédiaire",
+  "title": "Pages Turners - Club de Lecture Responsive",
+  "description": "Site vitrine pour un club de lecture fictif avec design responsive mobile-first et ambiance cosy chaleureuse",
+  "technologies": ["HTML5", "CSS3", "Responsive Design", "Media Queries", "Mobile-First", "CSS Grid", "CSS Flexbox", "Google Fonts"],
+  "formation": "codecademy-fullstack",
+  "module": "Making a Website Responsive",
+  "status": "in-progress",
+  "difficulty": "intermediate",
   "features": [
-    "Media queries pour différentes tailles d'écran",
-    "Design mobile-first",
-    "Navigation responsive avec menu hamburger",
-    "Images et contenus adaptatifs",
-    "Typographie responsive",
-    "Layout flexible avec Flexbox"
+    "Design responsive mobile-first",
+    "Polices Google Fonts (Libre Baskerville + Inter)",
+    "Palette de couleurs thématique club de lecture",
+    "Variables CSS pour cohérence du design",
+    "Layouts adaptatifs avec CSS Grid et Flexbox",
+    "Media queries pour tous types d'écrans",
+    "Images responsives et optimisées",
+    "Navigation adaptative"
   ],
   "objectives": [
-    "Maîtriser les media queries CSS",
-    "Comprendre l'approche mobile-first",
-    "Créer des layouts adaptatifs",
-    "Optimiser les performances sur mobile",
-    "Implémenter une navigation responsive"
+    "Maîtriser l'approche mobile-first",
+    "Créer des layouts adaptatifs avec CSS Grid et Flexbox",
+    "Utiliser les media queries efficacement",
+    "Optimiser l'expérience utilisateur sur tous appareils",
+    "Implémenter un design system cohérent"
   ],
   "dateCreated": "2025-09-01",
-  "lastModified": "2025-09-01"
+  "lastModified": "2025-09-02"
 }
