@@ -430,3 +430,91 @@ nav ul {
     justify-content: space-between;
     border-top: var(--border-color) 1px solid;
 }
+
+/* responsive  */
+@media (max-width: 1024px) {
+    section, footer{
+        padding: 0;
+    }
+
+
+}
+
+@media (max-width: 768px) {
+header button{
+    display: none;
+}
+  
+  
+}
+@media (max-width: 480px) {
+    .main-container{
+        align-items: center;
+    }
+    .site-header {
+        padding: 1rem;
+    }
+
+    .site-nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .book-item {
+        width: 100%;
+    }
+    #hero-buttons{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+    }
+    .book-highlight-container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .book-highlight-container img{
+        width: 100%;
+    }
+    .book-info{
+        width: 100%;
+    }
+    #book-month-buttons{
+        flex-direction: column;
+        gap: 10px;
+    }
+    #upcoming-event{
+        justify-content: center;
+        align-items: center;
+    }
+    .event-item-schedule{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .event-item-schedule-buttons{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .footer-info{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    #footer-credits{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        justify-content: space-between;
+        border-top: var(--border-color) 1px solid;
+    }
+
+
+
+}
