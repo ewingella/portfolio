@@ -1,41 +1,36 @@
 /* =================================
-   RESET & BASE STYLES
+   VARIABLES CSS & BASE STYLES
    ================================= */
-
-/* Box-sizing global */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-/* Reset de base */
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-}
 
 /* Variables CSS pour la cohérence */
 :root {
     /* Couleurs club de lecture cosy */
-    --primary-color: #8B4513;        /* Brun cuir de livre */
-    --secondary-color: #A0522D;      /* Sienna chaleureux */
-    --accent-color: #D2691E;         /* Orange automnal */
-    --text-color: #2F1B14;           /* Brun foncé lisible */
-    --text-light: #5D4037;           /* Brun moyen */
-    --background: #FFF8F0;           /* Beige papier ancien */
-    --surface: #F5F5DC;              /* Beige plus chaud */
-    --border-color: #D7CCC8;         /* Beige grisé */
-    
+    --primary-color: #8B4513;
+    /* Brun cuir de livre */
+    --secondary-color: #A0522D;
+    /* Sienna chaleureux */
+    --accent-color: #D2691E;
+    /* Orange automnal */
+    --text-color: #2F1B14;
+    /* Brun foncé lisible */
+    --text-light: #5D4037;
+    /* Brun moyen */
+    --background: #FFF8F0;
+    /* Beige papier ancien */
+    --surface: #F5F5DC;
+    /* Beige plus chaud */
+    --border-color: #D7CCC8;
+    /* Beige grisé */
+
     /* Typographie club de lecture */
-    --font-headings: 'Libre Baskerville', Georgia, serif;     /* Pour titres */
-    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;  /* Pour texte */
+    --font-headings: 'Libre Baskerville', Georgia, serif;
+    /* Pour titres */
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    /* Pour texte */
     --font-size-base: 16px;
     --line-height-base: 1.6;
     --line-height-headings: 1.3;
-    
+
     /* Espacement */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
@@ -43,11 +38,11 @@
     --spacing-lg: 1.5rem;
     --spacing-xl: 2rem;
     --spacing-2xl: 3rem;
-    
+
     /* Conteneur */
     --container-width: 1200px;
     --container-padding: 1rem;
-    
+
     /* Breakpoints pour media queries */
     --bp-sm: 576px;
     --bp-md: 768px;
@@ -55,13 +50,23 @@
     --bp-xl: 1200px;
 }
 
-/* =================================
-   STYLES DE BASE
-   ================================= */
-
 html {
     font-size: var(--font-size-base);
     scroll-behavior: smooth;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+li {
+    list-style-type: none;
+
 }
 
 body {
@@ -70,309 +75,358 @@ body {
     line-height: var(--line-height-base);
     color: var(--text-color);
     background-color: var(--background);
+    margin: 0;
+    padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Conteneur principal */
-.container {
-    width: 100%;
-    max-width: var(--container-width);
+section, footer{
+
+    padding-right: 300px;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    /* max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 var(--container-padding);
+    padding: 0 var(--container-padding); */
+   
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+
 }
 
-/* =================================
-   TYPOGRAPHIE RESPONSIVE
-   ================================= */
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-headings);
-    font-weight: 700;
-    line-height: var(--line-height-headings);
-    margin-bottom: var(--spacing-md);
-    color: var(--text-color);
-}
-
-h1 { font-size: clamp(1.75rem, 4vw, 3rem); }
-h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
-h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
-h4 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
-
-p {
-    margin-bottom: var(--spacing-md);
-    color: var(--text-light);
-}
-
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-a:hover {
-    color: var(--secondary-color);
-}
-
-/* =================================
-   LAYOUT RESPONSIVE
-   ================================= */
-
-/* Grid système de base */
-.grid {
-    display: grid;
-    gap: var(--spacing-lg);
-}
-
-.grid-2 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-.grid-3 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-.grid-4 { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
-
-/* Flexbox utilitaires */
-.flex { display: flex; }
-.flex-column { flex-direction: column; }
-.flex-center { justify-content: center; align-items: center; }
-.flex-between { justify-content: space-between; align-items: center; }
-.flex-wrap { flex-wrap: wrap; }
-
-/* =================================
-   UTILITAIRES RESPONSIVE
-   ================================= */
-
-/* Espacement */
-.m-0 { margin: 0; }
-.mt-1 { margin-top: var(--spacing-sm); }
-.mt-2 { margin-top: var(--spacing-md); }
-.mt-3 { margin-top: var(--spacing-lg); }
-.mb-1 { margin-bottom: var(--spacing-sm); }
-.mb-2 { margin-bottom: var(--spacing-md); }
-.mb-3 { margin-bottom: var(--spacing-lg); }
-
-.p-1 { padding: var(--spacing-sm); }
-.p-2 { padding: var(--spacing-md); }
-.p-3 { padding: var(--spacing-lg); }
-
-/* Texte */
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }
-
-/* Visibilité responsive */
-.hidden { display: none; }
-.visible { display: block; }
-
-/* =================================
-   MEDIA QUERIES
-   ================================= */
-
-/* Mobile First - Tablet */
-@media (min-width: 768px) {
-    .container {
-        --container-padding: 2rem;
-    }
-    
-    .tablet-show { display: block; }
-    .tablet-hide { display: none; }
-    
-    .tablet-text-center { text-align: center; }
-    .tablet-text-left { text-align: left; }
-}
-
-/* Desktop */
-@media (min-width: 992px) {
-    .container {
-        --container-padding: 2rem;
-    }
-    
-    .desktop-show { display: block; }
-    .desktop-hide { display: none; }
-    
-    .desktop-text-center { text-align: center; }
-    .desktop-text-left { text-align: left; }
-}
-
-/* Large Desktop */
-@media (min-width: 1200px) {
-    .container {
-        --container-padding: 2rem;
-    }
-}
-
-/* =================================
-   COMPOSANTS DE BASE
-   ================================= */
-
-/* Boutons responsive */
-.btn {
-    display: inline-flex;
+.main-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: var(--spacing-sm);
-    padding: var(--spacing-sm) var(--spacing-lg);
+    text-align: center;
+
+}
+
+.main-title h2 {
+    font-size: 2rem;
+
+}
+
+span {
     font-size: 0.9rem;
-    font-weight: 500;
-    text-decoration: none;
-    border: 2px solid transparent;
-    border-radius: 0.5rem;
+}
+
+/* =================================
+   VOTRE CSS ICI
+   ================================= */
+
+/* Ajoutez vos styles personnalisés ci-dessous */
+/* les boutons */
+.dark-button,
+.light-button {
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    transition: all 0.2s ease;
-    min-height: 44px; /* Touch target minimum */
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-.btn-primary {
+
+.dark-button {
     background-color: var(--primary-color);
     color: white;
 }
 
-.btn-primary:hover {
-    background-color: var(--secondary-color);
-    color: white;
+.dark-button:hover {
+    background-color: white;
+    color: var(--text-light);
+    border: 2px solid var(--primary-color);
+
 }
 
-.btn-outline {
-    border-color: var(--primary-color);
+.light-button {
+    background-color: white;
     color: var(--primary-color);
+    border: 2px solid var(--primary-color);
 }
 
-.btn-outline:hover {
+.light-button:hover {
     background-color: var(--primary-color);
     color: white;
 }
 
-/* Cartes responsive */
-.card {
-    background: var(--background);
-    border: 1px solid var(--border-color);
-    border-radius: 0.75rem;
-    padding: var(--spacing-lg);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* le header */
+header {
+    display: flex;
+    height: 60px;
+    background: var(--primary-color);
+    color: white;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-/* Images responsives */
-img {
+.logo img {
+    max-height: 60px;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    gap: 1rem;
+}
+
+/* hero section */
+#hero-activity {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: var(--spacing-2xl) 0;
+    gap: 30px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.hero p {
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero img {
     max-width: 100%;
     height: auto;
-    display: block;
+    width: 80%;
 }
 
-.img-responsive {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+/* section book of the month  */
+
+.book-highlight-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+    border: 1px solid var(--border-color);
+    background-color: white;
+    border-radius: 10px;
 }
 
-/* =================================
-   STYLES DE STRUCTURE
-   ================================= */
-
-/* Section générique */
-.section {
-    padding: var(--spacing-2xl) 0;
+.book-highlight-container img {
+    width: 45%;
+    border-radius: 10px;
+}
+.book-info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.section-header {
-    text-align: center;
-    margin-bottom: var(--spacing-2xl);
+.book-info>span {
+    background-color: black;
+    color: white;
+   
+    border-radius: 4px;
+    padding: 3px 6px;
+    width: fit-content;
 }
 
-.section-title {
+#book-month-schedule-container {
+    display: flex;
+    justify-content: space-around;
+   
+}
+
+.book-month-schedule {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.book-month-schedule p:first-of-type {
+    font-size: 1.1rem;
     color: var(--text-color);
-    margin-bottom: var(--spacing-md);
+    font-weight: 900;
+    margin: 0;
+}
+#book-month-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+#book-month-buttons > button{
+    width: 100%;
+
+}
+/* section upcoming events  */
+.event-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: fit-content;
+   
+
+}
+.event-item-schedule{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+  
 }
 
-.section-subtitle {
-    color: var(--text-light);
-    font-size: 1.125rem;
-    max-width: 600px;
-    margin: 0 auto;
+.event-item{
+    border: var(--border-color) 1px solid;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+   
+}
+.event-item-title-type span:first-of-type{
+    background-color: var(--text-light);
+    color: var(--border-color);
+    padding: 3px 6px;
+    border-radius: 5px;
+}
+.event-item-title h4{
+    font-size: 1.5rem;
+}
+.event-item-schedule-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+
+}
+.event-item-schedule-buttons >button{
+    width: 100%;
 }
 
-/* =================================
-   ANIMATIONS ET TRANSITIONS
-   ================================= */
-
-/* Animation d'apparition */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* section recommended reads */
+.book-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 100%;
+    gap: 20px;
 }
 
-.animate-fadeInUp {
-    animation: fadeInUp 0.6s ease forwards;
+.book-item{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    gap: 10px;
+    background-color: white;
+    width: 48%;
+    justify-content: space-between;
+
+}
+.book-item-cover{
+    position: relative;
+}
+.book-item-cover > span{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 3px 6px;
+    border-radius: 5px;
+
 }
 
-/* =================================
-   ACCESSIBILITY
-   ================================= */
+.book-item img{
+    max-width: 100%;
 
-/* Focus visible pour navigation au clavier */
-*:focus-visible {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
+}
+.book-item-info{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-/* Réduction des mouvements pour utilisateurs sensibles */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-    
-    html {
-        scroll-behavior: auto;
-    }
+.book-item h4{
+    font-size: 1.25rem;
+    margin: 0;
 }
 
-/* Mode sombre (préférence système) */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --text-color: #F5E6D3;
-        --text-light: #D7CCC8;
-        --background: #1A1A1A;
-        --surface: #2D2D2D;
-        --border-color: #404040;
-        --primary-color: #D2691E;
-        --secondary-color: #CD853F;
-    }
+.book-item p{
+    font-size: 1rem;
+    color: var(--text-color);
+    margin: 0
+}
+.book-item-meta{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.book-item-time{
+    display: flex;
+    justify-content: space-between;
+}
+.book-item-buttons > button{
+    width: 100%;
+}
+#recommended-reads-button{
+    margin:0 auto;
+}
+/* section footer */
+
+.footer-info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    max-width: 100%;
+
+   
+}
+.footer-info ul{
+    margin: 0;
+    padding: 0;
+}
+.infos div:first-child{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: start;
+}
+.infos div:first-child img{
+   max-width: 60px;
+}
+#footer-picto-reseaux{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: start;
 }
 
-/* =================================
-   STYLES SPÉCIFIQUES CLUB DE LECTURE
-   ================================= */
-
-/* Emphase pour les titres de livres */
-em {
-    font-style: italic;
-    color: var(--accent-color);
-    font-weight: 500;
-}
-
-/* Style cosy pour les conteneurs */
-.container {
-    background: linear-gradient(135deg, var(--background) 0%, var(--surface) 100%);
-    border-radius: 1rem;
-    padding: var(--spacing-2xl);
-    margin-top: var(--spacing-xl);
-    box-shadow: 0 8px 32px rgba(139, 69, 19, 0.1);
-}
-
-/* Typographie améliorée pour la lecture */
-p {
-    text-align: justify;
-    hyphens: auto;
-    line-height: 1.7;
+#footer-credits{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    border-top: var(--border-color) 1px solid;
 }
