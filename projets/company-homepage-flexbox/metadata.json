@@ -1,14 +1,15 @@
 {
   "title": "Company Home Page with Flexbox",
+  "description": "Page d'accueil d'entreprise entièrement responsive utilisant Flexbox pour la mise en page et le design moderne",
   "formation": "codecademy-fullstack",
   "formationName": "Codecademy Full-Stack Engineer",
   "module": "Web Development Foundations",
-  "moduleOrder": 1,
+  "moduleOrder": 0,
+  "projectOrder": 1,
   "technologies": ["HTML5", "CSS3", "Flexbox", "Responsive Design"],
-  "status": "in-progress",
+  "status": "completed",
   "difficulty": "beginner",
   "type": "formation-project",
-  "description": "Page d'accueil d'entreprise entièrement responsive utilisant Flexbox pour la mise en page et le design moderne",
   "demoUrl": "index.html",
   "githubUrl": "#",
   "features": [

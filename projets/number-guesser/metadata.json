@@ -1,22 +1,29 @@
 {
   "title": "Number Guesser",
   "description": "Jeu interactif de devinettes de nombres - Projet Codecademy 'Building Interactive Websites'",
+  "formation": "codecademy-fullstack",
+  "formationName": "Codecademy Full-Stack Engineer",
+  "module": "Building Interactive Websites",
+  "moduleOrder": 2,
+  "projectOrder": 1,
   "technologies": ["HTML", "CSS", "JavaScript"],
-  "category": "Interactive Game",
-  "status": "en développement",
-  "date": "2025-09-03",
-  "github": "https://github.com/ewingella/portfolio/tree/main/projets/number-guesser",
-  "demo": "./projets/number-guesser/index.html",
+  "status": "in-progress",
+  "difficulty": "beginner",
+  "type": "formation-project",
+  "demoUrl": "index.html",
+  "githubUrl": "#",
   "features": [
     "Jeu de devinettes interactif",
     "Interface utilisateur dynamique",
     "Logique de jeu JavaScript",
     "Validation des entrées utilisateur"
   ],
-  "learning": [
+  "learningObjectives": [
     "Manipulation du DOM",
     "Gestion des événements",
     "Logique conditionnelle",
     "Fonctions JavaScript"
-  ]
+  ],
+  "dateCreated": "2025-09-03",
+  "dateUpdated": "2025-09-03"
 }

@@ -27,7 +27,9 @@ class FormationProjectsManager {
             // Liste des projets à charger
             const projectPaths = [
                 'projets/css-grid-guide/metadata.json',
-                'projets/company-homepage-flexbox/metadata.json'
+                'projets/company-homepage-flexbox/metadata.json',
+                'projets/responsive-website/metadata.json',
+                'projets/number-guesser/metadata.json'
             ];
 
             for (const projectPath of projectPaths) {

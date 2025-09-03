@@ -1,11 +1,17 @@
 {
   "title": "Pages Turners - Club de Lecture Responsive",
   "description": "Site vitrine pour un club de lecture fictif avec design responsive mobile-first et ambiance cosy chaleureuse",
-  "technologies": ["HTML5", "CSS3", "Responsive Design", "Media Queries", "Mobile-First", "CSS Grid", "CSS Flexbox", "Google Fonts"],
   "formation": "codecademy-fullstack",
+  "formationName": "Codecademy Full-Stack Engineer",
   "module": "Making a Website Responsive",
-  "status": "in-progress",
+  "moduleOrder": 1,
+  "projectOrder": 1,
+  "technologies": ["HTML5", "CSS3", "Responsive Design", "Media Queries", "Mobile-First", "CSS Grid", "CSS Flexbox", "Google Fonts"],
+  "status": "completed",
   "difficulty": "intermediate",
+  "type": "formation-project",
+  "demoUrl": "index.html",
+  "githubUrl": "#",
   "features": [
     "Design responsive mobile-first",
     "Polices Google Fonts (Libre Baskerville + Inter)",
@@ -16,7 +22,7 @@
     "Images responsives et optimisées",
     "Navigation adaptative"
   ],
-  "objectives": [
+  "learningObjectives": [
     "Maîtriser l'approche mobile-first",
     "Créer des layouts adaptatifs avec CSS Grid et Flexbox",
     "Utiliser les media queries efficacement",
@@ -24,5 +30,5 @@
     "Implémenter un design system cohérent"
   ],
   "dateCreated": "2025-09-01",
-  "lastModified": "2025-09-02"
+  "dateUpdated": "2025-09-02"
 }
