@@ -1,0 +1,3 @@
+// MESSAGE GENERATOR - Projet Codecademy
+// Votre code ici...
+console.log("Bienvenue dans le générateur de messages !");
