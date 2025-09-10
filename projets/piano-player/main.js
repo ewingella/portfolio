@@ -5,9 +5,54 @@ keys.forEach(function(key){
   notes.push(document.getElementById(key));
 })
 
+// Créer un contexte audio avec gestion d'erreur
+const audioContext = new (window.AudioContext || window.webkitAudioContext || null)();
+
+// Fréquences des notes de piano (en Hz)
+const noteFrequencies = {
+    'c-key': 261.63,   // Do
+    'c-sharp-key': 277.18,  // Do dièse (note noire)
+    'd-key': 293.66,   // Ré
+    'd-sharp-key': 311.13,  // Ré dièse (note noire)
+    'e-key': 329.63,   // Mi
+    'f-key': 349.23,   // Fa
+    'f-sharp-key': 369.99,  // Fa dièse (note noire)
+    'g-key': 392.00,   // Sol
+    'g-sharp-key': 415.30,  // Sol dièse (note noire)
+    'a-key': 440.00,   // La
+    'a-sharp-key': 466.16,  // La dièse (note noire)
+    'b-key': 493.88,   // Si
+    'high-c-key': 523.25   // Do octave supérieure
+};
+
+// Fonction pour créer et jouer un son à une fréquence donnée
+function playTone(frequency) {
+    // Créer un oscillateur (générateur de son)
+    const oscillator = audioContext.createOscillator();
+    
+    // Créer un contrôleur de volume
+    const gainNode = audioContext.createGain();
+    
+    // Connecter oscillateur -> volume -> haut-parleurs
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+    
+    // Configurer le son
+    oscillator.frequency.value = frequency;  // Définir la fréquence
+    oscillator.type = 'sine';                // Type d'onde (son doux)
+    gainNode.gain.value = 0.3;               // Volume (30%)
+    
+    // Jouer le son pendant 0.5 seconde
+    oscillator.start();
+    oscillator.stop(audioContext.currentTime + 0.5);
+}
 // Write named functions that change the color of the keys below
 function keyPlay(event) {
     event.target.style.backgroundColor = '#fd4d3f';
+    // Récupérer la note associée à la touche
+    const note = event.target.id;
+    const frequency = noteFrequencies[note];
+    playTone(frequency);
 }
 
 // Write a named function with event handler properties
