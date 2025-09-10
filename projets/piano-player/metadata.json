@@ -1,0 +1,33 @@
+{
+  "title": "Piano Player",
+  "description": "Piano virtuel interactif développé avec HTML, CSS et JavaScript. Permet de jouer des notes musicales en cliquant sur les touches ou en utilisant le clavier. Projet axé sur la manipulation DOM et les événements.",
+  "formation": "codecademy",
+  "formationName": "Codecademy",
+  "module": "Building Interactive Websites",
+  "moduleOrder": 1,
+  "projectOrder": 4,
+  "technologies": ["HTML", "CSS", "JavaScript", "DOM", "Event Handling", "Audio API"],
+  "status": "en_cours",
+  "difficulty": "intermédiaire",
+  "type": "web_application",
+  "demoUrl": null,
+  "githubUrl": "https://github.com/ewingella/portfolio/tree/dev/projets/piano-player",
+  "features": [
+    "Interface piano visuelle avec touches blanches et noires",
+    "Lecture de sons musicaux via JavaScript",
+    "Interaction souris et clavier",
+    "Animations visuelles lors du clic",
+    "Mapping des touches du clavier aux notes",
+    "Design responsive"
+  ],
+  "learningObjectives": [
+    "Manipulation avancée du DOM",
+    "Gestion des événements (click, keydown)",
+    "Intégration Audio API HTML5",
+    "Création d'interfaces interactives",
+    "Animation CSS et JavaScript",
+    "Event listeners et event handling"
+  ],
+  "dateCreated": "2025-09-10",
+  "dateUpdated": "2025-09-10"
+}
