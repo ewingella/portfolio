@@ -7,10 +7,10 @@
   "moduleOrder": 1,
   "projectOrder": 4,
   "technologies": ["HTML", "CSS", "JavaScript", "DOM", "Event Handling", "Audio API"],
-  "status": "en_cours",
-  "difficulty": "intermédiaire",
+  "status": "completed",
+  "difficulty": "intermediate",
   "type": "web_application",
-  "demoUrl": null,
+  "demoUrl": "index.html",
   "githubUrl": "https://github.com/ewingella/portfolio/tree/dev/projets/piano-player",
   "features": [
     "Interface piano visuelle avec touches blanches et noires",

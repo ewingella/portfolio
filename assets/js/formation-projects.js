@@ -29,7 +29,8 @@ class FormationProjectsManager {
                 'projets/css-grid-guide/metadata.json',
                 'projets/company-homepage-flexbox/metadata.json',
                 'projets/responsive-website/metadata.json',
-                'projets/number-guesser/metadata.json'
+                'projets/number-guesser/metadata.json',
+                'projets/piano-player/metadata.json'
             ];
 
             for (const projectPath of projectPaths) {
