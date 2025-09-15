@@ -1,0 +1,22 @@
+{
+    "title": "WorkAround Explorer",
+    "description": "Projet Codecademy pour explorer les données salariales et pratiquer les modules JavaScript ES6",
+    "technologies": ["HTML", "CSS", "JavaScript", "ES6 Modules"],
+    "formation": "Codecademy - JavaScript",
+    "status": "En développement",
+    "dateCreated": "2025-09-15",
+    "features": [
+        "Exploration de données salariales",
+        "Modules JavaScript ES6",
+        "Manipulation de données",
+        "Interface utilisateur interactive"
+    ],
+    "learningObjectives": [
+        "Comprendre les modules ES6",
+        "Import/Export de fonctions",
+        "Séparation du code en modules",
+        "Manipulation de données complexes"
+    ],
+    "isOnline": false,
+    "repositoryPath": "projets/workaround-explorer"
+}
