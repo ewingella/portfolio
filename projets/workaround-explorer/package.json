@@ -1,0 +1,19 @@
+{
+  "name": "workaround-explorer",
+  "version": "1.0.0",
+  "description": "Projet Codecademy pour explorer les données salariales et pratiquer les modules JavaScript ES6",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "mocha",
+    "test:watch": "mocha --watch",
+    "start": "open index.html"
+  },
+  "keywords": ["javascript", "es6", "modules", "codecademy", "salary-data"],
+  "author": "Maria Alexandre",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^10.2.0",
+    "chai": "^4.3.8"
+  }
+}
