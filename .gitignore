@@ -56,3 +56,6 @@ build/
 # Temporary folders
 tmp/
 temp/
+
+# Sandbox/Test directories (uncomment if you want to exclude from git)
+# projets/_sandbox/
