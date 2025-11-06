@@ -12,9 +12,9 @@ Chaque projet doit avoir un `metadata.json` avec cette structure :
 ```json
 {
   "title": "Nom du Projet",
-  "formation": "codecademy-fullstack",
-  "formationName": "Codecademy Full-Stack Engineer",
-  "module": "Web Development Foundations",
+  "formation": "codecademy-fullstack|freecodecamp",
+  "formationName": "Codecademy Full-Stack Engineer|FreeCodeCamp",
+  "module": "Web Development Foundations|Responsive Web Design",
   "moduleOrder": 1,
   "projectOrder": 2,
   "technologies": ["HTML5", "CSS3", "JavaScript"],
@@ -25,14 +25,15 @@ Chaque projet doit avoir un `metadata.json` avec cette structure :
   "features": ["Feature 1", "Feature 2"],
   "learningObjectives": ["Objectif 1", "Objectif 2"],
   "dateCreated": "2025-08-25",
-  "dateUpdated": "2025-08-25"
+  "dateUpdated": "2025-08-25",
+  "demoUrl": "index.html"
 }
 ```
 
 ### Organisation Visuelle
 
 ```
-📚 Formation Full-Stack Engineer
+📚 Formation Codecademy Full-Stack Engineer
 ├── 📖 Module 1: Web Development Foundations
 │   ├── ✅ Company Homepage with Flexbox (Débutant)
 │   └── 🔄 Personal Portfolio Site (Intermédiaire)
@@ -42,7 +43,42 @@ Chaque projet doit avoir un `metadata.json` avec cette structure :
 └── 📖 Module 3: Frontend Development
     ├── 📋 React Component Library (Avancé)
     └── 📋 E-commerce Frontend (Avancé)
+
+📚 Formation FreeCodeCamp
+├── 📖 Certification 1: Responsive Web Design
+│   ├── ⏳ Survey Form (Débutant)
+│   ├── ⏳ Tribute Page (Débutant)
+│   ├── ⏳ Technical Documentation (Intermédiaire)
+│   ├── ⏳ Product Landing Page (Intermédiaire)
+│   └── ⏳ Personal Portfolio (Intermédiaire)
+├── 📖 Certification 2: JavaScript Algorithms and Data Structures
+│   └── ⏳ Projets algorithmiques (Avancé)
+└── 📖 Certification 3: Front End Development Libraries
+    └── ⏳ Projets React/Redux (Avancé)
 ```
+
+## 🎓 Formations Disponibles
+
+### Codecademy Full-Stack Engineer
+**Clé:** `codecademy-fullstack`
+
+Modules disponibles :
+1. Web Development Foundations (moduleOrder: 1)
+2. Building Interactive Websites (moduleOrder: 2)
+3. Frontend Development (moduleOrder: 3)
+4. Backend Development (moduleOrder: 4)
+5. Full-Stack Development (moduleOrder: 5)
+6. Portfolio & Career Prep (moduleOrder: 6)
+
+### FreeCodeCamp
+**Clé:** `freecodecamp`
+
+Certifications disponibles :
+1. Responsive Web Design (moduleOrder: 1)
+2. JavaScript Algorithms and Data Structures (moduleOrder: 2)
+3. Front End Development Libraries (moduleOrder: 3)
+4. Data Visualization (moduleOrder: 4)
+5. Back End Development and APIs (moduleOrder: 5)
 
 ## 🔧 Utilisation
 
@@ -74,6 +110,7 @@ const projectPaths = [
 <script>
 document.addEventListener('DOMContentLoaded', async () => {
     const manager = new FormationProjectsManager();
+    // Utilisez 'codecademy-fullstack' ou 'freecodecamp'
     await manager.init('codecademy-fullstack', 'formation-projects-container');
 });
 </script>
@@ -110,7 +147,9 @@ portfolio/
 │       └── formation-projects.js     # Logique JavaScript
 ├── formations/
 │   ├── index.html                    # Hub des formations
-│   └── codecademy-fullstack.html     # Page de formation
+│   ├── codecademy-fullstack.html     # Page Codecademy
+│   ├── freecodecamp.html             # Page FreeCodeCamp
+│   └── README.md                     # Documentation
 └── projets/
     ├── css-grid-guide/
     │   └── metadata.json             # Métadonnées du projet
@@ -134,16 +173,48 @@ portfolio/
 - [ ] Export des données de formation
 - [ ] Intégration avec API Codecademy
 
-## 📖 Exemple d'Usage
+## 📖 Exemples d'Usage
 
+### Projet Codecademy
 Pour ajouter le projet "React Todo App" au module "Frontend Development" :
 
-1. **Créer** `/projets/react-todo-app/metadata.json`
+1. **Créer** `/projets/react-todo-app/metadata.json` avec :
+```json
+{
+  "title": "React Todo App",
+  "formation": "codecademy-fullstack",
+  "formationName": "Codecademy Full-Stack Engineer",
+  "module": "Frontend Development",
+  "moduleOrder": 3,
+  "projectOrder": 1
+}
+```
 2. **Ajouter** le chemin dans `formation-projects.js`
-3. **Actualiser** la page de formation
+3. **Actualiser** la page `codecademy-fullstack.html`
+
+### Projet FreeCodeCamp
+Pour ajouter le projet "Survey Form" à la certification "Responsive Web Design" :
+
+1. **Créer** `/projets/fcc-survey-form/metadata.json` avec :
+```json
+{
+  "title": "Survey Form",
+  "formation": "freecodecamp",
+  "formationName": "FreeCodeCamp",
+  "module": "Responsive Web Design",
+  "moduleOrder": 1,
+  "projectOrder": 1,
+  "difficulty": "beginner",
+  "technologies": ["HTML5", "CSS3"],
+  "features": ["Formulaire responsive", "Validation HTML5"],
+  "learningObjectives": ["Formulaires HTML", "CSS responsive"]
+}
+```
+2. **Ajouter** le chemin dans `formation-projects.js`
+3. **Actualiser** la page `freecodecamp.html`
 
 Le projet apparaîtra automatiquement dans la bonne section !
 
 ---
 
-**Système créé pour optimiser le suivi de formation Full-Stack Engineer**
+**Système créé pour optimiser le suivi de formations web multiples**

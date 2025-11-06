@@ -1,0 +1,34 @@
+{
+  "title": "Survey Form",
+  "description": "Formulaire d'enquête responsive avec validation HTML5 et design moderne",
+  "formation": "freecodecamp",
+  "formationName": "FreeCodeCamp",
+  "module": "Responsive Web Design",
+  "moduleOrder": 1,
+  "projectOrder": 1,
+  "difficulty": "beginner",
+  "status": "planned",
+  "type": "formation-project",
+  "technologies": [
+    "HTML5",
+    "CSS3",
+    "Responsive Design"
+  ],
+  "features": [
+    "Formulaire responsive avec différents types de champs",
+    "Validation HTML5 native",
+    "Design moderne et accessible",
+    "Labels et placeholders clairs",
+    "Bouton de soumission stylisé"
+  ],
+  "learningObjectives": [
+    "Maîtriser la création de formulaires HTML5",
+    "Utiliser les attributs de validation",
+    "Appliquer les principes de design responsive",
+    "Respecter les bonnes pratiques d'accessibilité",
+    "Structurer un formulaire de manière sémantique"
+  ],
+  "dateCreated": "2025-11-06",
+  "dateUpdated": "2025-11-06",
+  "demoUrl": "index.html"
+}

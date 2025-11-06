@@ -30,7 +30,8 @@ class FormationProjectsManager {
                 'projets/company-homepage-flexbox/metadata.json',
                 'projets/responsive-website/metadata.json',
                 'projets/number-guesser/metadata.json',
-                'projets/piano-player/metadata.json'
+                'projets/piano-player/metadata.json',
+                'projets/fcc-survey-form/metadata.json'
             ];
 
             for (const projectPath of projectPaths) {
