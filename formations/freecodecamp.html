@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formation FreeCodeCamp - Maria Alexandre</title>
     <meta name="description" content="Découvrez mon parcours de formation FreeCodeCamp avec tous les projets réalisés et compétences acquises">
-    <link rel="stylesheet" href="../assets/css/portfolio.css">
-    <link rel="stylesheet" href="../assets/css/formation-projects.css">
+    <!-- <link rel="stylesheet" href="../assets/css/portfolio.css"> -->
+    <!-- <link rel="stylesheet" href="../assets/css/formation-projects.css"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- w -->
     <style>
         .formation-hero {
             background: linear-gradient(135deg, #0a0a23, #1b1b32);
@@ -300,6 +300,163 @@
                 width: fit-content;
             }
         }
+        
+        /* Force visibility of project cards */
+        #formation-projects-container {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            min-height: 500px !important;
+            background: #f8fafc !important;
+            padding: 2rem !important;
+        }
+        
+        .formation-projects {
+            display: block !important;
+            visibility: visible !important;
+        }
+        
+        .module-section {
+            background: white !important;
+            margin-bottom: 2rem !important;
+            display: block !important;
+            visibility: visible !important;
+            padding: 0 !important;
+        }
+        
+        .module-header {
+            background: linear-gradient(135deg, #0a0a23, #1b1b32) !important;
+            display: flex !important;
+            visibility: visible !important;
+            padding: 1.5rem !important;
+        }
+        
+        .module-projects {
+            display: grid !important;
+            visibility: visible !important;
+            padding: 2rem !important;
+            background: #ffffff !important;
+            min-height: 400px !important;
+        }
+        
+        .project-card {
+            background: #fef2f2 !important;
+            border: 3px solid #ef4444 !important;
+            min-height: 300px !important;
+            margin-bottom: 1rem !important;
+            padding: 2rem !important;
+            display: flex !important;
+            flex-direction: column !important;
+            visibility: visible !important;
+        }
+        
+        .project-card * {
+            visibility: visible !important;
+            display: block !important;
+        }
+        
+        .project-header {
+            margin-bottom: 1rem !important;
+        }
+        
+        .project-title {
+            color: #0a0a23 !important;
+            font-size: 1.5rem !important;
+            font-weight: 700 !important;
+            display: block !important;
+            margin-bottom: 1rem !important;
+        }
+        
+        .project-meta {
+            display: flex !important;
+            gap: 1rem !important;
+            margin-top: 0.5rem !important;
+        }
+        
+        .project-difficulty,
+        .project-status {
+            display: inline-block !important;
+            padding: 0.5rem 1rem !important;
+            background: #0a0a23 !important;
+            color: white !important;
+            border-radius: 5px !important;
+            font-size: 0.9rem !important;
+        }
+        
+        .project-description {
+            color: #1e293b !important;
+            font-size: 1.1rem !important;
+            display: block !important;
+            margin: 1rem 0 !important;
+            line-height: 1.6 !important;
+        }
+        
+        .project-technologies,
+        .project-features,
+        .project-objectives {
+            display: block !important;
+            margin: 1rem 0 !important;
+        }
+        
+        .tech-tag {
+            display: inline-block !important;
+            background: #dbeafe !important;
+            color: #1e40af !important;
+            padding: 0.3rem 0.8rem !important;
+            border-radius: 5px !important;
+            margin: 0.2rem !important;
+            font-weight: 600 !important;
+        }
+        
+        .project-features strong,
+        .project-objectives strong {
+            color: #0a0a23 !important;
+            font-size: 1.1rem !important;
+            display: block !important;
+            margin-bottom: 0.5rem !important;
+        }
+        
+        .project-features ul,
+        .project-objectives ul {
+            display: block !important;
+            padding-left: 1.5rem !important;
+            margin: 0.5rem 0 !important;
+        }
+        
+        .project-features li,
+        .project-objectives li {
+            display: list-item !important;
+            color: #475569 !important;
+            margin: 0.3rem 0 !important;
+            font-size: 1rem !important;
+        }
+        
+        .project-actions {
+            display: flex !important;
+            gap: 1rem !important;
+            margin-top: 1.5rem !important;
+        }
+        
+        .btn-project {
+            display: inline-block !important;
+            padding: 1rem 1.5rem !important;
+            font-size: 1rem !important;
+            font-weight: 600 !important;
+            border-radius: 8px !important;
+            text-decoration: none !important;
+            flex: 1 !important;
+        }
+        
+        .btn-primary {
+            background: #0a0a23 !important;
+            color: white !important;
+        }
+        
+        .btn-secondary {
+            background: white !important;
+            color: #0a0a23 !important;
+            border: 2px solid #0a0a23 !important;
+        }
     </style>
 </head>
 <body>
@@ -439,12 +596,6 @@
             <!-- Container pour les projets dynamiques -->
             <div id="formation-projects-container" class="formation-projects loading">
                 <!-- Le contenu sera chargé dynamiquement par JavaScript -->
-                <!-- Pour l'instant, aucun projet n'est disponible -->
-                <div style="text-align: center; padding: 3rem; color: var(--text-secondary);">
-                    <span style="font-size: 3rem; display: block; margin-bottom: 1rem;">🚀</span>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-primary);">Bientôt disponible</h3>
-                    <p>Les projets de cette formation seront ajoutés au fur et à mesure de ma progression.</p>
-                </div>
             </div>
         </div>
     </section>

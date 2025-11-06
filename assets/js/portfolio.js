@@ -18,6 +18,11 @@ class Portfolio {
         const navbar = document.querySelector('.navbar');
         const navLinks = document.querySelectorAll('.nav-link');
 
+        // Si pas de navbar, ne rien faire
+        if (!navbar) {
+            return;
+        }
+
         // Mise en évidence du lien actif
         const updateActiveLink = () => {
             const scrollPosition = window.scrollY + 100;

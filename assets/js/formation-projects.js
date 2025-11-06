@@ -31,7 +31,8 @@ class FormationProjectsManager {
                 'projets/responsive-website/metadata.json',
                 'projets/number-guesser/metadata.json',
                 'projets/piano-player/metadata.json',
-                'projets/fcc-survey-form/metadata.json'
+                'projets/fcc-survey-form/metadata.json',
+                'projets/fcc-drum-machine/metadata.json'
             ];
 
             for (const projectPath of projectPaths) {
@@ -276,9 +277,22 @@ class FormationProjectsManager {
      */
     async init(formationKey, containerId) {
         await this.loadProjects();
+        console.log('🔍 Formation recherchée:', formationKey);
+        console.log('📚 Formations disponibles:', Array.from(this.formations.keys()));
+        
+        const formation = this.formations.get(formationKey);
+        console.log('🎓 Formation trouvée:', formation);
+        
         const container = document.getElementById(containerId);
         if (container) {
-            container.innerHTML = this.generateFormationHTML(formationKey);
+            const html = this.generateFormationHTML(formationKey);
+            console.log('📝 HTML généré:', html.length > 0 ? `${html.length} caractères` : 'VIDE');
+            console.log('📄 Aperçu HTML:', html.substring(0, 500));
+            container.innerHTML = html;
+            container.classList.remove('loading'); // Retirer la classe loading
+            console.log('✅ Container mis à jour');
+        } else {
+            console.error('❌ Container non trouvé:', containerId);
         }
     }
 }

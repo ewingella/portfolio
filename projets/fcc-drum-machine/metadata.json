@@ -1,0 +1,36 @@
+{
+  "title": "Drum Machine",
+  "description": "Machine à rythmes interactive avec sons de batterie contrôlée par clavier",
+  "formation": "freecodecamp",
+  "formationName": "FreeCodeCamp",
+  "module": "Front End Development Libraries",
+  "moduleOrder": 3,
+  "projectOrder": 3,
+  "difficulty": "intermediate",
+  "status": "planned",
+  "type": "formation-project",
+  "technologies": [
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "React",
+    "Audio API"
+  ],
+  "features": [
+    "Interface de batterie avec 9 pads",
+    "Lecture de sons au clic et au clavier",
+    "Affichage du son joué",
+    "Contrôle du volume",
+    "Design responsive"
+  ],
+  "learningObjectives": [
+    "Manipuler l'API Audio du navigateur",
+    "Gérer les événements clavier et souris",
+    "Créer une interface interactive avec React",
+    "Synchroniser audio et interface utilisateur",
+    "Implémenter un contrôle de volume"
+  ],
+  "dateCreated": "2025-11-06",
+  "dateUpdated": "2025-11-06",
+  "demoUrl": "index.html"
+}
