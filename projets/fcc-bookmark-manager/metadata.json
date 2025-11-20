@@ -1,0 +1,36 @@
+{
+  "title": "Bookmark Manager App",
+  "description": "Application de gestion de favoris avec sauvegarde locale et interface moderne",
+  "formation": "freecodecamp",
+  "formationName": "FreeCodeCamp",
+  "module": "JavaScript Algorithms and Data Structures",
+  "moduleOrder": 2,
+  "projectOrder": 2,
+  "difficulty": "intermediate",
+  "status": "planned",
+  "type": "formation-project",
+  "technologies": [
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "Local Storage",
+    "DOM Manipulation"
+  ],
+  "features": [
+    "Ajout et suppression de favoris",
+    "Sauvegarde locale avec localStorage",
+    "Interface utilisateur intuitive",
+    "Validation des URLs",
+    "Design responsive et moderne"
+  ],
+  "learningObjectives": [
+    "Maîtriser la manipulation du DOM",
+    "Utiliser localStorage pour la persistance des données",
+    "Gérer les événements JavaScript",
+    "Valider et manipuler les URLs",
+    "Créer une interface CRUD complète"
+  ],
+  "dateCreated": "2025-11-20",
+  "dateUpdated": "2025-11-20",
+  "demoUrl": "index.html"
+}
