@@ -1,0 +1,36 @@
+{
+  "title": "Sorting Visualizer",
+  "description": "Visualiseur d'algorithmes de tri avec animations interactives",
+  "formation": "freecodecamp",
+  "formationName": "FreeCodeCamp",
+  "module": "JavaScript Algorithms and Data Structures",
+  "moduleOrder": 2,
+  "projectOrder": 4,
+  "difficulty": "advanced",
+  "status": "planned",
+  "type": "formation-project",
+  "technologies": [
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "DOM Manipulation",
+    "Algorithms"
+  ],
+  "features": [
+    "Visualisation d'algorithmes de tri (Bubble, Quick, Merge, etc.)",
+    "Animations interactives en temps réel",
+    "Contrôle de la vitesse d'animation",
+    "Génération de données aléatoires",
+    "Comparaison de performances"
+  ],
+  "learningObjectives": [
+    "Comprendre les algorithmes de tri classiques",
+    "Manipuler le DOM pour créer des animations",
+    "Gérer les délais et l'asynchrone (setTimeout, async/await)",
+    "Implémenter des algorithmes complexes",
+    "Créer une interface utilisateur interactive"
+  ],
+  "dateCreated": "2025-11-27",
+  "dateUpdated": "2025-11-27",
+  "demoUrl": "index.html"
+}

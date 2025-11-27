@@ -33,6 +33,7 @@ class FormationProjectsManager {
                 'projets/piano-player/metadata.json',
                 'projets/fcc-survey-form/metadata.json',
                 'projets/fcc-bookmark-manager/metadata.json',
+                'projets/fcc-sorting-visualizer/metadata.json',
                 'projets/fcc-drum-machine/metadata.json'
             ];
 

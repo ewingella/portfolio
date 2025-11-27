@@ -1,124 +1,62 @@
-const taskForm = document.getElementById("task-form");
-const confirmCloseDialog = document.getElementById("confirm-close-dialog");
-const openTaskFormBtn = document.getElementById("open-task-form-btn");
-const closeTaskFormBtn = document.getElementById("close-task-form-btn");
-const addOrUpdateTaskBtn = document.getElementById("add-or-update-task-btn");
-const cancelBtn = document.getElementById("cancel-btn");
-const discardBtn = document.getElementById("discard-btn");
-const tasksContainer = document.getElementById("tasks-container");
-const titleInput = document.getElementById("title-input");
-const dateInput = document.getElementById("date-input");
-const descriptionInput = document.getElementById("description-input");
+const conversionTable = {
+  cup: { gram: 240, ounce: 8.0, teaspoon: 48 },
+  gram: { cup: 1 / 240, ounce: 0.0353, teaspoon: 0.2 },
+  ounce: { cup: 0.125, gram: 28.35, teaspoon: 6 },
+  teaspoon: { cup: 1 / 48, gram: 5, ounce: 0.167 },
+}
 
-const taskData = [];
-let currentTask = {};
+const convertQuantity = (fromUnit) => (toUnit) => (quantity) => {
+  const conversionRate = conversionTable[fromUnit][toUnit];
+  return quantity * conversionRate;
+}
 
-const addOrUpdateTask = () => {
-  const dataArrIndex = taskData.findIndex((item) => item.id === currentTask.id);
-  const taskObj = {
-    id: `${titleInput.value.toLowerCase().split(" ").join("-")}-${Date.now()}`,
-    title: titleInput.value,
-    date: dateInput.value,
-    description: descriptionInput.value,
-  };
+const gramsResult = convertQuantity("cup")("gram")(2);
+console.log(gramsResult);
 
-  if (dataArrIndex === -1) {
-    taskData.unshift(taskObj);
-  } else {
-    taskData[dataArrIndex] = taskObj;
-  }
+const adjustForServings = (baseQuantity) => (newServings) =>
+  (baseQuantity / 1) * newServings;
 
-  updateTaskContainer()
-  reset()
+const servingsResult = adjustForServings(4)(6);
+console.log(servingsResult);
+
+const processIngredient = (baseQuantity, baseUnit, newUnit, newServings) => {
+  const adjustedQuantity = adjustForServings(baseQuantity)(newServings);
+  const convertedQuantity =
+    convertQuantity(baseUnit)(newUnit)(adjustedQuantity);
+  return convertedQuantity.toFixed(2);
 };
 
-const updateTaskContainer = () => {
-  tasksContainer.innerHTML = "";
+const ingredientName = document.getElementById("ingredient");
+const ingredientQuantity = document.getElementById("quantity");
+const unitToConvert = document.getElementById("unit");
+const numberOfServings = document.getElementById("servings");
+const recipeForm = document.getElementById("recipe-form");
+const resultList = document.getElementById("result-list");
 
-  taskData.forEach(
-    ({ id, title, date, description }) => {
-        tasksContainer.innerHTML += `
-        <div class="task" id="${id}">
-          <p><strong>Title:</strong> ${title}</p>
-          <p><strong>Date:</strong> ${date}</p>
-          <p><strong>Description:</strong> ${description}</p>
-          <button onclick="editTask(this)" type="button" class="btn">Edit</button>
-          <button onclick="deleteTask(this)" type="button" class="btn">Delete</button> 
-        </div>
-      `
-    }
-  );
-};
+const units = ["cup", "gram", "ounce", "teaspoon"];
 
 
-const deleteTask = (buttonEl) => {
-  const dataArrIndex = taskData.findIndex(
-    (item) => item.id === buttonEl.parentElement.id
-  );
-
-  buttonEl.parentElement.remove();
-  taskData.splice(dataArrIndex, 1);
-}
-
-const editTask = (buttonEl) => {
-    const dataArrIndex = taskData.findIndex(
-    (item) => item.id === buttonEl.parentElement.id
-  );
-
-  currentTask = taskData[dataArrIndex];
-
-  titleInput.value = currentTask.title;
-  dateInput.value = currentTask.date;
-  descriptionInput.value = currentTask.description;
-
-  addOrUpdateTaskBtn.innerText = "Update Task";
-
-  taskForm.classList.toggle("hidden");  
-}
-
-const reset = () => {
-  titleInput.value = "";
-  dateInput.value = "";
-  descriptionInput.value = "";
-  taskForm.classList.toggle("hidden");
-  currentTask = {};
-}
-
-openTaskFormBtn.addEventListener("click", () =>
-  taskForm.classList.toggle("hidden")
-);
-
-closeTaskFormBtn.addEventListener("click", () => {
-  const formInputsContainValues = titleInput.value || dateInput.value || descriptionInput.value;
-  const formInputValuesUpdated = titleInput.value !== currentTask.title || dateInput.value !== currentTask.date || descriptionInput.value !== currentTask.description;
-
-  if (formInputsContainValues && formInputValuesUpdated) {
-    confirmCloseDialog.showModal();
-  } else {
-    reset();
-  }
-});
-
-cancelBtn.addEventListener("click", () => confirmCloseDialog.close());
-
-discardBtn.addEventListener("click", () => {
-  confirmCloseDialog.close();
-  reset()
-});
-
-taskForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  addOrUpdateTask();
-});
-
-const myTaskArr = [
-  { task: "Walk the Dog", date: "22-04-2022" },
-  { task: "Read some books", date: "02-11-2023" },
-  { task: "Watch football", date: "10-08-2021" },
+const updateResultsList = () => {
+  resultList.innerHTML = "";
   
-];
-localStorage.setItem("data", JSON.stringify(myTaskArr))
-const getTaskArr = JSON.parse(localStorage.getItem("data"))
+  units.forEach(unit => {
+    // Vérifier si l'unité est DIFFÉRENTE de l'unité actuelle
+    if (unit !== unitToConvert.value.toLowerCase()) {
+      // Convertir la quantité vers cette unité
+      const convertedQuantity = processIngredient(
+        parseFloat(ingredientQuantity.value),  // Quantité de base
+        unitToConvert.value.toLowerCase(),     // Unité d'origine
+        unit,                                   // Unité cible
+        parseFloat(numberOfServings.value)     // Nombre de portions
+      );
+      
+      // Ajouter un élément de liste
+      resultList.innerHTML += `<li>${ingredientName.value}: ${convertedQuantity} ${unit}</li>`;
+    }
+  });
+}
 
-console.log(getTaskArr)
+recipeForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  updateResultsList();
+});
