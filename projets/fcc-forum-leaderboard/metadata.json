@@ -1,0 +1,36 @@
+{
+  "title": "fCC Forum Leaderboard",
+  "description": "Tableau de classement du forum FreeCodeCamp avec données API et filtrage",
+  "formation": "freecodecamp",
+  "formationName": "FreeCodeCamp",
+  "module": "JavaScript Algorithms and Data Structures",
+  "moduleOrder": 2,
+  "projectOrder": 5,
+  "difficulty": "intermediate",
+  "status": "planned",
+  "type": "formation-project",
+  "technologies": [
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "Fetch API",
+    "DOM Manipulation"
+  ],
+  "features": [
+    "Récupération de données depuis l'API du forum fCC",
+    "Affichage dynamique du classement",
+    "Filtrage et tri des données",
+    "Interface responsive",
+    "Gestion des erreurs API"
+  ],
+  "learningObjectives": [
+    "Maîtriser les requêtes API avec fetch()",
+    "Manipuler et transformer des données JSON",
+    "Créer des interfaces dynamiques",
+    "Gérer les états de chargement et erreurs",
+    "Implémenter des systèmes de filtrage"
+  ],
+  "dateCreated": "2025-12-02",
+  "dateUpdated": "2025-12-02",
+  "demoUrl": "index.html"
+}

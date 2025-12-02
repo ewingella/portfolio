@@ -1,62 +1,44 @@
-const conversionTable = {
-  cup: { gram: 240, ounce: 8.0, teaspoon: 48 },
-  gram: { cup: 1 / 240, ounce: 0.0353, teaspoon: 0.2 },
-  ounce: { cup: 0.125, gram: 28.35, teaspoon: 6 },
-  teaspoon: { cup: 1 / 48, gram: 5, ounce: 0.167 },
-}
+const authorContainer = document.getElementById('author-container');
+const loadMoreBtn = document.getElementById('load-more-btn');
 
-const convertQuantity = (fromUnit) => (toUnit) => (quantity) => {
-  const conversionRate = conversionTable[fromUnit][toUnit];
-  return quantity * conversionRate;
-}
+let startingIndex = 0;
+let endingIndex = 8;
+let authorDataArr = [];
 
-const gramsResult = convertQuantity("cup")("gram")(2);
-console.log(gramsResult);
+fetch('https://cdn.freecodecamp.org/curriculum/news-author-page/authors.json')
+  .then((res) => res.json())
+  .then((data) => {
+    authorDataArr = data;
+    displayAuthors(authorDataArr.slice(startingIndex, endingIndex));  
+  })
+  .catch((err) => {
+    authorContainer.innerHTML = '<p class="error-msg">There was an error loading the authors</p>';
+    
+  });
 
-const adjustForServings = (baseQuantity) => (newServings) =>
-  (baseQuantity / 1) * newServings;
+const fetchMoreAuthors = () => {
+  startingIndex += 8;
+  endingIndex += 8;
 
-const servingsResult = adjustForServings(4)(6);
-console.log(servingsResult);
-
-const processIngredient = (baseQuantity, baseUnit, newUnit, newServings) => {
-  const adjustedQuantity = adjustForServings(baseQuantity)(newServings);
-  const convertedQuantity =
-    convertQuantity(baseUnit)(newUnit)(adjustedQuantity);
-  return convertedQuantity.toFixed(2);
+  displayAuthors(authorDataArr.slice(startingIndex, endingIndex));
+  if (authorDataArr.length <= endingIndex) {
+    loadMoreBtn.disabled = true;
+    loadMoreBtn.textContent = 'No more data to load';
+  }
 };
 
-const ingredientName = document.getElementById("ingredient");
-const ingredientQuantity = document.getElementById("quantity");
-const unitToConvert = document.getElementById("unit");
-const numberOfServings = document.getElementById("servings");
-const recipeForm = document.getElementById("recipe-form");
-const resultList = document.getElementById("result-list");
-
-const units = ["cup", "gram", "ounce", "teaspoon"];
-
-
-const updateResultsList = () => {
-  resultList.innerHTML = "";
-  
-  units.forEach(unit => {
-    // Vérifier si l'unité est DIFFÉRENTE de l'unité actuelle
-    if (unit !== unitToConvert.value.toLowerCase()) {
-      // Convertir la quantité vers cette unité
-      const convertedQuantity = processIngredient(
-        parseFloat(ingredientQuantity.value),  // Quantité de base
-        unitToConvert.value.toLowerCase(),     // Unité d'origine
-        unit,                                   // Unité cible
-        parseFloat(numberOfServings.value)     // Nombre de portions
-      );
-      
-      // Ajouter un élément de liste
-      resultList.innerHTML += `<li>${ingredientName.value}: ${convertedQuantity} ${unit}</li>`;
-    }
+const displayAuthors = (authors) => {
+  authors.forEach(({ author, image, url, bio }, index) => {
+    authorContainer.innerHTML += `
+    <div id="${index}" class="user-card">
+      <h2 class="author-name">${author}</h2>
+      <img class="user-img" src="${image}" alt="${author} avatar" />
+      <div class="purple-divider"></div>
+      <p class="bio">${bio.length > 50 ? bio.slice(0, 50) + '...' : bio}</p>
+      <a class="author-link" href="${url}" target="_blank">${author} author page</a>
+    </div>
+  `;
   });
-}
+};
 
-recipeForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  updateResultsList();
-});
+loadMoreBtn.addEventListener('click', fetchMoreAuthors);
