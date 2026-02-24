@@ -1,6 +1,51 @@
 # 📋 Template de Présentation Projet
 
-## Structure HTML standardisée pour tous les futurs projets
+> **📚 Voir aussi :**
+> - [PROJECT_STRUCTURE.md](../PROJECT_STRUCTURE.md) - Architecture globale du portfolio
+> - [NAVIGATION_FORMATIONS.md](../NAVIGATION_FORMATIONS.md) - Système de navigation
+
+Ce guide fournit le template HTML et les guidelines visuelles pour ajouter un nouveau projet dans `projets/index.html`.
+
+## 📁 Structure complète d'un projet
+
+Chaque projet doit contenir :
+
+```
+mon-projet/
+├── index.html           # Page principale du projet
+├── README.md            # Documentation complète
+├── metadata.json        # ⚠️ OBLIGATOIRE - Métadonnées pour affichage dynamique
+├── styles.css          # Styles du projet
+├── script.js           # JavaScript (si applicable)
+└── images/             # Ressources visuelles (si applicable)
+```
+
+### 📄 Fichier metadata.json (OBLIGATOIRE)
+
+**Ce fichier permet l'affichage automatique du projet sur les pages de formations.**
+
+```json
+{
+  "title": "Titre du Projet",
+  "formation": "codecademy-fullstack",
+  "module": "Module ou Section",
+  "status": "completed",
+  "difficulty": "intermediate",
+  "technologies": ["HTML5", "CSS3", "JavaScript"],
+  "description": "Description courte du projet",
+  "featured": true
+}
+```
+
+**Valeurs possibles :**
+- `formation` : `"codecademy-fullstack"`, `"freecodecamp"`, `"personal"`
+- `status` : `"completed"`, `"in-progress"`, `"planned"`
+- `difficulty` : `"beginner"`, `"intermediate"`, `"advanced"`
+- `featured` : `true` / `false` (projet mis en avant)
+
+## 🎨 Structure HTML standardisée pour la page index.html
+
+**Ajouter ce code dans `projets/index.html` pour afficher la carte du projet :**
 
 ```html
 <!-- [NOM DU PROJET] - [DESCRIPTION COURTE] -->
@@ -123,16 +168,58 @@ Exemples :
 - `portfolio-theme` : Violet/rose gradient
 - `game-theme` : Dégradé gaming (violet/cyan)
 
-## 🚀 Processus d'ajout d'un nouveau projet
+## 🚀 Workflow d'ajout d'un nouveau projet
 
-1. **Créer le dossier projet** dans `/projets/`
-2. **Développer le projet** avec README.md
-3. **Créer le thème visuel** dans `formation-projects.css` si nécessaire
-4. **Ajouter l'article HTML** dans `index.html` en suivant le template
-5. **Tester l'aperçu** et ajuster les styles
-6. **Commit avec message** : `feat: add [nom-projet] with [techno-principale]`
+### Étape 1 : Créer la structure
+```bash
+cd projets/
+mkdir mon-nouveau-projet
+cd mon-nouveau-projet
+touch index.html README.md metadata.json styles.css
+```
+
+### Étape 2 : Créer le fichier metadata.json
+Compléter avec les informations du projet (voir section ci-dessus).
+
+**⚠️ IMPORTANT :** Sans ce fichier, le projet n'apparaîtra pas automatiquement sur les pages de formations.
+
+### Étape 3 : Développer le projet
+- Créer `index.html` avec le contenu du projet
+- Ajouter les styles dans `styles.css`
+- Documenter dans `README.md`
+
+### Étape 4 : Ajouter la carte visuelle (optionnel)
+
+Pour afficher le projet sur `projets/index.html` :
+1. Copier le template HTML ci-dessus
+2. Remplacer les placeholders `[...]`
+3. Créer un thème visuel dans `assets/css/all-projects.css` si nécessaire
+4. Insérer dans la section `<div class="projects-grid">` de `projets/index.html`
+
+**Note :** Avec le système de métadonnées, cette étape peut être automatisée à l'avenir.
+
+### Étape 5 : Tester
+```bash
+# Ouvrir dans le navigateur
+open projets/mon-nouveau-projet/index.html
+
+# Vérifier l'affichage sur la page formations
+open formations/codecademy-fullstack.html  # ou freecodecamp.html
+```
+
+### Étape 6 : Commit
+```bash
+git add .
+git commit -m "feat: add mon-nouveau-projet with [techno-principale]"
+```
+
+## 📚 Documentation complémentaire
+
+- **Architecture globale** : Voir [PROJECT_STRUCTURE.md](../PROJECT_STRUCTURE.md)
+- **Navigation et URLs** : Voir [NAVIGATION_FORMATIONS.md](../NAVIGATION_FORMATIONS.md)
+- **Template FreeCodeCamp** : Voir [formations/TEMPLATE_PROJET_FREECODECAMP.md](../formations/TEMPLATE_PROJET_FREECODECAMP.md)
 
 ---
 
-**Dernière mise à jour** : Septembre 2025
-**Projets utilisant ce template** : Golden Hive Honey Co., CSS Layouts Guide
+**Dernière mise à jour** : 24 février 2026  
+**Projets utilisant ce template** : Golden Hive Honey Co., CSS Layouts Guide, Pages Turners, Piano Player
