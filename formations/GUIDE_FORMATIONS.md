@@ -1,25 +1,27 @@
 # 🎓 Guide Complet - Gestion des Formations
 
-Ce guide explique comment gérer et mettre à jour vos formations FreeCodeCamp et Codecademy.
+Ce guide explique comment gérer et mettre à jour vos formations Codecademy, FreeCodeCamp et Scrimba.
 
 > **📌 Mise à jour importante** : Ce guide reflète la nouvelle architecture unifiée où toutes les pages de formation partagent le même CSS (formation-detail.css) et affichent les projets de manière identique à projets/index.html avec miniatures en iframe.
 
 ## 📊 Vue d'ensemble
 
-Vous avez maintenant **2 formations actives** :
+Vous avez maintenant **3 formations actives** :
 1. **Codecademy Full-Stack Engineer** (en cours - 75%)
-2. **FreeCodeCamp** (nouvelle - 0%)
+2. **Scrimba The Frontend Developer Path** (en cours - 76%)
+3. **FreeCodeCamp** (à venir - 0%)
 
 ## 🎯 Pages créées
 
 ### Pages principales
 - ✅ `formations/index.html` - Liste de toutes les formations (mise à jour)
 - ✅ `formations/codecademy-fullstack.html` - Détails Codecademy (existante)
-- ✅ `formations/freecodecamp.html` - Détails FreeCodeCamp (NOUVELLE)
+- ✅ `formations/scrimba-frontend.html` - Détails Scrimba (NOUVELLE)
+- ✅ `formations/freecodecamp.html` - Détails FreeCodeCamp (existante)
 
 ### Styles CSS
 - ✅ `assets/css/formations-index.css` - **Fichier CSS unique** pour formations/index.html (autonome, contient toutes les variables et styles)
-- ✅ `assets/css/formation-detail.css` - **Fichier CSS partagé** pour toutes les pages de détail de formation (autonome, codecademy-fullstack.html et freecodecamp.html)
+- ✅ `assets/css/formation-detail.css` - **Fichier CSS partagé** pour toutes les pages de détail de formation (autonome, codecademy-fullstack.html, scrimba-frontend.html et freecodecamp.html)
 
 ### Scripts JavaScript
 - ✅ `assets/js/formation-projects.js` - Charge et affiche automatiquement les projets par formation et module

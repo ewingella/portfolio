@@ -328,6 +328,10 @@ body {
     background: #0a0a23;
 }
 
+.formation-logo.scrimba {
+    background: linear-gradient(135deg, #2B283A 0%, #44415B 100%);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .formations-hero h1 {
