@@ -52,15 +52,14 @@ mon-projet/
 <article class="project-card featured">
     <div class="project-image">
         <!-- Option 1: Aperçu réel du site (recommandé) -->
-        <div class="project-preview real-site-preview">
-            <iframe 
-                src="[dossier-projet]/index.html" 
-                title="Aperçu [Nom du Projet]"
-                loading="lazy"
-                class="site-preview-iframe">
-            </iframe>
-            <div class="preview-overlay">
-                <div class="preview-label">[Icône] Aperçu en direct</div>
+        <div class="project-preview real-site-preview screenshot-preview">
+            <div class="site-screenshot">
+                <iframe 
+                    src="[dossier-projet]/index.html" 
+                    title="Aperçu [Nom du Projet]"
+                    loading="lazy"
+                    class="screenshot-iframe">
+                </iframe>
             </div>
         </div>
         
