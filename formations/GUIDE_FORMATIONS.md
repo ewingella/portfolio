@@ -2,6 +2,8 @@
 
 Ce guide explique comment gérer et mettre à jour vos formations FreeCodeCamp et Codecademy.
 
+> **📌 Mise à jour importante** : Ce guide reflète la nouvelle architecture unifiée où toutes les pages de formation partagent le même CSS (formation-detail.css) et affichent les projets de manière identique à projets/index.html avec miniatures en iframe.
+
 ## 📊 Vue d'ensemble
 
 Vous avez maintenant **2 formations actives** :
@@ -17,7 +19,17 @@ Vous avez maintenant **2 formations actives** :
 
 ### Styles CSS
 - ✅ `assets/css/formations-index.css` - **Fichier CSS unique** pour formations/index.html (autonome, contient toutes les variables et styles)
-- ✅ `assets/css/formation-detail.css` - Styles partagés pour les pages de détail (codecademy-fullstack.html et freecodecamp.html)
+- ✅ `assets/css/formation-detail.css` - **Fichier CSS partagé** pour toutes les pages de détail de formation (autonome, codecademy-fullstack.html et freecodecamp.html)
+
+### Scripts JavaScript
+- ✅ `assets/js/formation-projects.js` - Charge et affiche automatiquement les projets par formation et module
+
+### Architecture technique
+- ✅ **CSS unifié** : Un seul fichier CSS par type de page (formations-index.css pour l'index, formation-detail.css pour les détails)
+- ✅ **Structure HTML identique** : Toutes les pages de formation partagent la même structure
+- ✅ **Cartes projet uniformes** : Les projets s'affichent avec le même design que dans projets/index.html
+- ✅ **Miniatures dynamiques** : Les projets sont affichés en iframe avec effet zoom (33% de scale pour voir 3x plus de contenu)
+- ✅ **Tri automatique** : Les projets sont triés par statut (Terminés → En cours → Planifiés)
 
 ### Documentation
 - ✅ `formations/README.md` - Documentation du système (mise à jour)
@@ -105,88 +117,210 @@ Au fur et à mesure de votre progression, mettez à jour les pourcentages et nom
 
 **Note importante :** Toutes les modifications de style doivent être faites dans `/assets/css/formations-index.css`. Ce fichier est **autonome** et contient toutes les variables CSS nécessaires (pas besoin d'importer portfolio.css).
 
-## 🚀 Comment ajouter un nouveau projet FreeCodeCamp
+## 🚀 Comment ajouter un nouveau projet à votre formation
 
-### Méthode rapide (5 étapes)
+### Structure complète d'un projet
+
+Chaque projet doit avoir cette structure de dossier :
+
+```
+projets/
+└── nom-du-projet/
+    ├── index.html          # Page principale du projet
+    ├── styles.css          # (optionnel) Styles CSS
+    ├── script.js           # (optionnel) JavaScript
+    ├── metadata.json       # ⚠️ OBLIGATOIRE - Métadonnées pour l'affichage
+    └── README.md           # Documentation du projet
+```
+
+### Méthode rapide (4 étapes)
 
 #### 1️⃣ Créer le dossier du projet
 ```bash
 cd projets
-mkdir fcc-nom-du-projet
-cd fcc-nom-du-projet
+mkdir nom-du-projet
+cd nom-du-projet
 ```
 
-#### 2️⃣ Créer les fichiers de base
-Copiez le contenu du template ou créez :
-- `index.html` - Page du projet
-- `styles.css` - Styles
-- `script.js` - JavaScript (si nécessaire)
-- `metadata.json` - Métadonnées
-- `README.md` - Documentation
+#### 2️⃣ Créer le fichier metadata.json
 
-#### 3️⃣ Remplir le metadata.json
-
-Utilisez ce template et adaptez-le :
+**C'EST LE FICHIER LE PLUS IMPORTANT** - Il permet au système d'afficher automatiquement votre projet sur les pages de formation.
 
 ```json
 {
-  "title": "Nom du Projet",
-  "description": "Description claire du projet",
-  "formation": "freecodecamp",
-  "formationName": "FreeCodeCamp",
-  "module": "Responsive Web Design",
+  "title": "Titre du Projet",
+  "description": "Description concise du projet (1-2 phrases maximum). Cette description s'affichera sur la carte du projet.",
+  "formation": "codecademy-fullstack",
+  "formationName": "Codecademy",
+  "module": "Nom du Module",
   "moduleOrder": 1,
   "projectOrder": 1,
   "difficulty": "beginner",
   "status": "in-progress",
   "type": "formation-project",
-  "technologies": ["HTML5", "CSS3"],
-  "features": [
-    "Fonctionnalité 1",
-    "Fonctionnalité 2"
-  ],
-  "learningObjectives": [
-    "Objectif 1",
-    "Objectif 2"
-  ],
-  "dateCreated": "2025-11-06",
-  "dateUpdated": "2025-11-06",
+  "technologies": ["HTML5", "CSS3", "JavaScript"],
+  "dateCreated": "2026-02-25",
+  "dateUpdated": "2026-02-25",
   "demoUrl": "index.html"
 }
 ```
 
-#### 4️⃣ Ajouter le projet au système
+**Champs obligatoires expliqués :**
+
+- `title` : Nom du projet (affiché en titre de carte)
+- `description` : Description courte (1-2 phrases, affichée sur la carte)
+- `formation` : Identifiant de la formation
+  - `"codecademy-fullstack"` pour Codecademy
+  - `"freecodecamp"` pour FreeCodeCamp
+- `formationName` : Nom affiché dans le badge
+  - `"Codecademy"` ou `"FreeCodeCamp"`
+- `module` : Nom du module/certification
+  - Ex: "Web Development Foundations", "Responsive Web Design"
+- `moduleOrder` : Ordre du module (1, 2, 3...)
+- `projectOrder` : Ordre du projet dans le module (1, 2, 3...)
+- `status` : État du projet
+  - `"completed"` : Projet terminé ✅
+  - `"in-progress"` : En cours de développement 🔄
+  - `"planned"` : Planifié mais pas encore commencé 📋
+- `technologies` : Tableau des technologies utilisées (affichées en tags)
+- `demoUrl` : Nom du fichier HTML principal (généralement "index.html")
+
+#### 3️⃣ Ajouter le projet au système
 
 Ouvrez `/assets/js/formation-projects.js` et ajoutez le chemin :
 
 ```javascript
 const projectPaths = [
     // ... projets existants
-    'projets/fcc-nom-du-projet/metadata.json',  // <- Ajouter ici
+    'projets/nom-du-projet/metadata.json',  // <- Ajouter ici
 ];
 ```
 
-#### 5️⃣ Mettre à jour les statistiques
+#### 4️⃣ Vérifier l'affichage
 
-Dans `formations/freecodecamp.html`, mettez à jour les stats :
+1. Ouvrez votre page de formation (`codecademy-fullstack.html` ou `freecodecamp.html`)
+2. Le projet devrait apparaître automatiquement dans le bon module
+3. Les projets sont automatiquement triés par statut :
+   - ✅ **Terminés** en premier
+   - 🔄 **En cours** ensuite
+   - 📋 **Planifiés** à la fin
+
+### 🎨 Apparence des cartes projet
+
+Les cartes projet s'affichent avec :
+- **Miniature** : Iframe du projet avec zoom 33% (montre 3x plus de contenu)
+- **Overlay** : Apparaît au survol avec boutons "Voir le projet" et "Documentation"
+- **Titre** + **Badges** (statut et formation)
+- **Description** courte
+- **Tags technologies**
+
+**Structure identique à projets/index.html !**
+
+## 🚀 Exemple pour FreeCodeCamp
+
+```bash
+# 1. Créer le dossier
+cd projets
+mkdir fcc-survey-form
+cd fcc-survey-form
+
+# 2. Créer les fichiers
+touch index.html styles.css metadata.json README.md
+```
+
+**metadata.json pour FreeCodeCamp :**
+```json
+{
+  "title": "Survey Form",
+  "description": "Formulaire de sondage responsive avec validation HTML5",
+  "formation": "freecodecamp",
+  "formationName": "FreeCodeCamp",
+  "module": "Responsive Web Design",
+  "moduleOrder": 1,
+  "projectOrder": 1,
+  "status": "completed",
+  "type": "formation-project",
+  "technologies": ["HTML5", "CSS3", "Forms"],
+  "dateCreated": "2026-02-25",
+  "dateUpdated": "2026-02-25",
+  "demoUrl": "index.html"
+}
+```
+
+## 📝 Mise à jour des statistiques
+
+Après avoir ajouté ou complété des projets, mettez à jour les statistiques dans :
+
+### 1. Page de la formation (`codecademy-fullstack.html` ou `freecodecamp.html`)
 
 ```html
-<div class="stat-card">
-    <span class="stat-number">20%</span>  <!-- Mise à jour -->
-    <span class="stat-label">Progression globale</span>
-</div>
-<div class="stat-card">
-    <span class="stat-number">1</span>  <!-- Mise à jour -->
-    <span class="stat-label">Projets réalisés</span>
+<div class="progress-stats">
+    <div class="stat-card">
+        <span class="stat-number">75%</span>  <!-- Mettre à jour -->
+        <span class="stat-label">Progression globale</span>
+    </div>
+    <div class="stat-card">
+        <span class="stat-number">12</span>  <!-- Mettre à jour -->
+        <span class="stat-label">Projets réalisés</span>
+    </div>
 </div>
 ```
 
-Dans `formations/index.html`, mettez à jour la carte FreeCodeCamp :
+### 2. Page index des formations (`formations/index.html`)
 
 ```html
-<div class="progress-fill" style="width: 20%;"></div>  <!-- Mise à jour -->
-<div class="progress-text">20% complété • En cours</div>
+<div class="progress-fill" style="width: 75%"></div>  <!-- Mettre à jour -->
+<div class="progress-text">75% complété • En cours</div>
 ```
+
+## ⚙️ Détails techniques
+
+### Affichage automatique des projets
+
+Le système utilise `formation-projects.js` qui :
+1. Charge tous les fichiers `metadata.json`
+2. Organise les projets par formation et module
+3. Les trie automatiquement par statut (completed → in-progress → planned)
+4. Génère le HTML avec miniatures en iframe
+5. Applique les styles de `formation-detail.css`
+
+### Miniatures des projets
+
+Les miniatures utilisent des iframes avec ces paramètres :
+- `width: 300%` et `height: 300%`
+- `transform: scale(0.33)` pour afficher 3x plus de contenu
+- `loading="lazy"` pour optimisation
+- `pointer-events: none` pour désactiver l'interaction
+
+### Structure HTML générée
+
+```html
+<div class="module-section">
+    <h3>Nom du Module</h3>
+    <div class="projects-grid">
+        <article class="project-card featured">
+            <!-- Miniature + overlay -->
+            <!-- Contenu : titre, badges, description, tech tags -->
+        </article>
+    </div>
+</div>
+```
+
+## 🎨 Charte graphique FreeCodeCamp
+
+### Couleurs
+```css
+--primary: #0a0a23;      /* Bleu très foncé */
+--secondary: #1b1b32;    /* Bleu foncé */
+--accent: #ff6b35;       /* Orange vif */
+```
+
+### Emojis
+- 🔥 Badge FreeCodeCamp
+- ✅ Projet terminé
+- 🔄 Projet en cours
+- ⏳ Projet à venir
+- 📋 Projet planifié
 
 ## 📋 Certifications FreeCodeCamp
 

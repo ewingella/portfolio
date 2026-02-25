@@ -136,26 +136,12 @@ class FormationProjectsManager {
         const formation = this.formations.get(formationKey);
         if (!formation) return '';
 
-        let html = `
-            <div class="formation-projects">
-                <div class="formation-header">
-                    <h2 class="formation-title">${formation.name}</h2>
-                    <div class="formation-stats">
-                        <span class="stat">
-                            <strong>${formation.modules.size}</strong> modules
-                        </span>
-                        <span class="stat">
-                            <strong>${this.getTotalProjects(formation)}</strong> projets
-                        </span>
-                    </div>
-                </div>
-        `;
+        let html = '';
 
         formation.modules.forEach(module => {
             html += this.generateModuleHTML(module);
         });
 
-        html += '</div>';
         return html;
     }
 
@@ -165,15 +151,17 @@ class FormationProjectsManager {
     generateModuleHTML(module) {
         let html = `
             <div class="module-section">
-                <div class="module-header">
-                    <h3 class="module-title">📚 ${module.name}</h3>
-                    <span class="module-count">${module.projects.length} projet${module.projects.length > 1 ? 's' : ''}</span>
-                </div>
-                <div class="module-projects">
+                <h3>${module.name}</h3>
+                <div class="projects-grid">
         `;
 
-        // Trier les projets par ordre s'il existe
-        const sortedProjects = module.projects.sort((a, b) => (a.projectOrder || 0) - (b.projectOrder || 0));
+        // Trier les projets par statut (completed → in-progress → planned)
+        const statusOrder = { 'completed': 1, 'in-progress': 2, 'planned': 3 };
+        const sortedProjects = module.projects.sort((a, b) => {
+            const statusDiff = (statusOrder[a.status] || 999) - (statusOrder[b.status] || 999);
+            if (statusDiff !== 0) return statusDiff;
+            return (a.projectOrder || 0) - (b.projectOrder || 0);
+        });
 
         sortedProjects.forEach(project => {
             html += this.generateProjectCard(project);
@@ -188,51 +176,49 @@ class FormationProjectsManager {
     }
 
     /**
-     * Génère une carte de projet
+     * Génère une carte de projet - Structure identique à projets/index.html
      */
     generateProjectCard(project) {
-        const statusIcon = this.getStatusIcon(project.status);
-        const difficultyClass = `difficulty-${project.difficulty}`;
+        const statusClass = project.status === 'completed' ? '' : project.status;
+        const formationClass = project.formation === 'personal' ? 'personal' : '';
+        
+        // Générer le chemin complet vers le projet pour l'iframe
+        const projectUrl = `${project.basePath}${project.path}/${project.demoUrl}`;
         
         return `
-            <div class="project-card ${difficultyClass}">
-                <div class="project-header">
-                    <h4 class="project-title">${statusIcon} ${project.title}</h4>
-                    <div class="project-meta">
-                        <span class="project-difficulty">${this.getDifficultyLabel(project.difficulty)}</span>
-                        <span class="project-status">${this.getStatusLabel(project.status)}</span>
+            <article class="project-card featured">
+                <div class="project-image">
+                    <div class="project-preview real-site-preview screenshot-preview">
+                        <div class="site-screenshot">
+                            <iframe 
+                                src="${projectUrl}" 
+                                title="${project.title}"
+                                loading="lazy"
+                                class="screenshot-iframe">
+                            </iframe>
+                        </div>
+                    </div>
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="${projectUrl}" class="btn btn-primary">🚀 Voir le projet</a>
+                            <a href="${project.basePath}${project.path}/README.md" class="btn btn-secondary">📖 Documentation</a>
+                        </div>
                     </div>
                 </div>
-                
-                <p class="project-description">${project.description}</p>
-                
-                <div class="project-technologies">
-                    ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">${project.title}</h3>
+                        <div class="project-badges">
+                            <span class="project-status ${statusClass}">${this.getStatusLabel(project.status)}</span>
+                            <span class="formation-badge ${formationClass}">${project.formationName}</span>
+                        </div>
+                    </div>
+                    <p class="project-description">${project.description}</p>
+                    <div class="project-tech">
+                        ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                    </div>
                 </div>
-                
-                <div class="project-features">
-                    <strong>Fonctionnalités :</strong>
-                    <ul>
-                        ${project.features.map(feature => `<li>${feature}</li>`).join('')}
-                    </ul>
-                </div>
-                
-                <div class="project-objectives">
-                    <strong>Objectifs d'apprentissage :</strong>
-                    <ul>
-                        ${project.learningObjectives.map(obj => `<li>${obj}</li>`).join('')}
-                    </ul>
-                </div>
-                
-                <div class="project-actions">
-                    <a href="${project.basePath}${project.path}/${project.demoUrl}" class="btn-project btn-primary">
-                        🚀 Voir le projet
-                    </a>
-                    <a href="${project.basePath}${project.path}/README.md" class="btn-project btn-secondary">
-                        📖 Documentation
-                    </a>
-                </div>
-            </div>
+            </article>
         `;
     }
 
