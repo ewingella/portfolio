@@ -2,6 +2,79 @@
    FORMATIONS INDEX PAGE STYLES
    =========================== */
 
+/* Variables CSS */
+:root {
+  /* Couleurs principales */
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #64748b;
+  --accent: #0ea5e9;
+  
+  /* Couleurs neutres */
+  --white: #ffffff;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+  
+  /* Texte */
+  --text-primary: var(--gray-900);
+  --text-secondary: var(--gray-600);
+  --text-muted: var(--gray-500);
+  
+  /* Background */
+  --bg-primary: var(--white);
+  --bg-secondary: var(--gray-50);
+  --bg-card: var(--white);
+  
+  /* Bordures */
+  --border: var(--gray-200);
+  --border-light: var(--gray-100);
+  
+  /* Transitions */
+  --transition: all 0.2s ease-in-out;
+  
+  /* Spacing */
+  --spacing-lg: 1.5rem;
+  
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Reset et base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
 /* Hero Section */
 .formations-hero {
     background: linear-gradient(135deg, var(--primary), var(--accent));
@@ -194,6 +267,65 @@
 .back-to-portfolio:hover {
     background: var(--primary-dark);
     transform: translateY(-2px);
+}
+
+/* Sections */
+.formations-section {
+    padding: 4rem 0;
+    background: var(--bg-secondary);
+}
+
+.cta-section {
+    padding: 4rem 0;
+    background: var(--gray-900);
+    color: white;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.cta-section p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-section a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    padding: 1.25rem 2.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.125rem;
+    transition: all 0.2s ease;
+}
+
+.cta-section a:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Formation Card Description */
+.formation-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 1rem 0;
+}
+
+/* Logo Variants */
+.formation-logo.freecodecamp {
+    background: #0a0a23;
 }
 
 /* Responsive Design */

@@ -15,12 +15,95 @@ Vous avez maintenant **2 formations actives** :
 - ✅ `formations/codecademy-fullstack.html` - Détails Codecademy (existante)
 - ✅ `formations/freecodecamp.html` - Détails FreeCodeCamp (NOUVELLE)
 
+### Styles CSS
+- ✅ `assets/css/formations-index.css` - **Fichier CSS unique** pour formations/index.html (autonome, contient toutes les variables et styles)
+- ✅ `assets/css/formation-detail.css` - Styles partagés pour les pages de détail (codecademy-fullstack.html et freecodecamp.html)
+
 ### Documentation
 - ✅ `formations/README.md` - Documentation du système (mise à jour)
 - ✅ `formations/TEMPLATE_PROJET_FREECODECAMP.md` - Template pour nouveaux projets
 
 ### Exemple de projet
 - ✅ `projets/fcc-survey-form/` - Projet exemple (planifié)
+
+## 🆕 Comment ajouter une nouvelle formation à la page index
+
+Si vous souhaitez ajouter une **troisième formation** (ex: Udemy, Platzi, OpenClassrooms, etc.) à la page `formations/index.html` :
+
+### Étapes pour ajouter une formation
+
+#### 1️⃣ Ajouter la carte HTML dans formations/index.html
+
+Dupliquez une carte existante et modifiez-la :
+
+```html
+<!-- Nouvelle Formation -->
+<div class="formation-card">
+    <div class="formation-header">
+        <div class="formation-logo nouvelle-formation">NF</div>
+        <div class="formation-info">
+            <h3>Titre de la Formation</h3>
+            <div class="formation-provider">Nom du Fournisseur</div>
+        </div>
+    </div>
+    
+    <div class="formation-progress">
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+        </div>
+        <div class="progress-text">0% complété • À venir</div>
+    </div>
+    
+    <div class="formation-stats">
+        <div class="stat-item">
+            <span class="stat-number">X</span>
+            <div class="stat-label">Modules</div>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">0</span>
+            <div class="stat-label">Projets</div>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">0</span>
+            <div class="stat-label">Heures</div>
+        </div>
+    </div>
+    
+    <p>
+        Description de la formation et des compétences couvertes.
+    </p>
+    
+    <div class="formation-actions">
+        <a href="nouvelle-formation.html" class="btn-formation btn-primary">Voir détails</a>
+        <a href="../projets/" class="btn-formation btn-secondary">Projets</a>
+    </div>
+</div>
+```
+
+#### 2️⃣ Ajouter les styles spécifiques dans formations-index.css
+
+Si votre formation a une couleur de marque spécifique, ajoutez-la :
+
+```css
+/* Logo Variants */
+.formation-logo.freecodecamp {
+    background: #0a0a23;
+}
+
+.formation-logo.nouvelle-formation {
+    background: #votre-couleur;  /* Ajoutez la couleur de la marque */
+}
+```
+
+#### 3️⃣ Créer la page de détail
+
+Créez `formations/nouvelle-formation.html` en copiant la structure de `freecodecamp.html` ou `codecademy-fullstack.html`.
+
+#### 4️⃣ Mettre à jour les statistiques
+
+Au fur et à mesure de votre progression, mettez à jour les pourcentages et nombres dans la carte.
+
+**Note importante :** Toutes les modifications de style doivent être faites dans `/assets/css/formations-index.css`. Ce fichier est **autonome** et contient toutes les variables CSS nécessaires (pas besoin d'importer portfolio.css).
 
 ## 🚀 Comment ajouter un nouveau projet FreeCodeCamp
 
