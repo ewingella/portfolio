@@ -1,0 +1,11 @@
+.app {
+
+    margin: 0 auto;
+    padding: 2rem;
+    background-color:#F5F7FB;
+    display: flex;
+    flex-direction: column;
+    border: 1px red solid;
+    width: 550px;
+    height: 550px;
+}

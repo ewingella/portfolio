@@ -2,7 +2,13 @@
 
 > **📚 Voir aussi :**
 > - [PROJECT_STRUCTURE.md](../PROJECT_STRUCTURE.md) - Architecture globale du portfolio
-> - [NAVIGATION_FORMATIONS.md](../NAVIGATION_FORMATIONS.md) - Système de navigation
+> - [formations/GUIDE_FORMATIONS.md](../formations/GUIDE_FORMATIONS.md) - Gestion des formations
+
+> **⚠️ ARCHITECTURE IMPORTANTE** :
+> - **Tous les projets sont stockés physiquement dans le dossier `projets/`**
+> - Les pages de formations affichent uniquement les **miniatures** des projets via iframes
+> - Le fichier `metadata.json` permet l'affichage automatique sur les pages de formations
+> - Ce guide concerne l'affichage manuel sur `projets/index.html`
 
 Ce guide fournit le template HTML et les guidelines visuelles pour ajouter un nouveau projet dans `projets/index.html`.
 
@@ -27,21 +33,30 @@ mon-projet/
 ```json
 {
   "title": "Titre du Projet",
+  "description": "Description courte du projet (1-2 phrases)",
   "formation": "codecademy-fullstack",
+  "formationName": "Codecademy",
   "module": "Module ou Section",
-  "status": "completed",
+  "moduleOrder": 1,
+  "projectOrder": 1,
   "difficulty": "intermediate",
+  "status": "completed",
+  "type": "formation-project",
   "technologies": ["HTML5", "CSS3", "JavaScript"],
-  "description": "Description courte du projet",
-  "featured": true
+  "featured": true,
+  "dateCreated": "2026-02-25",
+  "dateUpdated": "2026-02-25",
+  "demoUrl": "index.html"
 }
 ```
 
 **Valeurs possibles :**
-- `formation` : `"codecademy-fullstack"`, `"freecodecamp"`, `"personal"`
+- `formation` : `"codecademy-fullstack"`, `"scrimba-frontend"`, `"freecodecamp"`, `"personal"`
+- `formationName` : Nom affiché dans le badge ("Codecademy", "Scrimba", "FreeCodeCamp", etc.)
 - `status` : `"completed"`, `"in-progress"`, `"planned"`
 - `difficulty` : `"beginner"`, `"intermediate"`, `"advanced"`
-- `featured` : `true` / `false` (projet mis en avant)
+- `type` : `"formation-project"` ou `"personal-project"`
+- `featured` : `true` / `false` (projet mis en avant sur projets/index.html)
 
 ## 🎨 Structure HTML standardisée pour la page index.html
 
@@ -169,6 +184,8 @@ Exemples :
 
 ## 🚀 Workflow d'ajout d'un nouveau projet
 
+> **💡 Rappel** : Tous les projets sont créés dans `projets/`, même s'ils sont liés à une formation. Les pages de formations (`formations/*.html`) affichent uniquement les miniatures via iframes.
+
 ### Étape 1 : Créer la structure
 ```bash
 cd projets/
@@ -215,8 +232,8 @@ git commit -m "feat: add mon-nouveau-projet with [techno-principale]"
 ## 📚 Documentation complémentaire
 
 - **Architecture globale** : Voir [PROJECT_STRUCTURE.md](../PROJECT_STRUCTURE.md)
-- **Navigation et URLs** : Voir [NAVIGATION_FORMATIONS.md](../NAVIGATION_FORMATIONS.md)
-- **Template FreeCodeCamp** : Voir [formations/TEMPLATE_PROJET_FREECODECAMP.md](../formations/TEMPLATE_PROJET_FREECODECAMP.md)
+- **Gestion des formations** : Voir [formations/GUIDE_FORMATIONS.md](../formations/GUIDE_FORMATIONS.md)
+- **Guide complet formations** : Instructions détaillées pour ajouter des projets aux formations
 
 ---
 

@@ -1,0 +1,17 @@
+{
+  "title": "Quizzical",
+  "description": "Application de quiz interactive construite avec React. Permet de tester ses connaissances avec des questions dynamiques et un système de score.",
+  "formation": "scrimba-frontend",
+  "formationName": "Scrimba",
+  "module": "Learn React",
+  "moduleOrder": 9,
+  "projectOrder": 1,
+  "difficulty": "intermediate",
+  "status": "in-progress",
+  "type": "formation-project",
+  "technologies": ["React", "JavaScript", "Vite", "CSS3"],
+  "featured": true,
+  "dateCreated": "2026-02-25",
+  "dateUpdated": "2026-02-25",
+  "demoUrl": "index.html"
+}

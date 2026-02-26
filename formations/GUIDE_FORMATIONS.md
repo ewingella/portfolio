@@ -32,13 +32,11 @@ Vous avez maintenant **3 formations actives** :
 - ✅ **Cartes projet uniformes** : Les projets s'affichent avec le même design que dans projets/index.html
 - ✅ **Miniatures dynamiques** : Les projets sont affichés en iframe avec effet zoom (33% de scale pour voir 3x plus de contenu)
 - ✅ **Tri automatique** : Les projets sont triés par statut (Terminés → En cours → Planifiés)
+- ✅ **Architecture centralisée** : Tous les projets sont stockés dans `projets/`, les pages de formations affichent uniquement les miniatures
 
 ### Documentation
-- ✅ `formations/README.md` - Documentation du système (mise à jour)
-- ✅ `formations/TEMPLATE_PROJET_FREECODECAMP.md` - Template pour nouveaux projets
-
-### Exemple de projet
-- ✅ `projets/fcc-survey-form/` - Projet exemple (planifié)
+- ✅ `formations/GUIDE_FORMATIONS.md` - Guide complet de gestion des formations (CE FICHIER)
+- ✅ `projets/TEMPLATE_PROJET.md` - Guide pour créer des projets
 
 ## 🆕 Comment ajouter une nouvelle formation à la page index
 
@@ -121,6 +119,12 @@ Au fur et à mesure de votre progression, mettez à jour les pourcentages et nom
 
 ## 🚀 Comment ajouter un nouveau projet à votre formation
 
+> **⚠️ ARCHITECTURE IMPORTANTE** : 
+> - Tous les projets sont **stockés physiquement dans le dossier `projets/`**
+> - Les pages de formations (`codecademy-fullstack.html`, `scrimba-frontend.html`, `freecodecamp.html`) **n'affichent que les miniatures** via des iframes
+> - Les projets sont automatiquement détectés via leur fichier `metadata.json`
+> - Ne créez JAMAIS de projets directement dans le dossier `formations/`
+
 ### Structure complète d'un projet
 
 Chaque projet doit avoir cette structure de dossier :
@@ -161,6 +165,7 @@ cd nom-du-projet
   "status": "in-progress",
   "type": "formation-project",
   "technologies": ["HTML5", "CSS3", "JavaScript"],
+  "featured": false,
   "dateCreated": "2026-02-25",
   "dateUpdated": "2026-02-25",
   "demoUrl": "index.html"
@@ -185,27 +190,27 @@ cd nom-du-projet
   - `"in-progress"` : En cours de développement 🔄
   - `"planned"` : Planifié mais pas encore commencé 📋
 - `technologies` : Tableau des technologies utilisées (affichées en tags)
+- `featured` : `true` pour mettre en avant, `false` sinon (affecte l'affichage sur projets/index.html)
 - `demoUrl` : Nom du fichier HTML principal (généralement "index.html")
 
-#### 3️⃣ Ajouter le projet au système
+#### 3️⃣ Vérifier l'affichage automatique
 
-Ouvrez `/assets/js/formation-projects.js` et ajoutez le chemin :
+**Le système détecte automatiquement votre projet !**
 
-```javascript
-const projectPaths = [
-    // ... projets existants
-    'projets/nom-du-projet/metadata.json',  // <- Ajouter ici
-];
-```
+Grâce au fichier `metadata.json`, votre projet sera automatiquement :
+- Détecté par le système
+- Affiché dans la bonne formation (via le champ `formation`)
+- Classé dans le bon module (via le champ `module`)
+- Trié par statut (completed → in-progress → planned)
 
-#### 4️⃣ Vérifier l'affichage
-
-1. Ouvrez votre page de formation (`codecademy-fullstack.html` ou `freecodecamp.html`)
-2. Le projet devrait apparaître automatiquement dans le bon module
-3. Les projets sont automatiquement triés par statut :
+1. Ouvrez votre page de formation (`codecademy-fullstack.html`, `scrimba-frontend.html` ou `freecodecamp.html`)
+2. Le projet apparaît automatiquement dans le bon module
+3. Le tri est automatique par statut :
    - ✅ **Terminés** en premier
-   - 🔄 **En cours** ensuite
+   - 🔄 **En cours** ensuite  
    - 📋 **Planifiés** à la fin
+
+> **💡 Astuce** : Si le projet n'apparaît pas, vérifiez que le champ `formation` dans metadata.json correspond exactement à l'identifiant de la formation (`codecademy-fullstack`, `scrimba-frontend` ou `freecodecamp`)
 
 ### 🎨 Apparence des cartes projet
 
@@ -243,6 +248,7 @@ touch index.html styles.css metadata.json README.md
   "status": "completed",
   "type": "formation-project",
   "technologies": ["HTML5", "CSS3", "Forms"],
+  "featured": true,
   "dateCreated": "2026-02-25",
   "dateUpdated": "2026-02-25",
   "demoUrl": "index.html"
@@ -479,8 +485,7 @@ Ouvrez la console du navigateur sur la page d'une formation et vérifiez :
 - [FreeCodeCamp Curriculum](https://www.freecodecamp.org/learn)
 - [FreeCodeCamp Forum](https://forum.freecodecamp.org/)
 - [FreeCodeCamp Guide](https://guide.freecodecamp.org/)
-- [Template projet](./TEMPLATE_PROJET_FREECODECAMP.md)
-- [Documentation système](./README.md)
+- [Template projet](../projets/TEMPLATE_PROJET.md) - Guide pour créer un projet
 
 ---
 
