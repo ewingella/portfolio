@@ -1,0 +1,17 @@
+{
+  "title": "Component Library++",
+  "description": "Bibliothèque de composants React réutilisables. Solo project du Frontend Path Scrimba.",
+  "formation": "scrimba-frontend",
+  "formationName": "Scrimba",
+  "module": "Learn React",
+  "moduleOrder": 9,
+  "projectOrder": 2,
+  "difficulty": "advanced",
+  "status": "in-progress",
+  "type": "formation-project",
+  "technologies": ["React", "JavaScript", "Vite", "CSS3", "Custom Hooks"],
+  "featured": true,
+  "dateCreated": "2026-03-27",
+  "dateUpdated": "2026-03-27",
+  "demoUrl": "index.html"
+}
