@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import { decode } from 'he'
 import Start from './components/start'
 import Quizz from './components/Quizz'
 import './App.css'
+// lien api qui marche 
 
 // App.jsx - Gère l'état global du jeu
 function App() {
@@ -19,7 +21,7 @@ function App() {
   }
    // Fonction pour appeler l'API
   async function fetchQuestions() {
-    const response = await fetch('https://opentdb.com/api.php?amount=5&type=multiple')
+    const response = await fetch('https://opentdb.com/api.php?amount=5&category=28&difficulty=medium&type=multiple')
     const data = await response.json()
     return data.results
   }
@@ -41,9 +43,9 @@ function App() {
     console.log(apiQuestions)
     // Traiter les questions (mélanger réponses, etc.)
     const processed = apiQuestions.map(q => ({
-      question: q.question,
-      answers: shuffleArray([q.correct_answer, ...q.incorrect_answers]),
-      correctAnswer: q.correct_answer
+      question: decode(q.question),
+      answers: shuffleArray([decode(q.correct_answer), ...q.incorrect_answers.map(decode)]),
+      correctAnswer: decode(q.correct_answer)
     }))
     
     setQuestions(processed)
