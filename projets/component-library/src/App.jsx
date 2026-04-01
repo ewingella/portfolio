@@ -3,6 +3,8 @@ import Button from './components/Button'
 import './App.css'
 import { login } from './hooks/useLogin'
 import Banner from './components/Banner'
+import Card from './components/Card'
+
 
 export default function App() {
     return (
@@ -45,6 +47,13 @@ export default function App() {
                 <Banner type="error">There is a problem with your application.</Banner>
                 <Banner type="neutral">Update available. Please refresh the page.</Banner>
                 
+            </div>
+            <div className="card-showcase">
+                <p>Cards</p>
+                <Card>
+                    <Card.Title>Easy Deployment</Card.Title>
+                    <Card.Text>Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</Card.Text>
+                </Card>
             </div>
         </div>
     )
