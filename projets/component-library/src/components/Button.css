@@ -1,0 +1,47 @@
+.btn-badge{
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: #F3F4F6;
+    color: #1F2937;
+}
+
+.btn-badge.pill {
+  
+    border-radius: 12rem;
+    margin-left: 0.5rem;
+    animation: pulse 1.5s infinite;
+}
+
+.btn-badge.red {
+    background-color: #FEE2E2;
+    color: #991B1B;
+}
+.btn-badge.yellow {
+    background-color: #FEF3C7;
+    color: #92400E;
+}
+.btn-badge.green {
+    background-color: #D1FAE5;
+    color: #065F46;
+}
+.btn-badge.blue {
+    background-color: #DBEAFE;
+    color: #1E40AF;
+}   
+.btn-badge.indigo {
+    background-color: #E0E7FF;
+    color: #3730A3;
+}
+.btn-badge.purple {
+    background-color: #F5E0FF;
+    color: #6B21A8;
+}   
+.btn-badge.pink {
+    background-color: #FCE7F3;
+    color: #9D174D;
+}
