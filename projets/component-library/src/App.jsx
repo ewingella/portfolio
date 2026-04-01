@@ -2,12 +2,14 @@ import React from 'react'
 import Button from './components/Button'
 import './App.css'
 import { login } from './hooks/useLogin'
+import Banner from './components/Banner'
 
 export default function App() {
     return (
         <div className="app">
             <h1>Component Library++</h1>
             <div className="button-showcase">
+                <p>Buttons</p>
                 <div className="square-btn-container">
                     <p>Square Buttons</p>
                     <Button color="red" shape="square" onClick={login}>Test Button</Button>
@@ -28,6 +30,21 @@ export default function App() {
                     <Button color="purple" shape="pill" onClick={login}>Purple Pill Button</Button>
                     <Button color="pink" shape="pill" onClick={login}>Pink Pill Button</Button>
                 </div>
+            </div>
+
+            <div className="banner-showcase">
+                <p>Banners</p>
+                <p>Single-line Banners</p>
+                <Banner type="success"/>
+                <Banner type="warning"/>
+                <Banner type="error"/>   
+                <Banner type="neutral"/>
+                <p>Multi-line Banners</p>
+                <Banner type="success">Congratulations! You did it!</Banner>
+                <Banner type="warning">Attention! Please check your input.</Banner>
+                <Banner type="error">There is a problem with your application.</Banner>
+                <Banner type="neutral">Update available. Please refresh the page.</Banner>
+                
             </div>
         </div>
     )
